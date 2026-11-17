@@ -366,9 +366,9 @@
       {
         "source": "FairGambling",
         "metric": "Hot wallet balance (all chains)",
-        "value": "$5.0M",
-        "note": "ETH, SOL, BSC, XRP, TRX",
-        "asOf": "2026-09-03",
+        "value": "$4.9M",
+        "note": "ETH, SOL, BSC, TRX, XRP",
+        "asOf": "2026-11-17",
         "sourceUrl": "https://www.fairgambling.com/duelbits"
       },
       {
