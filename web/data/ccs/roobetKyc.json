@@ -1,0 +1,12 @@
+{
+  "checkedAt": "2026-09-30",
+  "facts": [
+    { "label": "Documents for Level 2", "value": "Passport, driving licence or another government-issued ID; front and back where the document has both.", "source": "Roobet Help Center: Level 2 Verification", "url": "https://help.roobet.com/en/articles/14709132-level-2-verification" },
+    { "label": "Where to submit", "value": "Account Settings, then Verification, inside your own Roobet account.", "source": "Roobet Help Center: Level 2 Verification", "url": "https://help.roobet.com/en/articles/14709132-level-2-verification" },
+    { "label": "Review time", "value": "No fixed time is promised. Roobet says its compliance team reviews documents daily and gets in touch if it needs more.", "source": "Roobet Help Center: Level 2 Verification", "url": "https://help.roobet.com/en/articles/14709132-level-2-verification" },
+    { "label": "Tips", "value": "Level 2 must be complete to send or receive tips.", "source": "Roobet Help Center: Sending Tips and Free Spins", "url": "https://help.roobet.com/en/articles/10873689-sending-tips-and-free-spins" },
+    { "label": "Wagering on received tips", "value": "A received tip must be wagered at 30% of its amount before it can be withdrawn (an anti-money-laundering rule); verification does not remove this.", "source": "Roobet Help Center: Wagering Requirements", "url": "https://help.roobet.com/en/articles/13239839-wagering-requirements" },
+    { "label": "Restricted regions", "value": "Roobet publishes a list of countries it does not accept; players there should not register, and using a VPN to get round it breaks the terms.", "source": "Roobet Help Center: Restricted Regions", "url": "https://help.roobet.com/en/articles/13686927-roobet-restricted-regions" },
+    { "label": "Account security", "value": "Roobet's 2FA guide warns that the recovery key can be used to remove 2FA, so it should never be shared.", "source": "Roobet Help Center: 2FA Guide", "url": "https://help.roobet.com/en/articles/5017812-2fa-guide" }
+  ]
+}

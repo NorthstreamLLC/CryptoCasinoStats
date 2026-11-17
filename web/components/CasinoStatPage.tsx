@@ -1,13 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import pages from "@/data/ccs/casinoPages.json";
-import { Container, H2, Card, Inline, TableWrap, th, td, Cite } from "./ui";
+import { Container, H2, Card, Inline, TableWrap, th, td } from "./ui";
 import { OnChainPanel } from "./OnChainPanel";
 import { SlotTable } from "./SlotTable";
 import { PartnerList } from "./PartnerList";
 import { goPath, hasLink } from "@/lib/outbound";
 import { readingsFor, getGame, fmtRtp, SOURCE_LABEL } from "@/lib/slots";
-import { getCasinoSpecSheet } from "@/lib/spec-sheet";
+import { getCasino } from "@/lib/casinos";
+import { CasinoFacts } from "./CasinoFacts";
+import { RoobetKyc } from "./RoobetKyc";
 import { fmtDate, SITE_URL } from "@/lib/site";
 
 type CasinoPage = {
@@ -27,9 +29,6 @@ type CasinoPage = {
 
 export const casinoPage = (slug: string) => (pages as unknown as Record<string, CasinoPage>)[slug];
 
-/** Spec-sheet groups worth showing on a stats page, in this order. */
-const GROUPS = ["Coins & deposit limits", "Payouts & fees", "Compliance"];
-
 function PlayButton({ slug, name, placement }: { slug: string; name: string; placement: string }) {
   if (!hasLink(slug)) return null;
   return (
@@ -41,7 +40,7 @@ function PlayButton({ slug, name, placement }: { slug: string; name: string; pla
 
 export function CasinoStatPage({ slug }: { slug: string }) {
   const c = casinoPage(slug);
-  const sheet = getCasinoSpecSheet(slug);
+  const o = getCasino(slug);
   const readings = readingsFor(slug).sort((a, b) => a.slotSlug.localeCompare(b.slotSlug));
   const ld = {
     "@context": "https://schema.org",
@@ -144,30 +143,8 @@ export function CasinoStatPage({ slug }: { slug: string }) {
           </>
         )}
 
-        {sheet && (
-          <>
-            <H2 id="facts">{c.name} facts, from {c.name}&apos;s own pages</H2>
-            <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
-              {sheet.groups
-                .filter((g) => GROUPS.includes(g.title))
-                .sort((a, b) => GROUPS.indexOf(a.title) - GROUPS.indexOf(b.title))
-                .map((g) => (
-                  <Card key={g.title}>
-                    <h3 className="mb-3 font-semibold">{g.title}</h3>
-                    <dl className="grid gap-3 text-sm">
-                      {g.facts.slice(0, 6).map((f) => (
-                        <div key={f.label}>
-                          <dt className="text-xs text-text-dim-2">{f.label}</dt>
-                          <dd className="text-text-secondary">{f.chips ? f.chips.join(", ") : f.value}</dd>
-                          {f.sourceUrl && <Cite source="Source" href={f.sourceUrl} asOf={f.asOf} />}
-                        </div>
-                      ))}
-                    </dl>
-                  </Card>
-                ))}
-            </div>
-          </>
-        )}
+        {o && <CasinoFacts o={o} />}
+        {slug === "roobet" && <RoobetKyc />}
 
         <H2>{c.verdictTitle}</H2>
         <p className="max-w-3xl text-text-secondary">

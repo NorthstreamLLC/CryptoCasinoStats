@@ -5,7 +5,8 @@ import { PartnerList } from "@/components/PartnerList";
 import { pageMeta, fmtDate } from "@/lib/site";
 import { volumeTable, latestAsOf } from "@/lib/volume";
 import { allReadings, getGame, fmtRtp } from "@/lib/slots";
-import { goPath, hasLink, CASINO_PAGES } from "@/lib/outbound";
+import { goPath, hasLink } from "@/lib/outbound";
+import { casinoPath } from "@/lib/casinos";
 import posts from "@/data/ccs/posts.json";
 
 export const metadata = pageMeta(
@@ -96,7 +97,7 @@ export default function Home() {
                 <tr key={r.slug}>
                   <td className={`${td} text-text-dim`}>{i + 1}</td>
                   <td className={td}>
-                    {CASINO_PAGES[r.slug] ? <Link href={CASINO_PAGES[r.slug]} className="font-medium text-accent hover:underline">{r.name}</Link> : <span className="font-medium text-text-primary">{r.name}</span>}
+                    <Link href={casinoPath(r.slug)} className="font-medium text-accent hover:underline">{r.name}</Link>
                   </td>
                   <td className={td}>
                     {d ? <><span className="font-semibold text-text-primary">{d.value}</span> <Cite source={d.source} href={d.sourceUrl} asOf={d.asOf} /></> : "—"}
@@ -135,9 +136,9 @@ export default function Home() {
             <div key={c.slug} className="flex items-center gap-4 rounded-[14px] border border-border bg-surface p-4">
               <Image src={c.logo} alt={`${c.name} logo`} width={64} height={64} className="h-14 w-14 rounded-xl object-cover" />
               <div className="flex-1">
-                <Link href={CASINO_PAGES[c.slug]} className="font-semibold hover:text-accent">{c.name}</Link>
+                <Link href={casinoPath(c.slug)} className="font-semibold hover:text-accent">{c.name}</Link>
                 <div className="mt-1 flex gap-3 text-xs">
-                  <Link href={CASINO_PAGES[c.slug]} className="text-accent hover:underline">Stats</Link>
+                  <Link href={casinoPath(c.slug)} className="text-accent hover:underline">Stats</Link>
                   {hasLink(c.slug) && <a href={`${goPath(c.slug)}?p=home-casinos`} rel="nofollow sponsored" className="text-text-secondary hover:text-text-primary">Play</a>}
                 </div>
               </div>

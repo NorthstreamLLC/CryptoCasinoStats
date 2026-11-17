@@ -2,6 +2,7 @@ import { SITE_URL } from "./site";
 import { articles } from "./posts";
 import { latestAsOf } from "./volume";
 import { allReadings } from "./slots";
+import { OPS, isRootCasino } from "./casinos";
 
 /**
  * The same sitemap files the WordPress site (Yoast) published, so Search
@@ -20,6 +21,7 @@ export const SITEMAPS: Record<string, () => Entry[]> = {
     { path: "/roobet/", lastmod: dataDate() },
     { path: "/razed/", lastmod: dataDate() },
     { path: "/top-slots/", lastmod: dataDate() },
+    ...OPS.filter((o) => !isRootCasino(o.slug)).map((o) => ({ path: `/casinos/${o.slug}/`, lastmod: dataDate() })),
     { path: "/methodology/" },
     { path: "/affiliate-disclosure/" },
     { path: "/responsible-gambling/" },

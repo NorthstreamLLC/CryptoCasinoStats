@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { pickPartners, type PartnerContext } from "@/lib/partner-fit";
 import { GeoRanked } from "@/components/geo/GeoRanked";
-import { goPath, CASINO_PAGES } from "@/lib/outbound";
+import { goPath } from "@/lib/outbound";
+import { casinoPath } from "@/lib/casinos";
 
 /**
  * Where to play: partner casinos for this page, Roobet first, the rest in the
@@ -21,11 +22,9 @@ export function PartnerList({ title = "Where to play", context, seed, exclude = 
         <div>
           <div className="flex items-center gap-2">
             <span className="font-semibold text-text-primary">{p.o.name}</span>
-            {CASINO_PAGES[p.o.slug] && (
-              <Link href={CASINO_PAGES[p.o.slug]} className="text-xs text-accent hover:underline">
-                stats
-              </Link>
-            )}
+            <Link href={casinoPath(p.o.slug)} className="text-xs text-accent hover:underline">
+              stats
+            </Link>
           </div>
           <p className="mt-1 text-sm text-text-muted">{p.pitch}</p>
         </div>

@@ -12,12 +12,10 @@ export const goPath = (slug: string) => `/go/${encodeURIComponent(slug)}/`;
 
 const RAW = ops as Linkable[];
 
-/** Casinos with their own page on this site, at the paths the old site used. */
-export const CASINO_PAGES: Record<string, string> = { stake: "/stake/", roobet: "/roobet/", razed: "/razed/" };
-
 /** Our own page for a slug: where /go/ sends a click that has no live link. */
 export function reviewPath(slug: string): string {
-  return CASINO_PAGES[slug] ?? "/casinos/";
+  const known = RAW.some((r) => r.slug === slug);
+  return known ? (["stake", "roobet", "razed"].includes(slug) ? `/${slug}/` : `/casinos/${encodeURIComponent(slug)}/`) : "/casinos/";
 }
 
 export const hasLink = (slug: string) => !!RAW.find((r) => r.slug === slug && r.affiliate && r.signupUrl);

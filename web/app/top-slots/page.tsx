@@ -5,7 +5,7 @@ import { PartnerList } from "@/components/PartnerList";
 import { pageMeta, fmtDate } from "@/lib/site";
 import { getGame, fmtRtp, fmtX, allReadings, CATALOGUE_AS_OF } from "@/lib/slots";
 import watchOps from "@/data/watchOps.json";
-import { CASINO_PAGES } from "@/lib/outbound";
+import { casinoPath } from "@/lib/casinos";
 
 export const metadata = pageMeta(
   "Top Slots",
@@ -126,7 +126,7 @@ export default function TopSlotsPage() {
               <th className={th}>Provider RTP</th>
               {casinos.map((c) => (
                 <th key={c.slug} className={th}>
-                  {CASINO_PAGES[c.slug] ? <Link href={CASINO_PAGES[c.slug]} className="hover:text-text-primary">{c.name}</Link> : c.name}
+                  <Link href={casinoPath(c.slug)} className="hover:text-text-primary">{c.name}</Link>
                 </th>
               ))}
             </tr>

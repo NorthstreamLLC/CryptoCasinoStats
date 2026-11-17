@@ -31,6 +31,8 @@ const nextConfig: NextConfig = {
     return [
       // One host: www and any leftover server hostname go to the apex.
       { source: "/:path*", has: [{ type: "host", value: "www.cryptocasinostats.com" }], destination: "https://cryptocasinostats.com/:path*", permanent: true },
+      // Casinos the old site had at the root keep their root pages.
+      { source: "/casinos/:slug(stake|roobet|razed)", destination: "/:slug/", permanent: true },
       // WordPress odds and ends that people or bots may still request.
       { source: "/wp-admin/:path*", destination: "/", permanent: false },
       { source: "/wp-login.php", destination: "/", permanent: false },

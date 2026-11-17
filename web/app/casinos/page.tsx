@@ -6,7 +6,8 @@ import { Container, Hero, H2, TableWrap, th, td, Cite } from "@/components/ui";
 import { PartnerList } from "@/components/PartnerList";
 import { pageMeta, fmtDate } from "@/lib/site";
 import { volumeTable, earliestAsOf, latestAsOf, type VolumeFigure } from "@/lib/volume";
-import { goPath, hasLink, CASINO_PAGES } from "@/lib/outbound";
+import { goPath, hasLink } from "@/lib/outbound";
+import { casinoPath, getCasino, allCasinos, atAGlance } from "@/lib/casinos";
 import { readingsFor } from "@/lib/slots";
 import type { Operator } from "@/lib/types";
 
@@ -51,8 +52,8 @@ function Fig({ f }: { f?: VolumeFigure }) {
 }
 
 function CasinoName({ slug, name }: { slug: string; name: string }) {
-  return CASINO_PAGES[slug] ? (
-    <Link href={CASINO_PAGES[slug]} className="font-medium text-accent hover:underline">
+  return getCasino(slug) ? (
+    <Link href={casinoPath(slug)} className="font-medium text-accent hover:underline">
       {name}
     </Link>
   ) : (
@@ -83,7 +84,7 @@ export default function CasinosPage() {
                     Play {nameOf(b.slug)}
                   </a>
                 )}
-                <Link href={CASINO_PAGES[b.slug]} className="rounded-lg border border-border-strong px-3 py-2 text-sm font-semibold hover:bg-row-hover">
+                <Link href={casinoPath(b.slug)} className="rounded-lg border border-border-strong px-3 py-2 text-sm font-semibold hover:bg-row-hover">
                   Stats
                 </Link>
               </div>
@@ -160,6 +161,41 @@ export default function CasinosPage() {
           </tbody>
         </TableWrap>
 
+        <H2 id="all-casinos">All casinos we track</H2>
+        <p className="mb-4 max-w-3xl text-sm text-text-muted">
+          {allCasinos().length} crypto casinos. KYC, withdrawal times and wagering are taken from each casino&apos;s own terms and help pages;
+          open a casino for the sources.
+        </p>
+        <TableWrap>
+          <thead>
+            <tr>
+              <th className={th}>Casino</th>
+              <th className={th}>KYC policy</th>
+              <th className={th}>Stated withdrawal time</th>
+              <th className={th}>Bonus wagering</th>
+              <th className={th}>Licence</th>
+              <th className={th}>30-day deposits</th>
+            </tr>
+          </thead>
+          <tbody>
+            {allCasinos().map((o) => {
+              const g = atAGlance(o);
+              const v = rows.find((r) => r.slug === o.slug);
+              const d = v?.deposits.find((x) => x.source === "FairGambling") ?? v?.deposits[0];
+              return (
+                <tr key={o.slug}>
+                  <td className={td}><CasinoName slug={o.slug} name={o.name} /></td>
+                  <td className={td}>{g.kyc?.label ?? "—"}</td>
+                  <td className={td}>{g.withdrawal.label}</td>
+                  <td className={td}>{g.wagering.charAt(0).toUpperCase() + g.wagering.slice(1)}</td>
+                  <td className={td}>{g.licence || "—"}</td>
+                  <td className={td}>{d ? d.value : "—"}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </TableWrap>
+
         <H2>Featured Casinos</H2>
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
           {FEATURED.map((f) => {
@@ -170,8 +206,8 @@ export default function CasinosPage() {
               </>
             );
             const cls = "flex flex-col items-center rounded-[14px] border border-border bg-surface p-4 hover:bg-row-hover";
-            return CASINO_PAGES[f.slug] ? (
-              <Link key={f.slug} href={CASINO_PAGES[f.slug]} className={cls}>{inner}</Link>
+            return getCasino(f.slug) ? (
+              <Link key={f.slug} href={casinoPath(f.slug)} className={cls}>{inner}</Link>
             ) : hasLink(f.slug) ? (
               <a key={f.slug} href={`${goPath(f.slug)}?p=featured`} rel="nofollow sponsored" className={cls}>{inner}</a>
             ) : (
