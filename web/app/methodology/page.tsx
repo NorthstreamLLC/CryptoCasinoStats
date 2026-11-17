@@ -43,8 +43,9 @@ export default function Page() {
           re-checked monthly; the latest were taken on {fmtDate(lastRead)}.
         </p>
         <p>
-          We do not publish an RTP above 100%. RTP is a game&apos;s long-run theoretical return and is always below 100%; a session or tracker that
-          returned more than was staked describes luck in a sample, not the game.
+          We do not publish an RTP above 100%. RTP is a game&apos;s long-run theoretical return: almost always below 100%, and exactly 100% only
+          for the rare zero-edge game a casino says it runs. A session or tracker that returned more than was staked describes luck in a sample,
+          not the game.
         </p>
 
         <h2>Slot data</h2>
