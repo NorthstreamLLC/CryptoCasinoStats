@@ -1,9 +1,9 @@
-import { CasinoStatPage, casinoPage } from "@/components/CasinoStatPage";
+import { CasinoProfile, casinoCopy } from "@/components/profile/CasinoProfile";
 import { pageMeta } from "@/lib/site";
 
-const c = casinoPage("razed");
+const c = casinoCopy("razed")!;
 export const metadata = pageMeta(c.name, c.description, "/razed/", { image: c.logo });
 
 export default function Page() {
-  return <CasinoStatPage slug="razed" />;
+  return <CasinoProfile slug="razed" path="/razed/" />;
 }

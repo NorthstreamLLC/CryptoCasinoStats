@@ -168,6 +168,7 @@ p {
 .ccs-num { font-family: var(--font-jetbrains-mono), ui-monospace, monospace; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
 .ccs-eyebrow { font-family: var(--font-jetbrains-mono), ui-monospace, monospace; font-size: 11.5px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-dim-2); }
 .ccs-card { position: relative; border-radius: 16px; border: 1px solid var(--color-border); background: linear-gradient(180deg, rgba(255,255,255,.025), rgba(255,255,255,0)) , var(--color-surface); box-shadow: inset 0 1px 0 rgba(255,255,255,.05), 0 18px 40px -28px rgba(0,0,0,.8); }
+.ccs-card-glow { overflow: hidden; }
 .ccs-card-glow::before { content: ""; position: absolute; inset: -40% -40% auto auto; width: 70%; height: 90%; background: radial-gradient(closest-side, rgba(31,201,107,.16), transparent); pointer-events: none; }
 .ccs-lift { transition: transform .22s cubic-bezier(.2,.7,.2,1), border-color .22s, box-shadow .22s; }
 .ccs-lift:hover { transform: translateY(-2px); border-color: var(--color-border-strong-2); box-shadow: inset 0 1px 0 rgba(255,255,255,.06), 0 24px 48px -28px rgba(0,0,0,.9); }
