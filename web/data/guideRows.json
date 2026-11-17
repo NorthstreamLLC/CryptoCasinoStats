@@ -1,0 +1,202 @@
+[
+  {
+    "slug": "hacksaw-atg-sweden-integration",
+    "title": "Hacksaw brings slots to ATG through EveryMatrix",
+    "mono": "HG",
+    "tint": "#6FB7FF",
+    "standfirst": "The supplier announced an additional Swedish distribution partnership on November 16.",
+    "category": "News",
+    "readMins": 1,
+    "updated": "2026-11-16"
+  },
+  {
+    "slug": "curacao-register-12-november-2026",
+    "title": "Curaçao register adds two expired-licence entries",
+    "mono": "CW",
+    "tint": "#6FB7FF",
+    "standfirst": "The November 12 update adds Brictec and Black Hawk Technology to the register.",
+    "category": "Law",
+    "readMins": 1,
+    "updated": "2026-11-13"
+  },
+  {
+    "slug": "curacao-regulator-data-breach-october-2026",
+    "title": "Curaçao's casino regulator was breached. What it means for players",
+    "mono": "CW",
+    "tint": "#6FB7FF",
+    "standfirst": "The Curaçao Gaming Authority says someone got into its licensing portal for about ten months and published licence holders' data. It has shut that portal for good and is moving the licence register and footer seals to a new system. What the regulator said, and how to check a casino's licence meanwhile.",
+    "category": "News",
+    "readMins": 4,
+    "updated": "2026-10-20"
+  },
+  {
+    "slug": "gamdom-offline-security-incident-october-2026",
+    "title": "Gamdom went offline after a security scare. Here is what it said",
+    "mono": "GD",
+    "tint": "#57E39A",
+    "standfirst": "Gamdom took every system offline in October 2026 after finding an unauthorised connection on one of its servers, then came back with compensation offers. What Gamdom said, in its own words, and what to check on your account.",
+    "category": "News",
+    "readMins": 3,
+    "updated": "2026-10-16"
+  },
+  {
+    "slug": "roo-jackpots-explained",
+    "title": "Roo Jackpots: what Roobet's new jackpot side bet costs you",
+    "mono": "RJ",
+    "tint": "#FFC531",
+    "standfirst": "Roobet now lets you add $0.10 to $5 to every bet for a shot at four jackpots, the top one over $1 million. Its own terms say the side bet returns 80% on average. Here is what that means per bet.",
+    "category": "Bonuses",
+    "readMins": 4,
+    "updated": "2026-10-13"
+  },
+  {
+    "slug": "brazil-ban-crypto-casino-restricted-lists",
+    "title": "Brazil banned online casinos. 8 of 46 crypto casinos name it as restricted",
+    "mono": "BR",
+    "tint": "#E8C37A",
+    "standfirst": "Two weeks after Provisional Measure 1.394, we read the restricted list of every crypto casino we track. Most still leave Brazil off. One says Brazilian players are welcome.",
+    "category": "Law",
+    "readMins": 4,
+    "updated": "2026-10-20"
+  },
+  {
+    "slug": "brazil-bans-sports-betting-and-online-casinos",
+    "title": "Brazil bans sports betting and online casinos",
+    "mono": "BR",
+    "tint": "#E8C37A",
+    "standfirst": "A provisional measure of 25 September 2026 prohibits fixed-odds betting nationwide. The licensed .bet.br sites went offline on 6 October. Here is what it covers, the timetable, and what it means for crypto casinos.",
+    "category": "Law",
+    "readMins": 4,
+    "updated": "2026-10-05"
+  },
+  {
+    "slug": "how-to-deposit-crypto",
+    "title": "USDT networks for casino deposits: ERC-20, TRC-20 and Solana",
+    "mono": "DP",
+    "tint": "#FFC531",
+    "standfirst": "USDT is the asset; ERC-20, TRC-20 and Solana are different transfer networks. The casino and wallet must show the same one.",
+    "category": "Crypto",
+    "readMins": 8,
+    "updated": "2026-11-16"
+  },
+  {
+    "slug": "how-to-sign-up",
+    "title": "How to sign up at a crypto casino",
+    "mono": "SU",
+    "tint": "#5FE3E8",
+    "standfirst": "Four decisions made in the first two minutes, three of which you cannot undo.",
+    "category": "Accounts",
+    "readMins": 6,
+    "updated": "2026-10-01"
+  },
+  {
+    "slug": "how-to-complete-kyc",
+    "title": "How to complete KYC without losing your balance",
+    "mono": "KV",
+    "tint": "#7BE0B8",
+    "standfirst": "Check you are eligible first, then verify early — not at cash-out.",
+    "category": "Accounts",
+    "readMins": 7,
+    "updated": "2026-10-01"
+  },
+  {
+    "slug": "what-is-kyc",
+    "title": "What KYC actually means at a crypto casino",
+    "mono": "KY",
+    "tint": "#C7A45C",
+    "standfirst": "All {casinos} say something about verification. Only one says it never asks.",
+    "category": "Accounts",
+    "readMins": 6,
+    "updated": "2026-09-30"
+  },
+  {
+    "slug": "how-casino-rtp-versions-work",
+    "title": "How casino RTP versions work",
+    "mono": "RT",
+    "tint": "#2FA8B0",
+    "standfirst": "Why the same slot pays differently at two casinos",
+    "category": "Slots",
+    "readMins": 7,
+    "updated": "2026-08-21"
+  },
+  {
+    "slug": "reading-wagering-requirements",
+    "title": "Reading wagering requirements",
+    "mono": "WG",
+    "tint": "#C7A45C",
+    "standfirst": "Turning a 40× headline into the number that matters",
+    "category": "Bonuses",
+    "readMins": 6,
+    "updated": "2026-08-19"
+  },
+  {
+    "slug": "kyc-thresholds-explained",
+    "title": "KYC thresholds, explained",
+    "mono": "KY",
+    "tint": "#7E93B8",
+    "standfirst": "What triggers a document request, and when",
+    "category": "Accounts",
+    "readMins": 5,
+    "updated": "2026-08-18"
+  },
+  {
+    "slug": "depositing-over-lightning",
+    "title": "Depositing over Lightning",
+    "mono": "LN",
+    "tint": "#C4795A",
+    "standfirst": "When channel capacity becomes the limit",
+    "category": "Crypto",
+    "readMins": 4,
+    "updated": "2026-09-16"
+  },
+  {
+    "slug": "who-pays-the-network-fee",
+    "title": "Who pays the network fee",
+    "mono": "FE",
+    "tint": "#9AAE5E",
+    "standfirst": "Some operators cover it, others deduct it, and the chain matters more",
+    "category": "Crypto",
+    "readMins": 4,
+    "updated": "2026-09-16"
+  },
+  {
+    "slug": "crypto-casino-withdrawals",
+    "title": "Crypto casino withdrawals: fees, confirmations and common mistakes",
+    "mono": "WD",
+    "tint": "#5FE3E8",
+    "standfirst": "A withdrawal is not finished when the casino approves it. Check the network, address, transaction ID and receiving-wallet policy before moving funds.",
+    "category": "Crypto",
+    "readMins": 8,
+    "updated": "2026-11-16"
+  },
+  {
+    "slug": "sportsbook-margin-explained",
+    "title": "Sportsbook margin, explained",
+    "mono": "MG",
+    "tint": "#57B98C",
+    "standfirst": "How overround is computed, and why one market is not enough",
+    "category": "Betting",
+    "readMins": 8,
+    "updated": "2026-09-16"
+  },
+  {
+    "slug": "bankroll-separation",
+    "title": "Hot wallet vs exchange wallet for crypto casino deposits",
+    "mono": "BR",
+    "tint": "#9B8FC4",
+    "standfirst": "A self-custody hot wallet gives you transaction control; an exchange wallet follows the exchange's current terms and compliance rules.",
+    "category": "Wallets",
+    "readMins": 7,
+    "updated": "2026-11-16"
+  },
+  {
+    "slug": "our-scoring-sheet",
+    "title": "Our scoring sheet: the six areas every review covers",
+    "mono": "SC",
+    "tint": "#C47A97",
+    "standfirst": "The six areas every profile covers, and where each fact comes from",
+    "category": "Method",
+    "readMins": 9,
+    "updated": "2026-09-16"
+  }
+]

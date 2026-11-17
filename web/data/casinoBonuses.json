@@ -1,0 +1,966 @@
+[
+  {
+    "operatorSlug": "bc-game",
+    "bonuses": [
+      {
+        "title": "Monthly Deposit Bonus",
+        "category": "Deposit bonus · new users",
+        "headline": "Up to 360%",
+        "subCopy": "Four deposit stages each month: 180% ($5 min), 240% ($10), 300% ($20) and 360% ($30). Resets on the 1st at 00:00 UTC.",
+        "stats": [
+          {
+            "label": "First stage",
+            "value": "180%"
+          },
+          {
+            "label": "Cycle",
+            "value": "Resets monthly"
+          }
+        ],
+        "asOf": "2026-10-20",
+        "sourceUrl": "https://help.bc.support/en/articles/15839846-monthly-4-deposit-bonus",
+        "sourceNote": "BC.Game's own help-centre article"
+      },
+      {
+        "title": "Weekly Raffle",
+        "category": "Recurring · all players",
+        "headline": "$20,000",
+        "subCopy": "Prize pool, drawn weekly. Tickets are earned by wagering, not purchased.",
+        "stats": [
+          {
+            "label": "Ticket = wager",
+            "value": "$100 / day"
+          },
+          {
+            "label": "Or per",
+            "value": "$1,000 wagered"
+          }
+        ],
+        "asOf": "2026-10-16",
+        "sourceUrl": "https://bc.game/promotions/weekly-raffle",
+        "sourceNote": "Operator's own in-account Promotions view, screenshot-verified — bc.game/promotions/weekly-raffle didn't return real content to an automated fetch"
+      },
+      {
+        "title": "Daily Contest",
+        "category": "Recurring · all players",
+        "headline": "$50,000",
+        "subCopy": "Daily wagering-contest pool, per the operator's own promotions grid.",
+        "asOf": "2026-09-14",
+        "endsLabel": "Runs through 1 Jan",
+        "sourceUrl": "https://bc.game/promotions",
+        "sourceNote": "Operator's own Promotions grid, screenshot-verified"
+      },
+      {
+        "title": "BC Engine",
+        "category": "Platform token · all players",
+        "headline": "Ongoing",
+        "subCopy": "Wager to earn BC platform-token rewards. From 20 October 2026, BC.Game says Instant BC rewards are mined first and bought back afterwards.",
+        "asOf": "2026-10-20",
+        "endsLabel": "Runs through 1 Jan",
+        "sourceUrl": "https://blog.bc.game/announcement-bc-game-instant-bc-rewards-adjustment-mining-mechanism/",
+        "sourceNote": "BC.Game's own announcement"
+      }
+    ]
+  },
+  {
+    "operatorSlug": "razed",
+    "bonuses": [
+      {
+        "title": "Welcome bonus",
+        "category": "Deposit bonus · new players",
+        "headline": "100%",
+        "subCopy": "First deposit matched up to $300, plus 100 free spins on Sugar Rush 1000 for a $100–$199 deposit or 150 for $200 and up, over 5 days. The deposit and bonus together carry 40× wagering, to be completed within 7 days.",
+        "stats": [
+          {
+            "label": "Wagering",
+            "value": "40× deposit + bonus"
+          },
+          {
+            "label": "Max withdrawable",
+            "value": "$3,000"
+          }
+        ],
+        "asOf": "2026-09-16",
+        "endsLabel": "7 days to clear",
+        "sourceUrl": "https://www.razed.com/promotions/",
+        "sourceNote": "Razed’s own promotion page (updated 4 Aug 2026)"
+      },
+      {
+        "title": "$100,000 Monthly Race",
+        "category": "Leaderboard · all players",
+        "headline": "$100,000",
+        "subCopy": "Monthly wager leaderboard with a $30,000 top prize. Razed also runs a $10,000 Weekly Race and a $10,000 Wicked Rush Race.",
+        "stats": [
+          {
+            "label": "1st / 2nd / 3rd",
+            "value": "$30K / $10K / $6K"
+          },
+          {
+            "label": "Other races",
+            "value": "$10K weekly · $10K Wicked Rush"
+          }
+        ],
+        "asOf": "2026-09-15",
+        "endsLabel": "Current round ends ~30 Sep 2026",
+        "sourceUrl": "https://www.razed.com/promotions/",
+        "sourceNote": "Razed's own in-account race page, screenshot-verified — razed.com blocks automated fetches"
+      },
+      {
+        "title": "$10,000 Sports Race",
+        "category": "Leaderboard · sports bets",
+        "headline": "$10,000",
+        "subCopy": "A sports-only leaderboard ranked by the highest multiplier hit on a sports bet, not by turnover: $1,500 for first, $1,000 and $750 for second and third, paid down to 50th place at $65. The race page reads \"hit high multiplier bets on sports to earn your spot on the leaderboard\".",
+        "stats": [
+          {
+            "label": "1st / 2nd / 3rd",
+            "value": "$1,500 / $1,000 / $750"
+          },
+          {
+            "label": "Places paid",
+            "value": "50"
+          },
+          {
+            "label": "Ranked by",
+            "value": "Highest sports-bet multiplier"
+          }
+        ],
+        "asOf": "2026-09-17",
+        "endsLabel": "Runs in rounds; 13 days were left on the round read",
+        "sourceUrl": "https://www.razed.com/promotions/",
+        "sourceNote": "Razed's own in-account Sports Race page, screenshot-verified — razed.com blocks automated fetches"
+      },
+      {
+        "title": "VIP rank-up rewards",
+        "category": "VIP Club · all players",
+        "headline": "$20 – $500K",
+        "subCopy": "Cash paid at each new rank, from $20 at Bronze 1 to $500,000 at Onyx. Rakeback and the monthly bonus start from Starter; the weekly bonus from Bronze 1.",
+        "stats": [
+          {
+            "label": "Bronze 1",
+            "value": "$10K wagered"
+          },
+          {
+            "label": "Onyx",
+            "value": "$1B wagered"
+          }
+        ],
+        "asOf": "2026-09-15",
+        "sourceUrl": "https://www.razed.com/vip-program/",
+        "sourceNote": "Razed's own in-account VIP page, screenshot-verified — razed.com blocks automated fetches"
+      },
+      {
+        "title": "Daily reload & VIP host",
+        "category": "VIP Club · Gold and up",
+        "headline": "Gold 1",
+        "subCopy": "Daily reload from Gold 1, based on your last 7 days of play; a dedicated VIP host from Gold 4; birthday bonus from Platinum for verified profiles.",
+        "stats": [
+          {
+            "label": "Gold 1",
+            "value": "$200K wagered"
+          },
+          {
+            "label": "Platinum 1",
+            "value": "$750K wagered"
+          }
+        ],
+        "asOf": "2026-09-15",
+        "sourceUrl": "https://www.razed.com/promotions/vip-transfer/",
+        "sourceNote": "Razed's own in-account VIP page, screenshot-verified — razed.com blocks automated fetches"
+      },
+      {
+        "title": "Milestone prizes",
+        "category": "VIP Club · first to reach",
+        "headline": "Lamborghini",
+        "subCopy": "The first player to reach each top rank wins a prize — a Mercedes G-Wagon at Red Diamond, a Lamborghini Huracán STO at Blue Diamond and a Revuelto at Onyx. Lower-rank prizes are already claimed.",
+        "stats": [
+          {
+            "label": "Red Diamond",
+            "value": "$250M wagered"
+          },
+          {
+            "label": "Onyx",
+            "value": "$1B wagered"
+          }
+        ],
+        "asOf": "2026-09-15",
+        "sourceUrl": "https://www.razed.com/vip-program/",
+        "sourceNote": "Razed's own in-account VIP page, screenshot-verified — razed.com blocks automated fetches"
+      },
+      {
+        "title": "VIP transfer",
+        "category": "Promotion · switching casinos",
+        "headline": "Bronze 1 – Diamond",
+        "subCopy": "Bring a VIP rank from another casino through live support, with proof of status. The rank unlocks permanently once you hit set deposit and wager targets. One per person and household.",
+        "stats": [
+          {
+            "label": "Published",
+            "value": "2 Aug 2025"
+          },
+          {
+            "label": "Valid until",
+            "value": "29 Jan 2027"
+          }
+        ],
+        "asOf": "2026-09-15",
+        "endsLabel": "Valid until 29 Jan 2027",
+        "sourceUrl": "https://www.razed.com/promotions/vip-transfer/"
+      }
+    ]
+  },
+  {
+    "operatorSlug": "rollbit",
+    "bonuses": [
+      {
+        "title": "5% Rakeback",
+        "category": "Rewards Calendar · all players",
+        "headline": "5%",
+        "subCopy": "Rakeback on every bet, claimable every 30 minutes — half paid straight to your balance, half added to the Rewards Calendar over 3 days. Each calendar claim adds an hour of +15% Rakeboost.",
+        "stats": [
+          {
+            "label": "Claim every",
+            "value": "30 minutes"
+          },
+          {
+            "label": "Paid now",
+            "value": "50%"
+          }
+        ],
+        "asOf": "2026-09-15",
+        "sourceUrl": "https://help.rollbit.com/"
+      },
+      {
+        "title": "Daily, weekly & monthly bonuses",
+        "category": "Rewards Calendar · all players",
+        "headline": "3 recurring",
+        "subCopy": "Personalised on your wagering and profit and loss, with lossback in the weekly and monthly. 20% is paid immediately; the rest drips through the calendar over 7, 7 and 30 days.",
+        "stats": [
+          {
+            "label": "Weekly drops",
+            "value": "Sundays"
+          },
+          {
+            "label": "Monthly drops",
+            "value": "1st of month"
+          }
+        ],
+        "asOf": "2026-09-15",
+        "endsLabel": "Unlocked rewards expire after 24 hours",
+        "sourceUrl": "https://help.rollbit.com/"
+      },
+      {
+        "title": "$25K Daily Race",
+        "category": "Leaderboard · resets daily",
+        "headline": "$25,000",
+        "subCopy": "Daily wager race paying the top places, from $10,000 for 1st down to $300 for 10th.",
+        "stats": [
+          {
+            "label": "1st / 2nd / 3rd",
+            "value": "$10K / $5K / $2K"
+          },
+          {
+            "label": "10th place",
+            "value": "$300"
+          }
+        ],
+        "asOf": "2026-09-15",
+        "endsLabel": "Resets every 24 hours",
+        "sourceUrl": "https://rollbit.com/",
+        "sourceNote": "Rollbit's own race page, screenshot-verified — rollbit.com blocks automated fetches"
+      }
+    ]
+  },
+  {
+    "operatorSlug": "betplay",
+    "bonuses": [
+      {
+        "title": "Welcome bonus",
+        "category": "Deposit bonus · new players",
+        "headline": "5,000 USDT",
+        "subCopy": "Across the first three deposits: 100% up to 1,000 USDT, then 50% up to 2,000, then 100% up to 2,000. Live dealer and table games don't count.",
+        "stats": [
+          {
+            "label": "Wagering",
+            "value": "60× deposit"
+          },
+          {
+            "label": "Time to complete",
+            "value": "30 days"
+          }
+        ],
+        "asOf": "2026-09-15",
+        "sourceUrl": "https://betplay.io/en/info/promotions"
+      },
+      {
+        "title": "10% Weekly Cashback",
+        "category": "VIP · Bronze I and up",
+        "headline": "10%",
+        "subCopy": "Paid automatically every Thursday around 13:00 UTC; higher VIP levels raise the share. Sportsbook and live dealer bets excluded.",
+        "stats": [
+          {
+            "label": "Paid",
+            "value": "Thursdays"
+          },
+          {
+            "label": "Weekly cap",
+            "value": "$20,000"
+          }
+        ],
+        "asOf": "2026-09-15",
+        "sourceUrl": "https://betplay.io/en/info/promotions"
+      },
+      {
+        "title": "Weekly Raffle",
+        "category": "Raffle · all players",
+        "headline": "$2,000",
+        "subCopy": "Tickets earned by wagering; 20 winning tickets pay $100 each. Betplay also runs a $1,000 Weekly Race.",
+        "stats": [
+          {
+            "label": "Per ticket",
+            "value": "$100"
+          },
+          {
+            "label": "Draw time",
+            "value": "15:00"
+          }
+        ],
+        "asOf": "2026-09-15",
+        "endsLabel": "Draws weekly",
+        "sourceUrl": "https://betplay.io/en/info/promotions"
+      }
+    ]
+  },
+  {
+    "operatorSlug": "coincasino",
+    "bonuses": [
+      {
+        "title": "Welcome bonus",
+        "category": "Deposit bonus · new players",
+        "headline": "200%",
+        "subCopy": "First deposit matched 200% up to $30,000, plus up to 50 Super Spins on Wanted Dead or a Wild. Wagering is 60× the deposit, released in 10% instalments, with 14 days to finish.",
+        "stats": [
+          {
+            "label": "Wagering",
+            "value": "60× deposit"
+          },
+          {
+            "label": "Time limit",
+            "value": "14 days"
+          }
+        ],
+        "asOf": "2026-09-15",
+        "sourceUrl": "https://www.coincasino.com/",
+        "sourceNote": "CoinCasino’s own welcome offer terms"
+      },
+      {
+        "title": "VIP Club",
+        "category": "VIP · all players",
+        "headline": "Bronze – Diamond",
+        "subCopy": "Weekly cashback, monthly and weekly bonuses and a level-up bonus from Bronze; a personal VIP host and custom instant bonuses from Platinum; real-life events from Sapphire.",
+        "stats": [
+          {
+            "label": "Bronze",
+            "value": "$10K wagered"
+          },
+          {
+            "label": "Diamond",
+            "value": "$25M+ wagered"
+          }
+        ],
+        "asOf": "2026-09-15",
+        "sourceUrl": "https://www.coincasino.com/",
+        "sourceNote": "CoinCasino's own VIP Club page, screenshot-verified — coincasino.com blocks automated fetches"
+      },
+      {
+        "title": "Switch Your VIP Status",
+        "category": "Promotion · switching casinos",
+        "headline": "200%",
+        "subCopy": "Match your VIP level from another casino, boost your perks and get 200% up to $30,000.",
+        "stats": [
+          {
+            "label": "Up to",
+            "value": "$30,000"
+          }
+        ],
+        "asOf": "2026-09-15",
+        "sourceUrl": "https://www.coincasino.com/",
+        "sourceNote": "CoinCasino's own Promotions page, screenshot-verified — coincasino.com blocks automated fetches"
+      },
+      {
+        "title": "Pragmatic Drops & Wins",
+        "category": "Tournament · slots",
+        "headline": "€25,000,000",
+        "subCopy": "Daily tournaments and weekly wins run by Pragmatic Play. CoinCasino also lists Spinomenal's Spinoleague, an 8-stage series with a €12,000,000 max prize pool.",
+        "stats": [
+          {
+            "label": "Drops & Wins",
+            "value": "4 Mar 2026 – 3 Mar 2027"
+          },
+          {
+            "label": "Spinoleague",
+            "value": "5 Mar 2026 – 1 Mar 2027"
+          }
+        ],
+        "asOf": "2026-09-15",
+        "endsLabel": "Ends 3 Mar 2027",
+        "sourceUrl": "https://www.coincasino.com/",
+        "sourceNote": "CoinCasino's own Promotions page, screenshot-verified — coincasino.com blocks automated fetches"
+      }
+    ]
+  },
+  {
+    "operatorSlug": "1win",
+    "bonuses": [
+      {
+        "title": "Welcome deposit bonuses",
+        "category": "Deposit bonus · new players",
+        "headline": "Up to 500%",
+        "subCopy": "Over the first four deposits with 500 free spins in total (up to 600% on a crypto account). The first-deposit bonus carries 30× wagering on the bonus, a $10 minimum deposit and a $500 maximum bonus.",
+        "stats": [
+          {
+            "label": "Wagering",
+            "value": "30× bonus"
+          },
+          {
+            "label": "Min deposit",
+            "value": "$10"
+          }
+        ],
+        "asOf": "2026-09-15",
+        "endsLabel": "Just under 30 days to claim on a new account",
+        "sourceUrl": "https://1win.com/bonuses",
+        "sourceNote": "1win's own in-account Bonus page, screenshot-verified"
+      },
+      {
+        "title": "Levels and Rewards",
+        "category": "VIP · all players",
+        "headline": "20 levels",
+        "subCopy": "Cashback from Bronze 1 and rakeback from Bronze 2. VIP Club access and private tournaments unlock at Gold 3, a VIP manager and concierge at Platinum 1, and trips to VIP events at Platinum 3.",
+        "stats": [
+          {
+            "label": "Gold 3",
+            "value": "$1M bet"
+          },
+          {
+            "label": "Black 5",
+            "value": "$5B bet"
+          }
+        ],
+        "asOf": "2026-09-15",
+        "sourceUrl": "https://1win.com/",
+        "sourceNote": "1win's own in-account VIP page, screenshot-verified"
+      }
+    ]
+  },
+  {
+    "operatorSlug": "degen",
+    "bonuses": [
+      {
+        "title": "Welcome bonus",
+        "category": "Deposit bonus · new players",
+        "headline": "100%",
+        "subCopy": "First deposit matched up to $1,500. The account has to be registered under an eligible referral code, and rollover is 30× deposit plus bonus with no time limit.",
+        "stats": [
+          {
+            "label": "Max bonus",
+            "value": "$1,500"
+          },
+          {
+            "label": "Min deposit",
+            "value": "$20"
+          }
+        ],
+        "asOf": "2026-10-16",
+        "sourceUrl": "https://degen.com/promotions/welcome-bonus",
+        "sourceNote": "Degen’s own promotions page and help centre"
+      },
+      {
+        "title": "$25,000 Weekly Race",
+        "category": "Leaderboard · all players",
+        "headline": "$25,000",
+        "subCopy": "Weekly wager leaderboard shared between the top 20 players, reset every week. Casino, slots, live casino and sports wagers all count.",
+        "stats": [
+          {
+            "label": "Paid places",
+            "value": "Top 20"
+          },
+          {
+            "label": "Resets",
+            "value": "Weekly"
+          }
+        ],
+        "asOf": "2026-10-16",
+        "endsLabel": "Resets weekly",
+        "sourceUrl": "https://degen.com/promotions/weekly-race",
+        "sourceNote": "Degen’s own promotions page"
+      },
+      {
+        "title": "Rakeback & VIP bonuses",
+        "category": "VIP · Bronze and up",
+        "headline": "3–8%",
+        "subCopy": "Rakeback rises from 3% to 8% by VIP rank. A weekly bonus lands each Monday and a monthly bonus on the 1st, both from Bronze VIP; neither stacks, so an unclaimed one expires.",
+        "stats": [
+          {
+            "label": "Weekly",
+            "value": "Mondays"
+          },
+          {
+            "label": "Monthly",
+            "value": "1st"
+          }
+        ],
+        "asOf": "2026-10-16",
+        "sourceUrl": "https://help.degen.com/en/articles/12570521-rakeback",
+        "sourceNote": "Degen’s own help centre"
+      }
+    ]
+  },
+  {
+    "operatorSlug": "jackpotbet",
+    "bonuses": [
+      {
+        "title": "Welcome offer",
+        "category": "Deposit bonus · new players",
+        "headline": "100%",
+        "subCopy": "First deposit matched, with free spins, instant rakeback and a VIP rank transfer from another casino. Its wagering is set per promotion and worked out against a standard 3.5% house edge.",
+        "stats": [
+          {
+            "label": "Bonus expiry",
+            "value": "30 days"
+          },
+          {
+            "label": "Slots count",
+            "value": "100%"
+          }
+        ],
+        "asOf": "2026-09-15",
+        "sourceUrl": "https://jackpot.bet/",
+        "sourceNote": "JackpotBet’s own site and terms of service"
+      },
+      {
+        "title": "Instant rakeback",
+        "category": "VIP · Bronze and up",
+        "headline": "6%",
+        "subCopy": "Six percent of the house edge back on every bet, claimable straight away with no cap. Unlocks at Bronze, which takes $10,000 wagered.",
+        "stats": [
+          {
+            "label": "Bronze at",
+            "value": "$10,000 wagered"
+          },
+          {
+            "label": "Claim",
+            "value": "After every bet"
+          }
+        ],
+        "asOf": "2026-09-15",
+        "sourceUrl": "https://jackpot.bet/",
+        "sourceNote": "JackpotBet’s own VIP page"
+      },
+      {
+        "title": "VIP ranks",
+        "category": "VIP · ten ranks",
+        "headline": "Bronze – Apex",
+        "subCopy": "Ten ranks from Bronze ($10,000 wagered) to Apex ($25M). Each one carries instant rakeback plus its own weekly and monthly bonus, and a dedicated VIP host from Elite upwards.",
+        "stats": [
+          {
+            "label": "Elite",
+            "value": "$1M wagered"
+          },
+          {
+            "label": "Apex",
+            "value": "$25M wagered"
+          }
+        ],
+        "asOf": "2026-09-15",
+        "sourceUrl": "https://jackpot.bet/",
+        "sourceNote": "JackpotBet’s own VIP page, screenshot-verified"
+      }
+    ]
+  },
+  {
+    "operatorSlug": "duel",
+    "bonuses": [
+      {
+        "title": "$3,000,000 Monthly Leaderboard",
+        "category": "Leaderboard · all players",
+        "headline": "$3,000,000",
+        "subCopy": "Monthly wager race with $1,500,000 for first place, $345,000 for second and $225,000 for third, still paying $30,000 at tenth and running well beyond the top 50.",
+        "stats": [
+          {
+            "label": "1st place",
+            "value": "$1,500,000"
+          },
+          {
+            "label": "10th place",
+            "value": "$30,000"
+          }
+        ],
+        "asOf": "2026-10-16",
+        "endsLabel": "Resets monthly",
+        "sourceUrl": "https://duel.com/casino#leaderboard",
+        "sourceNote": "Duel’s own casino leaderboard"
+      },
+      {
+        "title": "$25,000 Daily Leaderboard",
+        "category": "Leaderboard · resets daily",
+        "headline": "$25,000",
+        "subCopy": "Daily wager race paying $12,500 for first, $3,750 for second and $1,875 for third, down to $250 at tenth.",
+        "stats": [
+          {
+            "label": "1st place",
+            "value": "$12,500"
+          },
+          {
+            "label": "Resets",
+            "value": "Every 24 hours"
+          }
+        ],
+        "asOf": "2026-10-16",
+        "endsLabel": "Resets daily",
+        "sourceUrl": "https://duel.com/casino#leaderboard",
+        "sourceNote": "Duel’s own casino leaderboard"
+      },
+      {
+        "title": "No deposit bonuses",
+        "category": "Policy · all players",
+        "headline": "None",
+        "subCopy": "Duel publishes a page arguing against deposit bonuses and runs none. Instead it says it returns 50% of the house edge you pay on slots as instant rakeback, and runs the leaderboards above.",
+        "asOf": "2026-10-16",
+        "sourceUrl": "https://duel.com/about/why-bonuses-suck",
+        "sourceNote": "Duel’s own Why Bonuses Suck page"
+      }
+    ]
+  },
+  {
+    "operatorSlug": "wager-com",
+    "bonuses": [
+      {
+        "title": "Advertised welcome bonus",
+        "category": "Deposit bonus · not shown in account",
+        "headline": "150%",
+        "subCopy": "Its site page advertises 150% up to $3,000 on a first crypto deposit at 40× the bonus, but the in-account Promotions panel said “No promotions available” when checked. Confirm it’s live before depositing for it.",
+        "stats": [
+          {
+            "label": "Max bonus",
+            "value": "$3,000"
+          },
+          {
+            "label": "Wagering",
+            "value": "40× bonus"
+          }
+        ],
+        "asOf": "2026-10-16",
+        "sourceUrl": "https://wager.com/",
+        "sourceNote": "Wager.com’s own site page and bonus policy"
+      },
+      {
+        "title": "VIP transfer",
+        "category": "Promotion · switching casinos",
+        "headline": "Status match",
+        "subCopy": "Matches a VIP status held at another casino so you skip the early levels, handled by a transfer team. It says it will beat the rewards you get elsewhere, but publishes no rates.",
+        "asOf": "2026-10-16",
+        "sourceUrl": "https://wager.com/promotions/vip-transfer/",
+        "sourceNote": "Wager.com’s own VIP Transfer page"
+      },
+      {
+        "title": "VIP club",
+        "category": "VIP · XP levels",
+        "headline": "10 levels",
+        "subCopy": "Rock to Adamantium plus invite-only Void Stone, with sports bets earning XP three times faster than casino. Rakeback, weekly, monthly and level-up bonuses and a VIP host; no rates published.",
+        "stats": [
+          {
+            "label": "Casino",
+            "value": "1 XP per $1"
+          },
+          {
+            "label": "Sports",
+            "value": "3 XP per $1"
+          }
+        ],
+        "asOf": "2026-09-16",
+        "sourceUrl": "https://wager.com/",
+        "sourceNote": "Wager.com’s own site page"
+      }
+    ]
+  },
+  {
+    "operatorSlug": "acebet",
+    "bonuses": [
+      {
+        "title": "Welcome package",
+        "category": "Deposit bonus · new players",
+        "headline": "100%",
+        "subCopy": "First deposit matched up to $1,000, plus free spins after email verification with no deposit needed. Both need Acebet’s own sign-up code, and the wagering requirement is only shown at sign-up.",
+        "stats": [
+          {
+            "label": "Max match",
+            "value": "$1,000"
+          },
+          {
+            "label": "Wagering",
+            "value": "Not published"
+          }
+        ],
+        "asOf": "2026-09-16",
+        "sourceUrl": "https://acebet.co/",
+        "sourceNote": "Acebet’s own welcome page"
+      },
+      {
+        "title": "Rakeback ranks",
+        "category": "VIP · all players",
+        "headline": "5% – 25%",
+        "subCopy": "Share of the house edge returned on every wager, rising over 27 ranks from Bronze I to Apex, paid into instant, daily, weekly and monthly vaults.",
+        "stats": [
+          {
+            "label": "Bronze I",
+            "value": "5.00% · $0"
+          },
+          {
+            "label": "Apex",
+            "value": "25.00% · $1B wagered"
+          }
+        ],
+        "asOf": "2026-09-16",
+        "sourceUrl": "https://acebet.co/",
+        "sourceNote": "Acebet’s own in-account Rewards page, screenshot-verified"
+      },
+      {
+        "title": "Missions",
+        "category": "Rewards · new players",
+        "headline": "15 missions",
+        "subCopy": "Small cash rewards from $0.10 to $5.00 for completing tasks in order, such as a $10 deposit, $200 wagered, reaching level 10 or a $50 withdrawal.",
+        "stats": [
+          {
+            "label": "Rewards",
+            "value": "$0.10 – $5.00"
+          },
+          {
+            "label": "Total",
+            "value": "About $21"
+          }
+        ],
+        "asOf": "2026-09-16",
+        "sourceUrl": "https://acebet.co/",
+        "sourceNote": "Acebet’s own in-account Missions panel, screenshot-verified"
+      }
+    ]
+  },
+  {
+    "operatorSlug": "bitcasino-io",
+    "bonuses": [
+      {
+        "title": "Wager Streak Rush",
+        "category": "Leaderboard · 3-day streaks",
+        "headline": "30,000 USDT",
+        "subCopy": "Bank 3-day wagering streaks (1,000 USDT a day on slots, or 3,000 on Originals or live casino) to share Bronze, Silver and Gold prize pools of 5,000, 10,000 and 15,000 USDT.",
+        "stats": [
+          {
+            "label": "Gold",
+            "value": "10 streaks"
+          },
+          {
+            "label": "Runs",
+            "value": "22 Sep – 21 Oct"
+          }
+        ],
+        "asOf": "2026-09-16",
+        "endsLabel": "Last streak period ends 21 Oct",
+        "sourceUrl": "https://bitcasino.io/promotions",
+        "sourceNote": "Bitcasino’s own promotion page"
+      },
+      {
+        "title": "Weekly Rakeback",
+        "category": "Opt-in · selected slots",
+        "headline": "Up to 5%",
+        "subCopy": "3% of the house edge back for 1,000–49,999 USDT wagered in a week, 5% from 50,000 USDT, capped at 2,000 USDT and paid every Monday.",
+        "stats": [
+          {
+            "label": "Weekly cap",
+            "value": "2,000 USDT"
+          },
+          {
+            "label": "Paid",
+            "value": "Mondays"
+          }
+        ],
+        "asOf": "2026-09-16",
+        "endsLabel": "Runs to 31 Oct",
+        "sourceUrl": "https://bitcasino.io/promotions",
+        "sourceNote": "Bitcasino’s own promotion page"
+      }
+    ]
+  },
+  {
+    "operatorSlug": "toshibet",
+    "bonuses": [
+      {
+        "title": "Deposit bonus",
+        "category": "Deposit bonus · first 3 deposits",
+        "headline": "200%",
+        "subCopy": "200%, 150% and 100% on the first three deposits, released as you play at $1 for every $250 wagered, with at most $60,000 claimable in total.",
+        "stats": [
+          {
+            "label": "Unlock rate",
+            "value": "$1 per $250"
+          },
+          {
+            "label": "Max claim",
+            "value": "$60,000"
+          }
+        ],
+        "asOf": "2026-09-16",
+        "sourceUrl": "https://help.toshi.bet/en/articles/10017165-deposit-bonus-how-does-it-work",
+        "sourceNote": "Toshibet’s own help centre and user agreement"
+      },
+      {
+        "title": "$25,000 Weekly Raffle",
+        "category": "Raffle · all players",
+        "headline": "$25,000",
+        "subCopy": "100 tickets drawn each week, from $2,500 for first down to the 100th. Earn 1 ticket per $100 wagered on casino or 3 per $100 on sports, or buy them with Toshi Gold.",
+        "stats": [
+          {
+            "label": "1st prize",
+            "value": "$2,500"
+          },
+          {
+            "label": "Winners",
+            "value": "100"
+          }
+        ],
+        "asOf": "2026-09-16",
+        "endsLabel": "Draws weekly",
+        "sourceUrl": "https://toshi.bet/raffle",
+        "sourceNote": "Toshibet’s own raffle page"
+      },
+      {
+        "title": "VIP rakeback",
+        "category": "VIP · all players",
+        "headline": "No wagering",
+        "subCopy": "Every player earns rakeback automatically, rising with rank in the Toshi Whale Club. VIP rewards can be withdrawn as cash as soon as they’re claimed.",
+        "asOf": "2026-09-16",
+        "sourceUrl": "https://toshi.bet/vip",
+        "sourceNote": "Toshibet’s own VIP FAQ"
+      }
+    ]
+  },
+  {
+    "operatorSlug": "vave",
+    "bonuses": [
+      {
+        "title": "Casino welcome package",
+        "category": "Deposit bonus · new players",
+        "headline": "Up to 4 BTC",
+        "subCopy": "150% up to 1.5 BTC plus 100 free spins on the first deposit, then 100% up to 1 BTC, 50% up to 1 BTC and 25% up to 0.5 BTC. Each is paid in instalments as you play slots, with 30 days to wager; bonus winnings are capped at 10,000 USDT.",
+        "stats": [
+          {
+            "label": "Min deposit",
+            "value": "20 USDT each"
+          },
+          {
+            "label": "Max winnings",
+            "value": "10,000 USDT"
+          }
+        ],
+        "asOf": "2026-09-16",
+        "sourceUrl": "https://vave.com/promotions",
+        "sourceNote": "Vave’s own promotion page and bonus terms"
+      },
+      {
+        "title": "First Deposit Sport Bonus",
+        "category": "Sports bonus · new players",
+        "headline": "100%",
+        "subCopy": "Up to 1 BTC on the first deposit, paid in instalments as you bet, with 30 days to wager and no maximum bet. Only settled bets at odds of 1.7 or more count, each event once; cashed-out, drawn and free bets don’t.",
+        "stats": [
+          {
+            "label": "Min odds",
+            "value": "1.7"
+          },
+          {
+            "label": "Time limit",
+            "value": "30 days"
+          }
+        ],
+        "asOf": "2026-09-16",
+        "sourceUrl": "https://vave.com/promotions",
+        "sourceNote": "Vave’s own promotion page"
+      }
+    ]
+  },
+  {
+    "operatorSlug": "dustbit",
+    "bonuses": [
+      {
+        "title": "VIP rakeback",
+        "category": "VIP · all players",
+        "headline": "Up to 50%",
+        "subCopy": "Rakeback rising with VIP level, paid out daily, weekly and monthly and claimed from the homepage. VIP status from another casino can be transferred through support.",
+        "stats": [
+          {
+            "label": "Paid",
+            "value": "Daily · weekly · monthly"
+          }
+        ],
+        "asOf": "2026-09-16",
+        "sourceUrl": "https://help.dustbit.com/en/",
+        "sourceNote": "Dustbit’s own help centre"
+      },
+      {
+        "title": "Early Payout",
+        "category": "Sportsbook · football",
+        "headline": "2-goal lead",
+        "subCopy": "Pre-match match-winner bets are paid as won the moment your team goes two goals ahead, even if it later loses. Covers the World Cup, the big European leagues, MLS and Liga MX. No opt-in.",
+        "asOf": "2026-09-16",
+        "sourceUrl": "https://dustbit.com/promotions",
+        "sourceNote": "Dustbit’s own promotion page"
+      },
+      {
+        "title": "Predict & Win",
+        "category": "Weekly contest · sports",
+        "headline": "$25+ free bet",
+        "subCopy": "Predict a featured match through Dustbit’s social channels; one random correct entry wins a free bet that grows to $50, then $75, while nobody gets it right.",
+        "stats": [
+          {
+            "label": "Min odds",
+            "value": "1.50 single · 3.00 combo"
+          }
+        ],
+        "asOf": "2026-09-16",
+        "endsLabel": "Runs weekly",
+        "sourceUrl": "https://dustbit.com/promotions",
+        "sourceNote": "Dustbit’s own promotion page"
+      }
+    ]
+  },
+  {
+    "operatorSlug": "degencity",
+    "bonuses": [
+      {
+        "title": "7-Day 10% Cashback",
+        "category": "Welcome offer · new players",
+        "headline": "10%",
+        "subCopy": "10% of your net slot losses in the first 7 days after registering, credited automatically once you’ve made a deposit. Only the first $5 of each spin counts; live casino, game shows and bonus buys are excluded.",
+        "stats": [
+          {
+            "label": "Window",
+            "value": "7 days"
+          },
+          {
+            "label": "Counted per spin",
+            "value": "$5"
+          }
+        ],
+        "asOf": "2026-09-16",
+        "sourceUrl": "https://degencity.com/promotions",
+        "sourceNote": "Degencity’s own promotion page"
+      },
+      {
+        "title": "Rakeback & VIP bonuses",
+        "category": "VIP · Chiplet and up",
+        "headline": "Instant",
+        "subCopy": "Instant rakeback from the first bet, with weekly and monthly bonuses from the Chiplet rank. VIP starts at Hustler, with a VIP host from Card Shark.",
+        "asOf": "2026-09-16",
+        "sourceUrl": "https://help.degencity.com/en/articles/13870117-what-are-rakeback-rewards-and-how-do-i-claim-them",
+        "sourceNote": "Degencity’s own help centre"
+      }
+    ]
+  }
+]

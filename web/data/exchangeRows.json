@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "kraken",
+    "name": "Kraken",
+    "mono": "KR",
+    "hed": "MiCA-licensed, proof of reserves published, 0.80% entry taker fee",
+    "note": "Regulated in the EU and UK and publishes proof of reserves; entry-tier Pro fees are the highest of the five",
+    "m1": "0.80%",
+    "m2": "ACH, SEPA, FPS, SWIFT",
+    "m3": "$100K/day cash"
+  },
+  {
+    "slug": "okx",
+    "name": "OKX",
+    "mono": "OK",
+    "hed": "46 proof-of-reserves reports and a 0.35% entry taker fee",
+    "note": "MiCA-licensed via Malta; US pages list ACH and wire, 0.20% / 0.35% entry fees",
+    "m1": "0.35%",
+    "m2": "ACH, wire (US)",
+    "m3": "$10M/day crypto"
+  },
+  {
+    "slug": "coinbase",
+    "name": "Coinbase",
+    "mono": "CB",
+    "hed": "the widest US fiat rails of the five, and a 0.60% entry taker fee on Coinbase Exchange",
+    "note": "ACH, wire, card and PayPal; no exchange-wide proof of reserves found",
+    "m1": "0.60% (Exchange)",
+    "m2": "ACH, wire, card, PayPal",
+    "m3": "$100K/day (Exchange)"
+  },
+  {
+    "slug": "bybit",
+    "name": "Bybit",
+    "mono": "BY",
+    "hed": "0.10% entry fees and 1M USDT daily withdrawals on standard KYC",
+    "note": "Lowest entry fees of the five alongside KuCoin; Merkle-tree proof of reserves",
+    "m1": "0.10%",
+    "m2": "SEPA, PIX, e-wallets",
+    "m3": "1M USDT/day"
+  },
+  {
+    "slug": "kucoin",
+    "name": "KuCoin",
+    "mono": "KC",
+    "hed": "0.10% on major pairs and a 107% BTC reserve ratio",
+    "note": "SEPA and SEPA Instant plus card and P2P for verified users; MiCAR-licensed in Austria",
+    "m1": "0.10%",
+    "m2": "SEPA, card, P2P",
+    "m3": "1M USDT/day"
+  }
+]

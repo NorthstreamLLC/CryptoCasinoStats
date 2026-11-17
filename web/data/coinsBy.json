@@ -1,0 +1,420 @@
+{
+  "roobet": [
+    "BTC",
+    "ETH",
+    "USDT",
+    "LTC",
+    "SOL",
+    "DOGE",
+    "TRX",
+    "XRP"
+  ],
+  "stake": [
+    "BTC",
+    "ETH",
+    "USDT",
+    "LTC",
+    "SOL",
+    "DOGE",
+    "XRP",
+    "TRX"
+  ],
+  "bc-game": [
+    "BTC",
+    "ETH",
+    "USDT",
+    "LTC",
+    "SOL",
+    "DOGE",
+    "XRP",
+    "TRX"
+  ],
+  "shuffle": [
+    "BTC",
+    "ETH",
+    "USDT",
+    "LTC",
+    "SOL",
+    "DOGE",
+    "XRP",
+    "TRX"
+  ],
+  "rollbit": [
+    "BTC",
+    "ETH",
+    "USDT",
+    "LTC",
+    "SOL",
+    "DOGE",
+    "XRP",
+    "TRX"
+  ],
+  "bitstarz": [
+    "BTC",
+    "ETH",
+    "USDT",
+    "LTC",
+    "SOL",
+    "DOGE",
+    "XRP",
+    "TRX"
+  ],
+  "cloudbet": [
+    "BTC",
+    "ETH",
+    "USDT",
+    "LTC",
+    "SOL",
+    "DOGE",
+    "XRP",
+    "TRX"
+  ],
+  "gamdom": [
+    "BTC",
+    "ETH",
+    "USDT",
+    "LTC",
+    "SOL",
+    "DOGE",
+    "XRP",
+    "TRX"
+  ],
+  "duelbits": [
+    "BTC",
+    "ETH",
+    "USDT",
+    "LTC",
+    "SOL",
+    "DOGE",
+    "XRP",
+    "TRX"
+  ],
+  "rainbet": [
+    "BTC",
+    "ETH",
+    "USDT",
+    "LTC",
+    "SOL",
+    "XRP",
+    "TRX"
+  ],
+  "bitcasino-io": [
+    "BTC",
+    "ETH",
+    "USDT",
+    "LTC",
+    "DOGE",
+    "XRP",
+    "TRX"
+  ],
+  "sportsbet-io": [
+    "BTC",
+    "ETH",
+    "USDT",
+    "LTC",
+    "SOL",
+    "DOGE",
+    "XRP",
+    "TRX"
+  ],
+  "500-casino": [
+    "BTC",
+    "ETH",
+    "USDT",
+    "LTC",
+    "SOL"
+  ],
+  "vave": [
+    "BTC",
+    "ETH",
+    "USDT",
+    "LTC",
+    "DOGE",
+    "XRP",
+    "TRX"
+  ],
+  "fortunejack": [
+    "BTC",
+    "ETH",
+    "USDT",
+    "LTC",
+    "SOL",
+    "DOGE",
+    "TRX"
+  ],
+  "mbit": [
+    "BTC",
+    "ETH",
+    "USDT",
+    "LTC",
+    "XRP",
+    "TRX"
+  ],
+  "7bit": [
+    "BTC",
+    "ETH",
+    "USDT",
+    "LTC",
+    "DOGE",
+    "XRP",
+    "TRX"
+  ],
+  "betplay": [
+    "BTC",
+    "ETH",
+    "USDT",
+    "LTC",
+    "SOL",
+    "DOGE",
+    "XRP",
+    "TRX"
+  ],
+  "winna": [
+    "BTC",
+    "ETH",
+    "USDT",
+    "LTC",
+    "SOL",
+    "DOGE",
+    "XRP",
+    "TRX"
+  ],
+  "thrill": [
+    "BTC",
+    "ETH",
+    "USDT",
+    "LTC",
+    "SOL",
+    "DOGE",
+    "XRP",
+    "TRX"
+  ],
+  "duel": [
+    "BTC",
+    "ETH",
+    "USDT",
+    "LTC",
+    "SOL",
+    "DOGE",
+    "XRP",
+    "TRX"
+  ],
+  "goated": [
+    "BTC",
+    "ETH",
+    "USDT",
+    "LTC",
+    "SOL",
+    "XRP",
+    "TRX"
+  ],
+  "yeet": [
+    "BTC",
+    "ETH",
+    "USDT",
+    "LTC",
+    "SOL",
+    "DOGE",
+    "XRP",
+    "TRX"
+  ],
+  "razed": [
+    "BTC",
+    "ETH",
+    "USDT",
+    "LTC",
+    "SOL",
+    "DOGE",
+    "XRP",
+    "TRX"
+  ],
+  "betfury": [
+    "BTC",
+    "ETH",
+    "USDT",
+    "LTC",
+    "SOL",
+    "DOGE",
+    "TRX"
+  ],
+  "gamba": [
+    "BTC",
+    "ETH",
+    "USDT",
+    "LTC",
+    "SOL",
+    "DOGE",
+    "XRP",
+    "TRX"
+  ],
+  "solcasino": [
+    "BTC",
+    "ETH",
+    "USDT",
+    "SOL",
+    "DOGE",
+    "XRP"
+  ],
+  "metawin": [
+    "BTC",
+    "ETH",
+    "USDT",
+    "LTC",
+    "SOL",
+    "DOGE",
+    "XRP",
+    "TRX"
+  ],
+  "whale-io": [
+    "BTC",
+    "ETH",
+    "USDT",
+    "SOL"
+  ],
+  "acebet": [
+    "BTC",
+    "ETH",
+    "USDT",
+    "LTC",
+    "SOL",
+    "DOGE",
+    "XRP",
+    "TRX"
+  ],
+  "jackpotbet": [
+    "BTC",
+    "ETH",
+    "USDT",
+    "LTC",
+    "SOL",
+    "DOGE",
+    "XRP",
+    "TRX"
+  ],
+  "degen": [
+    "BTC",
+    "ETH",
+    "USDT",
+    "LTC",
+    "SOL",
+    "DOGE",
+    "XRP",
+    "TRX"
+  ],
+  "qzino": [
+    "BTC",
+    "ETH",
+    "USDT",
+    "LTC",
+    "TRX"
+  ],
+  "shock": [
+    "BTC",
+    "ETH",
+    "USDT",
+    "LTC",
+    "SOL",
+    "XRP",
+    "TRX"
+  ],
+  "cybet": [
+    "BTC",
+    "ETH",
+    "USDT",
+    "LTC",
+    "SOL",
+    "DOGE",
+    "TRX"
+  ],
+  "housebets": [
+    "BTC",
+    "ETH",
+    "USDT",
+    "LTC",
+    "SOL",
+    "DOGE",
+    "TRX"
+  ],
+  "dicey": [
+    "BTC",
+    "ETH",
+    "USDT",
+    "SOL"
+  ],
+  "spartans": [
+    "BTC",
+    "ETH",
+    "USDT",
+    "LTC",
+    "SOL"
+  ],
+  "toshibet": [
+    "BTC",
+    "ETH",
+    "USDT",
+    "LTC",
+    "SOL",
+    "DOGE",
+    "XRP"
+  ],
+  "flush": [
+    "BTC",
+    "ETH",
+    "USDT",
+    "LTC",
+    "SOL"
+  ],
+  "degencity": [
+    "BTC",
+    "ETH",
+    "USDT",
+    "LTC",
+    "TRX"
+  ],
+  "dustbit": [
+    "BTC",
+    "ETH",
+    "USDT",
+    "LTC",
+    "SOL",
+    "DOGE",
+    "XRP",
+    "TRX"
+  ],
+  "wager-com": [
+    "BTC",
+    "ETH",
+    "USDT",
+    "LTC",
+    "SOL",
+    "DOGE",
+    "XRP",
+    "TRX"
+  ],
+  "coincasino": [
+    "BTC",
+    "ETH",
+    "USDT",
+    "LTC",
+    "SOL",
+    "DOGE",
+    "XRP",
+    "TRX"
+  ],
+  "bluff": [
+    "BTC",
+    "ETH",
+    "USDT",
+    "SOL"
+  ],
+  "1win": [
+    "BTC",
+    "ETH",
+    "USDT",
+    "LTC",
+    "SOL",
+    "DOGE",
+    "XRP",
+    "TRX"
+  ]
+}

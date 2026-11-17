@@ -1,0 +1,115 @@
+import restricted from "@/data/restricted.json";
+import geoEurope from "@/data/geo-europe.json";
+import legalUS from "@/data/legal-us.json";
+import geoWorld from "@/data/geo-world.json";
+import geoUS from "@/data/geo-us.json";
+import ops from "@/data/ops.json";
+import { SWEEPS, sweepsFact } from "@/lib/sweeps";
+import { inHouseOrder } from "@/lib/house-order";
+
+/**
+ * Online gambling law by US state and by country, each status backed by the
+ * regulator's or government's own page (see `sources`). Map shapes are
+ * precomputed SVG paths (world-atlas 110m, Natural Earth projection; us-atlas
+ * Albers), so the map ships as plain markup with no mapping library.
+ */
+export type { Source, USState, Country, Shape } from "./legal-types";
+import type { USState, Shape } from "./legal-types";
+export { COUNTRIES, countryBy } from "./legal-world";
+import { COUNTRIES } from "./legal-world";
+
+export const US_STATES = legalUS as USState[];
+export const WORLD_SHAPES = geoWorld as Shape[];
+export const US_SHAPES = geoUS as Shape[];
+
+export const stateBy = (code: string) => US_STATES.find((s) => s.code.toLowerCase() === code.toLowerCase()) ?? null;
+
+export type Tone = "legal" | "partial" | "grey" | "banned" | "none";
+
+/** Colour band for an online-casino status string. */
+export function toneOf(status?: string): Tone {
+  const s = (status ?? "").toLowerCase();
+  if (!s) return "none";
+  if (/not legal|banned|prohibited|illegal/.test(s)) return "banned";
+  if (/monopoly|retail only|state-run|varies/.test(s)) return "partial";
+  if (/no specific|grey|gray|unregulated|no licensing yet/.test(s)) return "grey";
+  if (/legal|licensed|allowed|online|regulated/.test(s)) return "legal";
+  return "none";
+}
+
+export const TONE: Record<Tone, { fill: string; label: string }> = {
+  legal: { fill: "#2FB67A", label: "Legal & licensed" },
+  partial: { fill: "#2FA8B0", label: "State monopoly / varies by state" },
+  grey: { fill: "#C7A45C", label: "No specific law" },
+  banned: { fill: "#C4653A", label: "Not legal" },
+  none: { fill: "#2A3439", label: "Not yet covered" },
+};
+
+/** Sweepstakes casinos whose own restricted-state list does not name this state. */
+export function sweepsAvailableIn(stateName: string, code: string) {
+  return inHouseOrder(SWEEPS.filter((s) => s.facts.length)).map((s) => {
+    const f = sweepsFact(s, "Restricted states");
+    const text = f?.value ?? "";
+    const excluded = !!text && (new RegExp(`(?<!West )\\b${stateName}\\b`, "i").test(text) || new RegExp(`\\b${code}\\b`).test(text));
+    return { s, excluded, known: !!f };
+  });
+}
+
+export const COUNTRY_ALIASES: Record<string, string[]> = {
+  US: ["united states", "usa", "us", "u.s."],
+  GB: ["united kingdom", "uk", "great britain"],
+  NL: ["netherlands", "the netherlands"],
+  KR: ["south korea", "korea"],
+  CW: ["curaçao", "curacao"],
+  AE: ["united arab emirates", "uae"],
+};
+
+
+export const EUROPE_SHAPES = geoEurope as Shape[];
+
+interface Restricted {
+  slug: string;
+  codes: string[];
+  regions: string[];
+  complete: boolean;
+  url: string;
+  note?: string;
+}
+const RESTRICTED = restricted as Restricted[];
+export const restrictedFor = (slug: string) => RESTRICTED.find((r) => r.slug === slug) ?? null;
+
+export type Access = "accepts" | "restricted" | "partial";
+
+/**
+ * Whether a casino takes players from a country, from its own restricted-countries list:
+ * "restricted" if the list names the country, "accepts" if a complete list doesn't,
+ * "partial" if the list doesn't name it but the casino says it may restrict others too.
+ */
+export function accessIn(slug: string, code: string): Access | null {
+  const r = restrictedFor(slug);
+  if (!r || (!r.codes.length && !r.complete)) return null;
+  if (r.codes.includes(code.toUpperCase())) return "restricted";
+  return r.complete ? "accepts" : "partial";
+}
+
+const REGION_COUNTRY: Record<string, string> = { Canada: "CA", Ukraine: "UA", "United States": "US", Argentina: "AR", Comoros: "KM" };
+
+/** Regions of a country a casino restricts even though it takes the rest of the country, e.g. ["Ontario"] for Canada. */
+export function exceptIn(slug: string, code: string): string[] {
+  const r = restrictedFor(slug);
+  if (!r) return [];
+  return r.regions
+    .map((g) => g.match(/^(.+?)\s*\(([^)]+)\)$/))
+    .filter((m): m is RegExpMatchArray => !!m && REGION_COUNTRY[m[2]] === code.toUpperCase())
+    .map((m) => m[1]);
+}
+
+export function casinosByAccess(code: string) {
+  const out: Record<Access, { slug: string; name: string; mono: string; except: string[] }[]> = { accepts: [], restricted: [], partial: [] };
+  // ops.json directly, not siteData: this runs in the homepage map's client chunk.
+  for (const o of ops as { slug: string; name: string; mono: string }[]) {
+    const a = accessIn(o.slug, code);
+    if (a) out[a].push({ slug: o.slug, name: o.name, mono: o.mono, except: a === "restricted" ? [] : exceptIn(o.slug, code) });
+  }
+  return out;
+}

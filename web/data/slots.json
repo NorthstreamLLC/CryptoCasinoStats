@@ -1,0 +1,656 @@
+[
+  {
+    "slug": "money-train-4",
+    "name": "Money Train 4",
+    "mono": "MT4",
+    "provider": "Relax Gaming",
+    "rtp": 96.1,
+    "vol": "high",
+    "maxWin": "150,000x",
+    "bestAt": "Roobet",
+    "tint": "#7BE0B8",
+    "unpublished": [
+      "rtp"
+    ],
+    "sourceUrl": "https://www.relax-gaming.com/products/casino/moneytrain4"
+  },
+  {
+    "slug": "mental",
+    "name": "Mental",
+    "mono": "MNT",
+    "provider": "Nolimit City",
+    "rtp": 96.08,
+    "vol": "extreme",
+    "maxWin": "66,666x",
+    "bestAt": "Roobet",
+    "tint": "#D6B65C",
+    "sourceUrl": "https://nolimitcity.com/games/mental/"
+  },
+  {
+    "slug": "razor-shark",
+    "name": "Razor Shark",
+    "mono": "RZR",
+    "provider": "Push Gaming",
+    "rtp": 96.7,
+    "vol": "high",
+    "maxWin": "50,000x",
+    "bestAt": "Stake",
+    "tint": "#8FA5C9",
+    "rtpVersions": "96.70 / 94.06",
+    "unpublished": [
+      "maxWin"
+    ],
+    "sourceUrl": "https://www.pushgaming.com/games/razor-shark.html"
+  },
+  {
+    "slug": "wanted-dead-or-a-wild",
+    "name": "Wanted Dead or a Wild",
+    "mono": "WDW",
+    "provider": "Hacksaw Gaming",
+    "rtp": 96.38,
+    "vol": "very-high",
+    "maxWin": "12,500x",
+    "bestAt": "Roobet",
+    "tint": "#E0A67B",
+    "rtpVersions": "96.38 / 94.55 / 92.33 / 88.42",
+    "sourceUrl": "https://www.hacksawgaming.com/games/wanted-dead-or-a-wild"
+  },
+  {
+    "slug": "sweet-bonanza",
+    "name": "Sweet Bonanza",
+    "mono": "SWB",
+    "provider": "Pragmatic Play",
+    "rtp": 96.48,
+    "vol": "high",
+    "maxWin": "21,100x",
+    "bestAt": "Shuffle",
+    "tint": "#E39BC4",
+    "unpublished": [
+      "vol",
+      "maxWin"
+    ],
+    "sourceUrl": "https://www.pragmaticplay.com/en/games/sweet-bonanza-slot/"
+  },
+  {
+    "slug": "fire-in-the-hole-2",
+    "name": "Fire in the Hole 2",
+    "mono": "FH2",
+    "provider": "Nolimit City",
+    "rtp": 96.07,
+    "vol": "extreme",
+    "maxWin": "65,000x",
+    "bestAt": "Roobet",
+    "tint": "#D68A6E",
+    "sourceUrl": "https://nolimitcity.com/games/fire-in-the-hole-2/"
+  },
+  {
+    "slug": "gates-of-olympus",
+    "name": "Gates of Olympus",
+    "mono": "GOO",
+    "provider": "Pragmatic Play",
+    "rtp": 96.5,
+    "vol": "very-high",
+    "maxWin": "5,000x",
+    "bestAt": "BC.Game",
+    "tint": "#9FB6E0",
+    "unpublished": [
+      "vol",
+      "maxWin"
+    ],
+    "sourceUrl": "https://www.pragmaticplay.com/en/games/gates-of-olympus/"
+  },
+  {
+    "slug": "le-bandit",
+    "name": "Le Bandit",
+    "mono": "LEB",
+    "provider": "Hacksaw Gaming",
+    "rtp": 96.34,
+    "vol": "high",
+    "maxWin": "10,000x",
+    "bestAt": "Roobet",
+    "tint": "#C9D67B",
+    "rtpVersions": "96.34 / 94.23 / 92.17 / 88.36",
+    "sourceUrl": "https://www.hacksawgaming.com/games/le-bandit"
+  },
+  {
+    "slug": "san-quentin-xways",
+    "name": "San Quentin xWays",
+    "mono": "SQX",
+    "provider": "Nolimit City",
+    "rtp": 96.03,
+    "vol": "extreme",
+    "maxWin": "150,000x",
+    "bestAt": "Gamdom",
+    "tint": "#B4B8BB",
+    "sourceUrl": "https://nolimitcity.com/games/san-quentin/"
+  },
+  {
+    "slug": "big-bass-bonanza",
+    "name": "Big Bass Bonanza",
+    "mono": "BBB",
+    "provider": "Reel Kingdom",
+    "rtp": 96.71,
+    "vol": "medium",
+    "maxWin": "2,100x",
+    "bestAt": "Cloudbet",
+    "tint": "#7BC9E0",
+    "unpublished": [
+      "vol",
+      "maxWin"
+    ],
+    "sourceUrl": "https://www.pragmaticplay.com/en/games/big-bass-bonanza/"
+  },
+  {
+    "slug": "bonanza-megaways",
+    "name": "Bonanza Megaways",
+    "mono": "BNZ",
+    "provider": "Big Time Gaming",
+    "rtp": 96,
+    "vol": "high",
+    "maxWin": "26,000x",
+    "bestAt": "Stake",
+    "tint": "#D6B65C",
+    "unpublished": [
+      "vol"
+    ],
+    "sourceUrl": "https://www.bigtimegaming.com/games/bonanza"
+  },
+  {
+    "slug": "gonzo-s-quest-megaways",
+    "name": "Gonzo’s Quest Megaways",
+    "mono": "GQM",
+    "provider": "Red Tiger",
+    "rtp": 95.77,
+    "vol": "high",
+    "maxWin": "20,972x",
+    "bestAt": "BC.Game",
+    "tint": "#9AAE5E",
+    "unpublished": [
+      "vol"
+    ],
+    "sourceUrl": "https://redtiger.com/games/gonzos-quest-megaways"
+  },
+  {
+    "slug": "jammin-jars",
+    "name": "Jammin’ Jars",
+    "mono": "JMJ",
+    "provider": "Push Gaming",
+    "rtp": 96.83,
+    "vol": "high",
+    "maxWin": "20,000x",
+    "bestAt": "Roobet",
+    "tint": "#E39BC4",
+    "rtpVersions": "96.83 / 94.25",
+    "unpublished": [
+      "maxWin"
+    ],
+    "sourceUrl": "https://www.pushgaming.com/games/jammin-jars.html"
+  },
+  {
+    "slug": "reactoonz",
+    "name": "Reactoonz",
+    "mono": "RTZ",
+    "provider": "Play’n GO",
+    "rtp": 96.51,
+    "vol": "high",
+    "maxWin": "4,570x",
+    "bestAt": "Shuffle",
+    "tint": "#B284FF",
+    "rtpVersions": "96.51 / 94.51 / 91.49 / 87.50 / 84.51",
+    "sourceUrl": "https://www.playngo.com/games/reactoonz"
+  },
+  {
+    "slug": "divine-fortune",
+    "name": "Divine Fortune",
+    "mono": "DVF",
+    "provider": "NetEnt",
+    "rtp": 96.59,
+    "vol": "medium",
+    "maxWin": "1,000x",
+    "bestAt": "Cloudbet",
+    "tint": "#C7A45C",
+    "sourceUrl": "https://netent.com/games/divine-fortune"
+  },
+  {
+    "slug": "sweet-bonanza-1000",
+    "name": "Sweet Bonanza 1000",
+    "mono": "SB1",
+    "provider": "Pragmatic Play",
+    "rtp": 96.53,
+    "vol": "high",
+    "maxWin": "25,000x",
+    "bestAt": "",
+    "tint": "#E39BC4",
+    "unpublished": [
+      "vol",
+      "maxWin"
+    ],
+    "sourceUrl": "https://www.pragmaticplay.com/en/games/sweet-bonanza-1000/"
+  },
+  {
+    "slug": "gates-of-olympus-1000",
+    "name": "Gates of Olympus 1000",
+    "mono": "GO1",
+    "provider": "Pragmatic Play",
+    "rtp": 96.5,
+    "vol": "high",
+    "maxWin": "15,000x",
+    "bestAt": "",
+    "tint": "#E2B84F",
+    "unpublished": [
+      "vol",
+      "maxWin"
+    ],
+    "sourceUrl": "https://www.pragmaticplay.com/en/games/gates-of-olympus-1000/"
+  },
+  {
+    "slug": "sugar-rush-1000",
+    "name": "Sugar Rush 1000",
+    "mono": "SR1",
+    "provider": "Pragmatic Play",
+    "rtp": 96.53,
+    "vol": "high",
+    "maxWin": "25,000x",
+    "bestAt": "",
+    "tint": "#F08BB0",
+    "unpublished": [
+      "vol",
+      "maxWin"
+    ],
+    "sourceUrl": "https://www.pragmaticplay.com/en/games/sugar-rush-1000/",
+    "rtpVersions": "96.53 / 96.00"
+  },
+  {
+    "slug": "outsourced",
+    "name": "Outsourced",
+    "mono": "OUT",
+    "provider": "Nolimit City",
+    "rtp": 96.08,
+    "vol": "extreme",
+    "maxWin": "5,000x",
+    "bestAt": "",
+    "tint": "#9FB4C2",
+    "sourceUrl": "https://www.nolimitcity.com/games/outsourced"
+  },
+  {
+    "slug": "duck-hunters-2",
+    "name": "Duck Hunters 2",
+    "mono": "DH2",
+    "provider": "Nolimit City",
+    "rtp": 96,
+    "vol": "extreme",
+    "maxWin": "40,000x",
+    "bestAt": "",
+    "tint": "#8FB36B",
+    "unpublished": [
+      "vol"
+    ],
+    "sourceUrl": "https://www.nolimitcity.com/games/duck-hunters-2"
+  },
+  {
+    "slug": "stormforged",
+    "name": "Stormforged",
+    "mono": "STF",
+    "provider": "Hacksaw Gaming",
+    "rtp": 96.41,
+    "vol": "high",
+    "maxWin": "",
+    "bestAt": "",
+    "tint": "#8FA8D6",
+    "unpublished": [
+      "rtp",
+      "vol",
+      "maxWin"
+    ]
+  },
+  {
+    "slug": "gates-of-olympus-2500",
+    "name": "Gates of Olympus 2500",
+    "mono": "GOO",
+    "provider": "Pragmatic Play",
+    "rtp": 96.51,
+    "vol": "high",
+    "maxWin": "25,000x",
+    "bestAt": "Roobet",
+    "tint": "#E0A67B",
+    "sourceUrl": "https://www.pragmaticplay.com/en/games/gates-of-olympus-2500/"
+  },
+  {
+    "slug": "big-bass-bonanza-1000",
+    "name": "Big Bass Bonanza 1000",
+    "mono": "BBB",
+    "provider": "Pragmatic Play",
+    "rtp": 96.51,
+    "vol": "high",
+    "maxWin": "20,000x",
+    "bestAt": "Roobet",
+    "tint": "#D6B65C",
+    "sourceUrl": "https://www.pragmaticplay.com/en/games/big-bass-bonanza-1000/"
+  },
+  {
+    "slug": "dork-unit",
+    "name": "Dork Unit",
+    "mono": "DU",
+    "provider": "Hacksaw Gaming",
+    "rtp": 96.24,
+    "vol": "medium",
+    "maxWin": "10,000x",
+    "bestAt": "Roobet",
+    "tint": "#7BC8E0",
+    "rtpVersions": "96.24 / 94.38 / 92.38 / 88.37",
+    "sourceUrl": "https://www.hacksawgaming.com/"
+  },
+  {
+    "slug": "retro-sweets",
+    "name": "Retro Sweets",
+    "mono": "RS",
+    "provider": "Push Gaming",
+    "rtp": 96.49,
+    "vol": "high",
+    "maxWin": "10,000x",
+    "bestAt": "Roobet",
+    "tint": "#B28CE0",
+    "rtpVersions": "96.49 / 94.42",
+    "sourceUrl": "https://www.pushgaming.com/games/retro-sweets.html"
+  },
+  {
+    "slug": "5-lions-megaways",
+    "name": "5 Lions Megaways",
+    "mono": "5LM",
+    "provider": "Pragmatic Play",
+    "rtp": 96.5,
+    "vol": "medium",
+    "maxWin": "5,000x",
+    "bestAt": "Roobet",
+    "tint": "#E07B9B",
+    "sourceUrl": "https://www.pragmaticplay.com/en/games/5-lions-megaways/"
+  },
+  {
+    "slug": "big-bamboo",
+    "name": "Big Bamboo",
+    "mono": "BB",
+    "provider": "Push Gaming",
+    "rtp": 96.13,
+    "vol": "high",
+    "maxWin": "50,000x",
+    "bestAt": "Roobet",
+    "tint": "#7BE0B8",
+    "rtpVersions": "96.13 / 94.13",
+    "sourceUrl": "https://www.pushgaming.com/games/big-bamboo.html"
+  },
+  {
+    "slug": "duel-at-dawn",
+    "name": "Duel at Dawn",
+    "mono": "DAD",
+    "provider": "Hacksaw Gaming",
+    "rtp": 96.3,
+    "vol": "high",
+    "maxWin": "15,000x",
+    "bestAt": "Roobet",
+    "tint": "#E0C77B",
+    "rtpVersions": "96.3 / 94.27 / 92.28 / 88.37",
+    "sourceUrl": "https://www.hacksawgaming.com/"
+  },
+  {
+    "slug": "sugar-rush",
+    "name": "Sugar Rush",
+    "mono": "SR",
+    "provider": "Pragmatic Play",
+    "rtp": 96.5,
+    "vol": "high",
+    "maxWin": "5,000x",
+    "bestAt": "Roobet",
+    "tint": "#E0A67B",
+    "sourceUrl": "https://www.pragmaticplay.com/en/games/sugar-rush/"
+  },
+  {
+    "slug": "starlight-princess-1000",
+    "name": "Starlight Princess 1000",
+    "mono": "SP1",
+    "provider": "Pragmatic Play",
+    "rtp": 96.5,
+    "vol": "medium",
+    "maxWin": "15,000x",
+    "bestAt": "Roobet",
+    "tint": "#D6B65C",
+    "rtpVersions": "96.5 / 94",
+    "sourceUrl": "https://www.pragmaticplay.com/en/games/starlight-princess-1000/"
+  },
+  {
+    "slug": "the-dog-house-megaways-1000",
+    "name": "The Dog House Megaways 1000",
+    "mono": "TDH",
+    "provider": "Pragmatic Play",
+    "rtp": 96.5,
+    "vol": "high",
+    "maxWin": "25,000x",
+    "bestAt": "Roobet",
+    "tint": "#7BC8E0",
+    "sourceUrl": "https://www.pragmaticplay.com/en/games/the-dog-house-megaways-1000/"
+  },
+  {
+    "slug": "zeus-vs-hades-gods-of-war",
+    "name": "Zeus vs Hades - Gods of War",
+    "mono": "ZVH",
+    "provider": "Pragmatic Play",
+    "rtp": 96.07,
+    "vol": "medium",
+    "maxWin": "15,000x",
+    "bestAt": "Roobet",
+    "tint": "#B28CE0",
+    "sourceUrl": "https://www.pragmaticplay.com/en/games/zeus-vs-hades-gods-of-war/"
+  },
+  {
+    "slug": "chaos-crew-2",
+    "name": "Chaos Crew 2",
+    "mono": "CC2",
+    "provider": "Hacksaw Gaming",
+    "rtp": 96.27,
+    "vol": "very-high",
+    "maxWin": "20,000x",
+    "bestAt": "Roobet",
+    "tint": "#E07B9B",
+    "rtpVersions": "96.27 / 94.22 / 92.41 / 88.28",
+    "sourceUrl": "https://www.hacksawgaming.com/"
+  },
+  {
+    "slug": "hand-of-anubis",
+    "name": "Hand of Anubis",
+    "mono": "HOA",
+    "provider": "Hacksaw Gaming",
+    "rtp": 96.24,
+    "vol": "high",
+    "maxWin": "10,000x",
+    "bestAt": "Roobet",
+    "tint": "#7BE0B8",
+    "rtpVersions": "96.24 / 94.32 / 92.28 / 88.41",
+    "sourceUrl": "https://www.hacksawgaming.com/"
+  },
+  {
+    "slug": "rip-city",
+    "name": "Rip City",
+    "mono": "RC",
+    "provider": "Hacksaw Gaming",
+    "rtp": 96.22,
+    "vol": "medium",
+    "maxWin": "12,500x",
+    "bestAt": "Roobet",
+    "tint": "#E0C77B",
+    "rtpVersions": "96.22 / 94.27 / 92.32 / 88.02",
+    "sourceUrl": "https://www.hacksawgaming.com/"
+  },
+  {
+    "slug": "chaos-crew-3",
+    "name": "Chaos Crew 3",
+    "mono": "CC3",
+    "provider": "Hacksaw Gaming",
+    "rtp": 96.18,
+    "vol": "high",
+    "maxWin": "30,000x",
+    "bestAt": "Roobet",
+    "tint": "#E07B9B",
+    "rtpVersions": "96.18 / 94.17 / 92.27 / 86.19",
+    "sourceUrl": "https://www.hacksawgaming.com/games/chaos-crew-3"
+  },
+  {
+    "slug": "six-feet-under",
+    "name": "Six Feet Under",
+    "mono": "SF",
+    "provider": "Nolimit City",
+    "rtp": 96.05,
+    "vol": "high",
+    "maxWin": "30,000x",
+    "bestAt": "",
+    "tint": "#A07A4F",
+    "sourceUrl": "https://www.nolimitcity.com/games/six-feet-under",
+    "unpublished": [
+      "vol"
+    ]
+  },
+  {
+    "slug": "mental-2",
+    "name": "Mental 2",
+    "mono": "M2",
+    "provider": "Nolimit City",
+    "rtp": 96.06,
+    "vol": "extreme",
+    "maxWin": "99,999x",
+    "bestAt": "",
+    "tint": "#9FB4C9",
+    "rtpVersions": "96.06 / 95.23 / 94.04 / 92.02",
+    "sourceUrl": "https://www.nolimitcity.com/games/mental-2"
+  },
+  {
+    "slug": "tombstone-rip",
+    "name": "Tombstone RIP",
+    "mono": "TR",
+    "provider": "Nolimit City",
+    "rtp": 96.08,
+    "vol": "extreme",
+    "maxWin": "300,000x",
+    "bestAt": "",
+    "tint": "#C9A15A",
+    "rtpVersions": "96.08 / 94.08",
+    "sourceUrl": "https://www.nolimitcity.com/games/tombstone-rip"
+  },
+  {
+    "slug": "fire-in-the-hole-3",
+    "name": "Fire in the Hole 3",
+    "mono": "F3",
+    "provider": "Nolimit City",
+    "rtp": 96.05,
+    "vol": "high",
+    "maxWin": "70,000x",
+    "bestAt": "",
+    "tint": "#E0703A",
+    "sourceUrl": "https://www.nolimitcity.com/games/fire-in-the-hole-3",
+    "unpublished": [
+      "vol"
+    ]
+  },
+  {
+    "slug": "the-dog-house-megaways",
+    "name": "The Dog House Megaways",
+    "mono": "DH",
+    "provider": "Pragmatic Play",
+    "rtp": 96.55,
+    "vol": "high",
+    "maxWin": "12,305x",
+    "bestAt": "",
+    "tint": "#E8A53C",
+    "sourceUrl": "https://www.pragmaticplay.com/en/games/the-dog-house-megaways-slot/",
+    "unpublished": [
+      "vol"
+    ]
+  },
+  {
+    "slug": "big-bass-splash",
+    "name": "Big Bass Splash",
+    "mono": "BS",
+    "provider": "Pragmatic Play",
+    "rtp": 96.71,
+    "vol": "high",
+    "maxWin": "5,000x",
+    "bestAt": "",
+    "tint": "#3BA7D9",
+    "sourceUrl": "https://www.pragmaticplay.com/en/games/big-bass-splash/",
+    "unpublished": [
+      "vol"
+    ]
+  },
+  {
+    "slug": "wild-west-gold",
+    "name": "Wild West Gold",
+    "mono": "WW",
+    "provider": "Pragmatic Play",
+    "rtp": 96.51,
+    "vol": "high",
+    "maxWin": "10,000x",
+    "bestAt": "",
+    "tint": "#D9A441",
+    "sourceUrl": "https://www.pragmaticplay.com/en/games/wild-west-gold-slot/",
+    "unpublished": [
+      "vol"
+    ]
+  },
+  {
+    "slug": "madame-destiny-megaways",
+    "name": "Madame Destiny Megaways",
+    "mono": "MD",
+    "provider": "Pragmatic Play",
+    "rtp": 96.56,
+    "vol": "high",
+    "maxWin": "",
+    "bestAt": "",
+    "tint": "#8E5BD6",
+    "sourceUrl": "https://www.pragmaticplay.com/en/games/madame-destiny-megaways/",
+    "unpublished": [
+      "maxWin"
+    ]
+  },
+  {
+    "slug": "xways-hoarder-xsplit",
+    "name": "xWays Hoarder xSplit",
+    "mono": "XH",
+    "provider": "Nolimit City",
+    "rtp": 96.14,
+    "vol": "high",
+    "maxWin": "11,030x",
+    "bestAt": "",
+    "tint": "#7FA35B",
+    "sourceUrl": "https://www.nolimitcity.com/games/xways-hoarder"
+  },
+  {
+    "slug": "book-of-dead",
+    "name": "Book of Dead",
+    "mono": "BD",
+    "provider": "Play'n GO",
+    "rtp": 96.21,
+    "vol": "high",
+    "maxWin": "",
+    "bestAt": "",
+    "tint": "#C9A44A",
+    "sourceUrl": "https://www.playngo.com/games/book-of-dead",
+    "unpublished": [
+      "rtp",
+      "vol",
+      "maxWin"
+    ]
+  },
+  {
+    "slug": "jammin-jars-2",
+    "name": "Jammin' Jars 2",
+    "mono": "J2",
+    "provider": "Push Gaming",
+    "rtp": 96.4,
+    "vol": "high",
+    "maxWin": "",
+    "bestAt": "",
+    "tint": "#E25A9B",
+    "rtpVersions": "96.40 / 94.40",
+    "sourceUrl": "https://www.pushgaming.com/games/jammin-jars-2.html",
+    "unpublished": [
+      "maxWin"
+    ]
+  }
+]

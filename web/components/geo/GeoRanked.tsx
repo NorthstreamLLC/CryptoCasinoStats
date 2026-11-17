@@ -1,0 +1,46 @@
+"use client";
+
+import { Fragment, useEffect, useState, type ReactNode } from "react";
+import { getGeo } from "@/lib/geo-client";
+
+/**
+ * A ranked list of casino placements, cut to `count` after dropping the ones
+ * that turn this visitor away (restricted country, or a region such as
+ * Ontario, via /api/geo). The server sends a few spare candidates so a blocked
+ * one is replaced by the next fit rather than leaving a gap. Crawlers and first
+ * paint get the top `count`. Where every candidate is blocked, the top `count`
+ * stay with `note` after them, as every list on the site does: shown, and the
+ * reader told before they click.
+ */
+export function GeoRanked({ items, count, note = null, instead }: { items: { slug: string; node: ReactNode }[]; count: number; /** Shown after the list when every candidate is shut to the visitor. */ note?: ReactNode; /** Shown in place of the list when every candidate is shut: for a single button, where a button that cannot be used is worse than a different one. */ instead?: ReactNode }) {
+  const [blocked, setBlocked] = useState<string[] | null>(null);
+
+  useEffect(() => {
+    let live = true;
+    getGeo().then((g) => {
+      if (!live || !g?.detected) return;
+      // Open only where the casino's own list is known to let this country
+      // in: a casino whose terms we could not read (Degen sends US visitors
+      // to a different site) is not promoted on a guess.
+      const ok = new Set(g.casinos?.acceptsSlugs ?? []);
+      for (const r of g.regionBlocked ?? []) ok.delete(r.slug);
+      const out = items.map((i) => i.slug).filter((s) => !ok.has(s));
+      if (out.length) setBlocked(out);
+    });
+    return () => {
+      live = false;
+    };
+  }, [items]);
+
+  const allowed = blocked ? items.filter((i) => !blocked.includes(i.slug)) : items;
+  const allBlocked = !allowed.length;
+  if (allBlocked && instead) return <>{instead}</>;
+  const shown = (allBlocked ? items : allowed).slice(0, count);
+  return (
+    <>
+      {shown.map((i) => <Fragment key={i.slug}>{i.node}</Fragment>)}
+      {allBlocked && <Fragment key="note">{note}</Fragment>}
+    </>
+  );
+}
+

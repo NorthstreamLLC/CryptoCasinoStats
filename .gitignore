@@ -1,0 +1,9 @@
+node_modules/
+web/node_modules/
+web/.next/
+web/out/
+web/next-env.d.ts
+web/*.tsbuildinfo
+.vercel
+.env*
+.DS_Store

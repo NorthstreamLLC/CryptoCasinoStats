@@ -1,0 +1,74 @@
+{
+  "stake": {
+    "name": "Stake",
+    "logo": "/wp-content/uploads/2025/07/Untitled-design-79.png",
+    "tagline": "Leading crypto casino with a massive community, fast payouts, and trusted reputation.",
+    "description": "Stake casino stats: on-chain deposit volume and hot-wallet balance with sources, the RTP Stake shows for popular slots, and Stake's slots by provider.",
+    "whyTitle": "Why Stake Stands Out",
+    "why": "Stake is one of the most recognized names in the crypto casino space, known for its strong community presence, sleek platform, and exclusive brand partnerships. While its RTPs tend to be slightly lower than newer competitors like Razed, Stake makes up for it with a wide variety of games, original titles, live events, and consistent promotions. Players value the platform’s user-friendly design, fast crypto payouts, and active social features like integrated chat and leaderboards.",
+    "highlights": [
+      ["🎮", "Large Game Library", "Thousands of slots from top providers including Pragmatic Play, Hacksaw Gaming, and NoLimit City."],
+      ["💬", "Strong Community", "Integrated live chat and community events make Stake more social than most competitors."],
+      ["🪙", "Crypto-Friendly", "Supports a wide range of cryptocurrencies with fast deposits and withdrawals."],
+      ["🎁", "Ongoing Promotions", "Rakeback, reload bonuses, and limited-time events are available to frequent users."],
+      ["🔒", "Trust & Transparency", "Licensed and provably fair, with years of credibility in the crypto gambling space."]
+    ],
+    "slots": {
+      "Pragmatic Play": ["gold-train", "spaceman", "the-catfather", "lucky-dragons", "fruit-party-2"],
+      "Hacksaw Gaming": ["chicken-man", "danny-dollar", "donut-division", "outlaws-inc", "pray-for-three"],
+      "Nolimit City": ["kitchen-drama-sushi-mania-1", "buffalo-hunter-1", "harlequin-carnival", "east-coast-vs-west-coast-1", "the-border"]
+    },
+    "verdictTitle": "Should You Play at Stake?",
+    "verdict": "If you’re looking for a crypto casino with a large game selection, vibrant community features, and a strong reputation, Stake is a solid choice. While it doesn’t offer the highest RTPs across all titles, its accessibility, partnerships with influencers, and brand recognition make it a trusted and popular option among seasoned players. It’s a platform where entertainment, competition, and fast crypto transactions come together.",
+    "rewards": ["Rakeback & Reload Bonuses", "Level-Based VIP Program", "Weekly Promotions", "Influencer Giveaways"],
+    "platform": ["Licensed & Provably Fair", "Two-Factor Authentication", "Fast Crypto Transactions", "Privacy-Conscious"]
+  },
+  "roobet": {
+    "name": "Roobet",
+    "logo": "/wp-content/uploads/2025/07/roobet-logo.png",
+    "tagline": "Fast, fun, and user-friendly—Roobet delivers solid games with minimal hassle.",
+    "description": "Roobet casino stats: on-chain deposit volume and hot-wallet balance with sources, the RTP Roobet's paytables show, and Roobet's slots by provider.",
+    "whyTitle": "Why Roobet Stands Out",
+    "why": "Roobet has carved out a strong presence in the crypto casino world by offering a high RTP game library, popular slot selections, and unique in-house games. While it may not boast the same reward tiers as some of its competitors, it remains a favorite among users for its simple UX, quick payouts, and entertaining slot variety.",
+    "highlights": [
+      ["✅", "High RTP slots", "Wide range of high RTP slots across Pragmatic, Hacksaw, and NoLimit City"],
+      ["🔒", "Licensed", "Licensed and secure crypto platform with fast payouts"],
+      ["🕹️", "Easy to use", "User-friendly design and quick game loading"],
+      ["🎯", "Originals", "Unique in-house games not available elsewhere"],
+      ["💰", "Tournaments", "Regular slot tournaments and prize drops"]
+    ],
+    "slots": {
+      "Pragmatic Play": ["wolf-gold-ultimate", "madame-destiny-megaways", "big-bass-bonanza", "fruit-party", "star-pirates-code"],
+      "Hacksaw Gaming": ["let-it-snow", "stickem", "cash-compass", "frutz", "miamimultiplier"],
+      "Nolimit City": ["kitchen-drama-sushi-mania-1", "pixies-vs-pirates", "deadwood-xnudge", "the-border", "east-coast-vs-west-coast-1"]
+    },
+    "verdictTitle": "Should You Play at Roobet?",
+    "verdict": "Roobet is an established platform with a loyal user base. While its bonuses and promotions are more modest than [Razed](/razed/) or [Stake](/stake/), its smooth user experience and selection of top-tier slots keep players coming back. It’s ideal for those who want fast, uncomplicated gameplay with crypto.",
+    "rewards": ["Frequent slot tournaments", "Occasional cashback offers for loyal players", "Random prize drops", "Simpler bonus system"],
+    "platform": ["Licensed crypto casino supporting multiple coins", "Fast game load speeds", "Minimal KYC required"]
+  },
+  "razed": {
+    "name": "Razed",
+    "logo": "/wp-content/uploads/2025/07/images.jpeg",
+    "tagline": "Next-gen crypto casino known for unbeatable RTP and exclusive high-reward slots.",
+    "description": "Razed casino stats: on-chain deposit volume and hot-wallet balance with sources, the RTP Razed shows for popular slots, and Razed's slots by provider.",
+    "whyTitle": "Why Razed Stands Out",
+    "why": "Razed Casino stands at the top of the crypto casino world, delivering unmatched RTP rates, a sleek user interface, and massive monthly rewards. With zero KYC requirements, next-gen slot partnerships, and a community-focused rewards model, it’s no surprise Razed is ranked #1.",
+    "highlights": [
+      ["🚀", "Highest RTP Slots", "The RTP Razed shows for each slot is listed below, with the date we read it"],
+      ["🎁", "Best Rewards System", "Monthly bonuses, VIP perks"],
+      ["🎮", "Top Game Providers", "Pragmatic, Hacksaw, NoLimit City"],
+      ["🛡️", "No KYC Required", ""],
+      ["🔒", "Safe & Transparent Crypto Payments", ""]
+    ],
+    "slots": {
+      "Pragmatic Play": ["sweet-bonanza", "gates-of-olympus", "sweet-bonanza-1000", "sugar-rush-1000", "starlight-princess-1000"],
+      "Hacksaw Gaming": ["wanted-dead-or-a-wild", "chaos-crew-2", "rip-city", "le-king", "le-bandit"],
+      "Nolimit City": ["mental-2", "outsourced", "san-quentin-2-death-row", "fire-in-the-hole-2-1", "duck-hunters"]
+    },
+    "verdictTitle": "Should You Play at Razed?",
+    "verdict": "If you’re chasing elite RTP, big volatility wins, and anonymous crypto gameplay, Razed is a clear winner. No fluff—just payouts, perks, and high-level slot performance.",
+    "rewards": ["5% cashback every week (RTP-linked)", "Monthly leaderboard competitions", "VIP tiers with staking multipliers", "Referral system with lifetime % rewards"],
+    "platform": ["Licensed, provably fair games", "Fast crypto withdrawals", "BTC, ETH, USDT accepted", "No account or email required (anonymous play)"]
+  }
+}
