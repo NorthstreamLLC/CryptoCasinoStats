@@ -15,9 +15,9 @@ export default function Page() {
   const lastRead = allReadings().map((r) => r.checkedAt).sort().at(-1) ?? "";
   const s = heroStats();
   const SOURCES = [
-    ["30-day deposit volume", "FairGambling, Tanzanite", "Third-party wallet attribution", "Weekly"],
-    ["Hot-wallet balance", "FairGambling", "Third-party wallet attribution", "Weekly"],
-    ["RTP at a casino", "The casino's game page or in-game paytable", "Read by our team", "Monthly"],
+    ["30-day deposit volume", "FairGambling, Tanzanite", "Third-party wallet attribution", "FairGambling weekly, automatically; Tanzanite by hand"],
+    ["Hot-wallet balance", "FairGambling", "Third-party wallet attribution", "Weekly, automatically"],
+    ["RTP at a casino", "The casino's game page or in-game paytable", "Read by our team", "Monthly, by hand"],
     ["Slot RTP, volatility, max win", "Studio data via slotessentials.com", "Studio-published", "With each catalogue export"],
     ["KYC, limits, fees, licence", "The casino's own terms and help pages", "Read by our team", "Re-checked periodically"],
   ];
@@ -91,7 +91,7 @@ export default function Page() {
                 <li>A hot-wallet balance is what sits in the casino&apos;s spending wallets at one moment. Casinos also hold funds in cold storage, so it is not a measure of total reserves or solvency.</li>
                 <li>The two trackers can disagree for the same casino; we show both rather than pick one.</li>
               </ul>
-              <p>Figures on file currently run from {fmtDate(earliestAsOf())} to {fmtDate(latestAsOf())}. They are refreshed weekly. Totals on the site say which casinos and dates they add up.</p>
+              <p>Figures on file currently run from {fmtDate(earliestAsOf())} to {fmtDate(latestAsOf())}. FairGambling&apos;s figures are re-read from its public casino pages every Monday; a figure that fails to read, or moves more than tenfold in a week, is held back for a person to check rather than published. Tanzanite&apos;s figures are updated by hand. Totals on the site say which casinos and dates they add up.</p>
             </>
           ),
         },

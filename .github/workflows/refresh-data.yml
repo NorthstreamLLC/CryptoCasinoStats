@@ -1,0 +1,90 @@
+# Weekly data refresh. Runs in GitHub's cloud, so it does not depend on anyone's
+# computer being on.
+#
+# 1. If the CSG_READ_TOKEN secret is set, copies CryptoSlotGuide's shared data
+#    (RTP readings, casino facts, game catalogue) into this site.
+# 2. Re-reads FairGambling's public casino pages for the 30-day deposit volume
+#    and hot-wallet figures (scripts/refresh-onchain.mjs; skips anything that
+#    looks wrong and lists it in the run summary).
+# 3. Type-checks and builds the whole site; only if that passes, commits the
+#    changed data to the default branch, which Vercel then deploys.
+#
+# Nothing is committed when nothing changed or when the build fails, and a
+# failed run is emailed to the repository owner by GitHub.
+name: refresh-data
+
+on:
+  schedule:
+    # Mondays 06:17 UTC.
+    - cron: "17 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-data
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    env:
+      HAS_CSG_TOKEN: ${{ secrets.CSG_READ_TOKEN != '' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check out CryptoSlotGuide data (read-only)
+        if: env.HAS_CSG_TOKEN == 'true'
+        uses: actions/checkout@v4
+        with:
+          repository: NorthstreamLLC/cryptoslotguide
+          token: ${{ secrets.CSG_READ_TOKEN }}
+          path: csg
+          sparse-checkout: web/data
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      - name: Install
+        working-directory: web
+        run: npm ci
+
+      - name: Sync from CryptoSlotGuide
+        if: env.HAS_CSG_TOKEN == 'true'
+        working-directory: web
+        run: node scripts/sync-from-csg.mjs ../csg
+
+      - name: Refresh on-chain figures
+        working-directory: web
+        env:
+          REFRESH_REPORT: ${{ runner.temp }}/report.md
+        run: node scripts/refresh-onchain.mjs
+
+      - name: Run summary
+        if: always()
+        run: |
+          if [ -f "${{ runner.temp }}/report.md" ]; then cat "${{ runner.temp }}/report.md" >> "$GITHUB_STEP_SUMMARY"; fi
+          if [ "$HAS_CSG_TOKEN" != "true" ]; then echo -e "\nCryptoSlotGuide sync skipped: add a CSG_READ_TOKEN secret to enable it." >> "$GITHUB_STEP_SUMMARY"; fi
+
+      - name: Type check and build
+        working-directory: web
+        run: |
+          npx tsc --noEmit -p .
+          npm run build
+
+      - name: Commit changed data
+        run: |
+          git add web/data
+          if git diff --cached --quiet; then
+            echo "No data changed."
+            exit 0
+          fi
+          git config user.name "crypto-casino-stats-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -m "Weekly data refresh $(date -u +%Y-%m-%d)"
+          for i in 1 2 3; do git pull --rebase -q && git push && exit 0; sleep 5; done
+          exit 1
