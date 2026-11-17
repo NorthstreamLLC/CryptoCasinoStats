@@ -1,15 +1,14 @@
 import Link from "next/link";
-import { Container } from "@/components/ui";
+import { DocHero } from "@/components/doc/DocHero";
 
 export default function NotFound() {
   return (
-    <Container className="max-w-2xl py-20 text-center">
-      <h1 className="text-3xl font-bold">Page not found</h1>
-      <p className="mt-3 text-text-muted">That page does not exist. Try the casino stats or slot stats instead.</p>
-      <div className="mt-6 flex justify-center gap-3">
-        <Link href="/casinos/" className="rounded-lg bg-accent px-4 py-2 font-semibold text-page">Casino stats</Link>
-        <Link href="/top-slots/" className="rounded-lg border border-border-strong px-4 py-2 font-semibold">Slot stats</Link>
+    <DocHero eyebrow={<span>404 · Not found</span>} title="That page isn't here." lede="It may have moved when the site was rebuilt. The numbers are all still a click away.">
+      <div className="mt-8 flex flex-wrap gap-3">
+        <Link href="/" className="ccs-btn-primary">Home</Link>
+        <Link href="/casinos/" className="ccs-btn-ghost">Casino stats</Link>
+        <Link href="/top-slots/" className="ccs-btn-ghost">Slot stats</Link>
       </div>
-    </Container>
+    </DocHero>
   );
 }
