@@ -15,6 +15,9 @@ const nextConfig: NextConfig = {
     return [
       // Preview builds stay out of search indexes; never applies to production.
       ...(process.env.VERCEL_ENV === "preview" ? [{ source: "/:path*", headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }] }] : []),
+      // Any *.vercel.app address (including the project's production one) stays
+      // out of search: only cryptocasinostats.com should be indexed.
+      { source: "/:path*", has: [{ type: "host", value: "(?<host>.*\\.vercel\\.app)" }], headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }] },
       {
         source: "/:path*",
         headers: [
