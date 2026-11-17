@@ -64,7 +64,7 @@ export function heroStats() {
   };
 }
 
-export const leaderboards = () => ({ deposits: board("deposits").slice(0, 10), wallet: board("wallet").slice(0, 10) });
+export const leaderboards = (limit = 10) => ({ deposits: board("deposits").slice(0, limit), wallet: board("wallet").slice(0, limit) });
 
 export interface FinderCasino {
   slug: string;

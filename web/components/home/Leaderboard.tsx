@@ -36,7 +36,7 @@ export function Leaderboard({ deposits, wallet }: { deposits: BoardRow[]; wallet
             </button>
           ))}
         </div>
-        <p className="text-xs text-text-dim">Top 10 · FairGambling on-chain attribution · dated per row</p>
+        <p className="text-xs text-text-dim">{rows.length > 10 ? `All ${rows.length}` : `Top ${rows.length}`} · FairGambling on-chain attribution · dated per row</p>
       </div>
       <ol key={metric} className="divide-y divide-row-divider">
         {rows.map((r, i) => (

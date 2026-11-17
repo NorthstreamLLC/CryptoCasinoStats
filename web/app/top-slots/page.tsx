@@ -1,11 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Container, Hero, H2, TableWrap, th, td } from "@/components/ui";
-import { PartnerList } from "@/components/PartnerList";
-import { pageMeta, fmtDate } from "@/lib/site";
-import { getGame, fmtRtp, fmtX, allReadings, CATALOGUE_AS_OF } from "@/lib/slots";
-import watchOps from "@/data/watchOps.json";
-import { casinoPath } from "@/lib/casinos";
+import { pageMeta, fmtDate, SITE_URL } from "@/lib/site";
+import { slotCard, rtpMatrix, catalogueSize, CATALOGUE_AS_OF } from "@/lib/slot-page";
+import { partnerCards } from "@/lib/partners";
+import { PageHero } from "@/components/home/PageHero";
+import { Section } from "@/components/home/Section";
+import { RtpMatrix } from "@/components/slots/RtpMatrix";
+import { SlotLists } from "@/components/slots/SlotLists";
+import { SlotArt } from "@/components/slots/SlotArt";
+import { PartnerCards } from "@/components/PartnerCards";
 
 export const metadata = pageMeta(
   "Top Slots",
@@ -44,176 +47,126 @@ const FEATURED: [string, string][] = [
   ["sweet-bonanza", "Sweet-Bonanza.jpg"],
   ["starlight-princess-1000", "Starlight-princess-1000.jpg"],
 ];
-
 const up = (f: string) => `/wp-content/uploads/2025/07/${f}`;
 
-function SlotList({ slugs }: { slugs: string[] }) {
-  return (
-    <TableWrap>
-      <thead>
-        <tr>
-          <th className={th}>Slot</th>
-          <th className={th}>Provider</th>
-          <th className={th}>Provider RTP</th>
-          <th className={th}>Max win</th>
-          <th className={th}>Volatility</th>
-        </tr>
-      </thead>
-      <tbody>
-        {slugs.map((s) => {
-          const g = getGame(s);
-          return (
-            <tr key={s}>
-              <td className={`${td} font-medium text-text-primary`}>{g?.name ?? s}</td>
-              <td className={td}>{g?.provider ?? "—"}</td>
-              <td className={td}>{fmtRtp(g?.rtp)}</td>
-              <td className={td}>{fmtX(g?.maxWinMultiplier)}</td>
-              <td className={`${td} capitalize`}>{g?.volatility ?? "—"}</td>
-            </tr>
-          );
-        })}
-      </tbody>
-    </TableWrap>
-  );
-}
+const EXPLAIN: [string, string, string][] = [
+  ["RTP", "Long-run return", "The share of all money wagered that a game pays back over millions of spins. 96% means $96 back per $100 wagered on average, never per session."],
+  ["Volatility", "How it pays", "High volatility pays big wins rarely; low pays small wins often. Two games with the same RTP can feel completely different."],
+  ["Max win", "The ceiling", "The largest multiple of your stake the game can pay on one spin or bonus. Rarely hit, and usually only in the bonus round."],
+];
 
 export default function TopSlotsPage() {
-  const readings = allReadings();
-  const slotSlugs = [...new Set(readings.map((r) => r.slotSlug))];
-  const casinos = (watchOps as { slug: string; name: string }[]).filter((o) => readings.some((r) => r.operatorSlug === o.slug));
-  const lastRead = readings.map((r) => r.checkedAt).sort().at(-1) ?? "";
+  const m = rtpMatrix();
+  const top = TOP_RTP.map((s) => slotCard(s));
   const ld = {
     "@context": "https://schema.org",
     "@type": "Dataset",
     name: "RTP by crypto casino",
     description: "The RTP each crypto casino displays for its own copy of popular slots, read on the casino's game page or in-game paytable, with dates.",
-    url: "https://cryptocasinostats.com/top-slots/#rtp-by-casino",
+    url: `${SITE_URL}/top-slots/#rtp-by-casino`,
     creator: { "@type": "Organization", name: "Crypto Casino Stats" },
-    dateModified: lastRead,
+    dateModified: m.lastRead,
     variableMeasured: "Return to player (%)",
   };
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />
-      <Hero
+      <PageHero
+        eyebrow={`RTP readings ${fmtDate(m.lastRead)} · ${m.casinos.length} casinos`}
         title="Top Slots Worth Your Spin"
-        lede="Looking for the most rewarding slots in crypto casinos? We’ve handpicked the highest RTP, most volatile, and community-favorite games available today, with each studio's published numbers and the RTP each casino actually runs, especially on platforms like Razed, Roobet and Stake."
+        lede="The highest RTP, most volatile, and community-favorite games, with each studio's published numbers and the RTP each casino actually runs, on platforms like Razed, Roobet and Stake."
+        stats={[
+          { value: catalogueSize().toLocaleString("en-US"), label: "Slots in the catalogue", foot: `Studio-published RTP, volatility and max win, export of ${fmtDate(CATALOGUE_AS_OF)}`, href: "#lists" },
+          { value: String(m.total), label: "Casino RTP readings", foot: `${m.casinos.length} casinos, read on their own game pages and paytables`, href: "#rtp-by-casino" },
+          { value: `${m.matching}/${m.total}`, label: "Match the studio's RTP", foot: "Readings at or above the published figure", href: "#rtp-by-casino" },
+        ]}
+        primary={{ href: "#rtp-by-casino", label: "See RTP by casino →" }}
+        secondary={{ href: "#featured", label: "Browse featured slots" }}
       />
-      <Container>
-        <H2>Top RTP Slots</H2>
-        <div className="grid gap-4 sm:grid-cols-3">
-          {TOP_RTP.map((s) => {
-            const g = getGame(s);
-            return (
-              <div key={s} className="rounded-[14px] border border-border bg-surface p-5">
-                <h3 className="text-lg font-semibold">{g?.name}</h3>
-                <p className="mt-2 text-sm text-text-secondary">RTP: {fmtRtp(g?.rtp)} <span className="text-text-dim">(provider)</span></p>
-                <p className="text-sm text-text-secondary">Max Win: {fmtX(g?.maxWinMultiplier)}</p>
+
+      <Section eyebrow="Top RTP slots" title="Three to start with">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+          {top.map((s, i) => (
+            <article key={s.slug} className={`ccs-card ccs-lift group overflow-hidden ${i === 0 ? "ccs-card-glow" : ""}`}>
+              <div className="relative overflow-hidden">
+                <SlotArt src={s.art} name={s.name} width={640} className="aspect-[4/3] w-full transition duration-500 group-hover:scale-[1.03]" />
+                <span className="ccs-num absolute left-3 top-3 rounded-full bg-page/85 px-2.5 py-1 text-xs font-semibold text-text-primary backdrop-blur">#{i + 1}</span>
               </div>
-            );
-          })}
-        </div>
-
-        <H2 id="rtp-by-casino">RTP by casino</H2>
-        <p className="mb-4 max-w-3xl text-sm text-text-muted">
-          The same slot can run at a different RTP from one casino to the next. Each cell is the RTP that casino showed for its own copy of the game,
-          read on its game page or in the in-game paytable on {fmtDate(lastRead)}. A dash means we have not read it there.
-        </p>
-        <TableWrap>
-          <thead>
-            <tr>
-              <th className={th}>Slot</th>
-              <th className={th}>Provider RTP</th>
-              {casinos.map((c) => (
-                <th key={c.slug} className={th}>
-                  <Link href={casinoPath(c.slug)} className="hover:text-text-primary">{c.name}</Link>
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {slotSlugs.map((s) => {
-              const g = getGame(s);
-              return (
-                <tr key={s}>
-                  <td className={`${td} font-medium text-text-primary`}>{g?.name ?? s}</td>
-                  <td className={td}>{fmtRtp(g?.rtp)}</td>
-                  {casinos.map((c) => {
-                    const r = readings.find((x) => x.slotSlug === s && x.operatorSlug === c.slug);
-                    return (
-                      <td key={c.slug} className={td}>
-                        {r ? <span className={r.rtp < (g?.rtp ?? r.rtp) - 0.1 ? "font-semibold text-warning" : "text-text-primary"}>{fmtRtp(r.rtp)}</span> : "—"}
-                      </td>
-                    );
-                  })}
-                </tr>
-              );
-            })}
-          </tbody>
-        </TableWrap>
-
-        <H2>Slots Across Crypto Casino</H2>
-        <h3 className="mb-3 mt-6 text-lg font-semibold">Top Community Slot Picks</h3>
-        <SlotList slugs={COMMUNITY} />
-        <h3 className="mb-3 mt-8 text-lg font-semibold">Top Paying Slots This Month</h3>
-        <p className="mb-3 text-sm text-text-muted">The biggest maximum wins among recent releases.</p>
-        <SlotList slugs={PAYING} />
-        <h3 className="mb-3 mt-8 text-lg font-semibold">Top Volatile Games</h3>
-        <TableWrap caption="Volatility as described by the studio; the catalogue rating is shown alongside.">
-          <thead>
-            <tr>
-              <th className={th}>Slot Title</th>
-              <th className={th}>Volatility</th>
-              <th className={th}>Provider</th>
-              <th className={th}>Max win</th>
-            </tr>
-          </thead>
-          <tbody>
-            {VOLATILE.map(([s, v]) => {
-              const g = getGame(s);
-              return (
-                <tr key={s}>
-                  <td className={`${td} font-medium text-text-primary`}>{g?.name ?? s}</td>
-                  <td className={td}>{v}</td>
-                  <td className={td}>{g?.provider ?? "—"}</td>
-                  <td className={td}>{fmtX(g?.maxWinMultiplier)}</td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </TableWrap>
-
-        <H2>Highest RTP Games</H2>
-        <div className="flex snap-x gap-3 overflow-x-auto pb-2">
-          {BANNERS.map((b) => (
-            <Image key={b} src={up(b)} alt="" width={420} height={236} className="h-auto w-72 shrink-0 snap-start rounded-xl" />
+              <div className="p-5">
+                <p className="text-xs text-text-dim">{s.provider}</p>
+                <h3 className="ccs-display mt-1 text-2xl">{s.name}</h3>
+                <dl className="mt-4 grid grid-cols-3 gap-2 text-sm">
+                  {[["RTP", s.rtp], ["Max win", s.maxWin], ["Volatility", s.volatility]].map(([k, v]) => (
+                    <div key={k} className="rounded-lg bg-page px-2.5 py-2">
+                      <dt className="text-xs text-text-dim">{k}</dt>
+                      <dd className="ccs-num mt-0.5 font-semibold capitalize text-text-primary">{v}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            </article>
           ))}
         </div>
+      </Section>
 
-        <H2>Featured Slots</H2>
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+      <Section id="rtp-by-casino" eyebrow="RTP by casino" title="Same slot, every casino" lede="Studios release games in several RTP versions and each casino picks one. These are the versions each casino actually showed us." className="bg-section">
+        <RtpMatrix m={m} />
+      </Section>
+
+      <Section id="lists" eyebrow="Slots across crypto casinos" title="Picks, payers and volatility">
+        <SlotLists
+          lists={[
+            { title: "Top Community Slot Picks", note: "The games players come back to.", rows: COMMUNITY.map((s) => slotCard(s)) },
+            { title: "Top Paying Slots This Month", note: "The biggest maximum wins among recent releases.", rows: PAYING.map((s) => slotCard(s)) },
+            { title: "Top Volatile Games", note: "Volatility as the studio describes it.", rows: VOLATILE.map(([s, v]) => ({ ...slotCard(s), tag: v })) },
+          ]}
+        />
+      </Section>
+
+      <Section eyebrow="Reading a slot" title="Three numbers, three different questions" className="bg-section">
+        <div className="grid grid-cols-1 gap-3 md:grid-cols-3">
+          {EXPLAIN.map(([k, t, d]) => (
+            <div key={k} className="ccs-card p-6">
+              <p className="ccs-num text-3xl font-semibold text-accent">{k}</p>
+              <h3 className="mt-3 font-semibold text-text-primary">{t}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-text-muted">{d}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      <Section id="featured" eyebrow="Highest RTP games" title="Featured Slots" lede="Studio-published RTP and max win for each.">
+        <div className="-mx-4 mb-8 flex snap-x gap-3 overflow-x-auto px-4 pb-2 sm:mx-0 sm:px-0">
+          {BANNERS.map((b) => (
+            <Image key={b} src={up(b)} alt="" width={420} height={236} className="h-auto w-64 shrink-0 snap-start rounded-xl sm:w-72" />
+          ))}
+        </div>
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
           {FEATURED.map(([s, img]) => {
-            const g = getGame(s);
+            const c = slotCard(s, up(img));
             return (
-              <div key={s} className="overflow-hidden rounded-[14px] border border-border bg-surface">
-                <Image src={up(img)} alt={g?.name ?? s} width={300} height={300} className="aspect-square w-full object-cover" />
+              <article key={s} className="ccs-card ccs-lift group min-w-0 overflow-hidden">
+                <div className="overflow-hidden">
+                  <Image src={c.art!} alt={c.name} width={300} height={300} className="aspect-square w-full object-cover transition duration-500 group-hover:scale-[1.04]" />
+                </div>
                 <div className="p-3">
-                  <h3 className="text-sm font-semibold">{g?.name ?? s}</h3>
-                  <p className="text-xs text-text-muted">
-                    {fmtRtp(g?.rtp)} RTP, {fmtX(g?.maxWinMultiplier)}
+                  <h3 className="truncate text-sm font-semibold text-text-primary">{c.name}</h3>
+                  <p className="ccs-num mt-1 text-xs text-text-muted">
+                    {c.rtp} · {c.maxWin}
                   </p>
                 </div>
-              </div>
+              </article>
             );
           })}
         </div>
         <p className="mt-6 text-xs text-text-dim">
-          Provider RTP, volatility and max win from the slotessentials.com game catalogue (export of {fmtDate(CATALOGUE_AS_OF)}). Casino RTP readings
-          are read by our team on each casino&apos;s game page or paytable.
+          Studio RTP, volatility and max win via the slotessentials.com game catalogue (export of {fmtDate(CATALOGUE_AS_OF)}). Casino readings are taken by our team on each casino&apos;s game page or paytable. <Link href="/methodology/" className="underline">Methodology</Link>
         </p>
+      </Section>
 
-        <PartnerList seed="top-slots" context={{ kind: "slots" }} />
-      </Container>
+      <Section eyebrow="Where to play" title="Casinos to play these at" lede="Partner casinos picked for fast withdrawals and light wagering, with their numbers." className="bg-section">
+        <PartnerCards cards={partnerCards({ seed: "top-slots", context: { kind: "slots" } })} placement="slots-partners" />
+      </Section>
     </>
   );
 }

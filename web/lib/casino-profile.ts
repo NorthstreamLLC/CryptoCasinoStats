@@ -3,7 +3,7 @@ import { volumeFor } from "./volume";
 import { getCasino, atAGlance, specGroups, shortFact, casinoPath } from "./casinos";
 import { readingsFor, getGame } from "./slots";
 import { hasLink } from "./outbound";
-import { pickPartners } from "./partner-fit";
+import { partnerCards } from "./partners";
 import { getSpecFact } from "./spec-sheet";
 import { volumeTable } from "./volume";
 import { OPS } from "./casinos";
@@ -39,12 +39,7 @@ export function casinoProfile(slug: string) {
   const readings = readingsFor(slug)
     .map((r) => ({ ...r, name: getGame(r.slotSlug)?.name ?? r.slotSlug }))
     .sort((a, b) => a.name.localeCompare(b.name));
-  const alternatives = pickPartners({ context: { kind: "alternative", of: slug }, seed: slug, exclude: [slug], limit: 7 }).map((p) => {
-    const ag = atAGlance(p.o);
-    const dep = board.find((r) => r.slug === p.o.slug);
-    return { slug: p.o.slug, name: p.o.name, mono: p.o.mono, path: casinoPath(p.o.slug), pitch: p.pitch, kyc: ag.kyc?.label ?? "—", withdrawal: ag.withdrawal.label, deposits: dep?.value ?? null };
-  });
-  alternatives.sort((a, b) => Number(b.slug === "roobet") - Number(a.slug === "roobet"));
+  const alternatives = partnerCards({ context: { kind: "alternative", of: slug }, seed: slug, exclude: [slug] });
   const groups = specGroups(slug).map((grp) => ({
     title: grp.title,
     facts: grp.facts.map((f) => ({ label: f.label, value: shortFact(f), sourceUrl: f.sourceUrl ?? null, asOf: f.asOf ?? null })),

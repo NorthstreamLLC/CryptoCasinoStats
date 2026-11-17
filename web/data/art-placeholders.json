@@ -1,0 +1,39 @@
+{
+  "about": "Catalogue titles whose SlotEssentials image is the no-art stand-in (scripts/find-placeholder-art.mjs). Treated as having no art.",
+  "placeholder": {
+    "bytes": 1750,
+    "sha256": "d97caa5d040d4fb1"
+  },
+  "checked": "2026-11-17",
+  "slugs": [
+    "3-liberty-eagles",
+    "3-pots-of-venice",
+    "aviamasters-2-halloween",
+    "beasts-of-fire-inferno",
+    "birds-in-the-city",
+    "chests-of-cai-shen-infinity",
+    "chicken-halloween",
+    "demon-beats",
+    "ding-dong-death",
+    "disco-inferno",
+    "divine-queen-power-of-sun",
+    "extra-chilli-more-chilli",
+    "feed-the-beast",
+    "hot-rocket-mega-potz",
+    "jack-and-the-beanstalk-2",
+    "neon-cash-city",
+    "noche-de-almas",
+    "nunchucks",
+    "phoenix-inferno",
+    "rat-royale",
+    "red-and-hot-chilli",
+    "redtail-robber-cash-vault-heist",
+    "speed-blackjack-pro",
+    "spider-circus-hold-and-win",
+    "the-queen-of-social-media",
+    "the-vip",
+    "three-pots-of-the-genie",
+    "witchcraft-riches",
+    "x-mas-party"
+  ]
+}

@@ -29,7 +29,9 @@ export function CountUp({ value, className = "" }: { value: string; className?: 
         const tick = (t: number) => {
           const p = Math.min(1, (t - t0) / dur);
           const eased = 1 - Math.pow(1 - p, 3);
-          setShown(`${pre}${(target * eased).toFixed(decimals)}${post}`);
+          const n = target * eased;
+          const body = num.includes(",") ? n.toLocaleString("en-US", { minimumFractionDigits: decimals, maximumFractionDigits: decimals }) : n.toFixed(decimals);
+          setShown(`${pre}${body}${post}`);
           if (p < 1) raf = requestAnimationFrame(tick);
         };
         raf = requestAnimationFrame(tick);

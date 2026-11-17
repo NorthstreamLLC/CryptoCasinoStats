@@ -2,7 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/ui";
-import { PartnerList } from "@/components/PartnerList";
+import { PartnerCards } from "@/components/PartnerCards";
+import { partnerCards } from "@/lib/partners";
 import { articles, getPost, cleanHtml, AUTHORS } from "@/lib/posts";
 import { pageMeta, fmtDate, SITE_URL } from "@/lib/site";
 
@@ -52,7 +53,10 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           Put this into practice with the numbers: <Link href="/casinos/" className="text-accent hover:underline">casino deposit volumes and RTP readings</Link> and{" "}
           <Link href="/top-slots/" className="text-accent hover:underline">slot stats by casino</Link>.
         </div>
-        <PartnerList seed={p.slug} />
+        <div className="mt-12">
+          <h2 className="ccs-display mb-4 text-2xl">Where to play</h2>
+          <PartnerCards cards={partnerCards({ seed: p.slug })} placement="article" count={2} />
+        </div>
       </Container>
     </article>
   );
