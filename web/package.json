@@ -10,7 +10,8 @@
     "import:rtp": "node scripts/import-rtp-readings.mjs",
     "import:onchain": "node scripts/import-onchain-volume.mjs",
     "sync:data": "node scripts/sync-from-csg.mjs",
-    "refresh:onchain": "node scripts/refresh-onchain.mjs"
+    "refresh:onchain": "node scripts/refresh-onchain.mjs",
+    "indexnow": "node scripts/indexnow.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
