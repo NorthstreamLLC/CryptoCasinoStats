@@ -32,8 +32,9 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
-      // One host: www and any leftover server hostname go to the apex.
-      { source: "/:path*", has: [{ type: "host", value: "www.cryptocasinostats.com" }], destination: "https://cryptocasinostats.com/:path*", permanent: true },
+      // www vs apex is decided by the Vercel project's domain settings (apex
+      // primary, www redirecting to it), not here: a redirect in both places
+      // loops when they disagree.
       // Casinos the old site had at the root keep their root pages.
       { source: "/casinos/:slug(stake|roobet|razed)", destination: "/:slug/", permanent: true },
       // WordPress odds and ends that people or bots may still request.
