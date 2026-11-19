@@ -5,6 +5,7 @@ const NAV = [
   { href: "/", label: "Home" },
   { href: "/casinos/", label: "Casino Stats" },
   { href: "/top-slots/", label: "Slot Stats" },
+  { href: "/reports/", label: "Reports" },
   { href: "/category/uncategorized/", label: "Analysis" },
   { href: "/methodology/", label: "Methodology" },
 ];

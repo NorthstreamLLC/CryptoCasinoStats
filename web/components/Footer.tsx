@@ -11,6 +11,7 @@ export function Footer() {
         <nav aria-label="Site" className="flex flex-col gap-2">
           <Link href="/casinos/" className="hover:text-text-primary">Casino Stats</Link>
           <Link href="/top-slots/" className="hover:text-text-primary">Slot Stats</Link>
+          <Link href="/reports/" className="hover:text-text-primary">Weekly reports</Link>
           <Link href="/category/uncategorized/" className="hover:text-text-primary">Analysis</Link>
           <Link href="/methodology/" className="hover:text-text-primary">Methodology and sources</Link>
         </nav>

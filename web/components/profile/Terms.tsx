@@ -19,12 +19,14 @@ export function Terms({ p }: { p: CasinoProfileData }) {
             {g.facts.map((f) => (
               <div key={f.label} className="border-t border-row-divider px-5 py-3.5 first:border-t-0">
                 <dt className="text-xs font-semibold text-text-dim-2">{f.label}</dt>
-                <dd className="mt-1 text-sm leading-relaxed text-text-secondary">{f.value}</dd>
-                {f.sourceUrl && (
-                  <a href={f.sourceUrl} target="_blank" rel="noopener noreferrer nofollow" className="mt-1.5 inline-block text-xs text-text-dim hover:text-accent">
-                    Source ↗{f.asOf ? ` · ${fmtDate(f.asOf)}` : ""}
-                  </a>
-                )}
+                <dd className="mt-1 text-sm leading-relaxed text-text-secondary">
+                  {f.value}
+                  {f.sourceUrl && (
+                    <a href={f.sourceUrl} target="_blank" rel="noopener noreferrer nofollow" className="mt-1.5 block text-xs text-text-dim underline-offset-2 hover:text-accent hover:underline">
+                      Source ↗{f.asOf ? ` · ${fmtDate(f.asOf)}` : ""}
+                    </a>
+                  )}
+                </dd>
               </div>
             ))}
           </dl>

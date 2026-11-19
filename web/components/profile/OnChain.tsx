@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { fmtDate } from "@/lib/site";
+import { pct } from "@/lib/history";
 import type { CasinoProfileData } from "@/lib/casino-profile";
 
 /** Where the casino sits in the deposit ranking, then every cited figure with its source. */
@@ -8,7 +9,7 @@ export function OnChain({ p }: { p: CasinoProfileData }) {
   if (!figs.length)
     return (
       <div className="ccs-card p-6 text-text-secondary">
-        Neither tracker we cite publishes figures for {p.o.name} yet. We add them as soon as one does. <Link href="/casinos/#volume" className="text-accent hover:underline">See the casinos that are tracked →</Link>
+        Neither tracker we cite publishes figures for {p.o.name} yet. We add them as soon as one does. <Link href="/casinos/#volume" className="text-accent underline decoration-accent/50 underline-offset-2">See the casinos that are tracked →</Link>
       </div>
     );
   return (
@@ -45,6 +46,14 @@ export function OnChain({ p }: { p: CasinoProfileData }) {
               <span className="ccs-num text-2xl font-semibold text-text-primary">{f.value}</span>
             </div>
             {f.note && <p className="mt-1 text-xs text-accent-bright">{f.note}</p>}
+            {(() => {
+              const c = f.source === "FairGambling" ? (label === "30-day deposits" ? p.change.deposits : p.change.wallet) : null;
+              return c?.prev && c.now.asOf === f.asOf ? (
+                <p className="mt-1 text-xs text-text-muted">
+                  <span className={`ccs-num font-semibold ${c.change! > 0 ? "text-accent-bright" : "text-warning"}`}>{pct(c.change)}</span> since {c.prev.value} on {fmtDate(c.prev.asOf)}
+                </p>
+              ) : null;
+            })()}
             <a href={f.sourceUrl} target="_blank" rel="noopener noreferrer nofollow" className="mt-3 inline-flex rounded-full border border-border px-2.5 py-1 text-xs text-text-dim hover:border-accent hover:text-accent">
               {f.source} ↗ · {fmtDate(f.asOf)}
             </a>
@@ -52,7 +61,7 @@ export function OnChain({ p }: { p: CasinoProfileData }) {
         ))}
         <p className="text-xs leading-relaxed text-text-dim">
           Third-party wallet attribution, not our measurement. Deposits are money in, not profit or amount wagered; a hot wallet is not total reserves.{" "}
-          <Link href="/methodology/" className="text-accent hover:underline">How to read these</Link>
+          <Link href="/methodology/" className="text-accent underline decoration-accent/50 underline-offset-2">How to read these</Link>
         </p>
       </div>
     </div>

@@ -20,7 +20,7 @@ export function Readings({ p }: { p: CasinoProfileData }) {
           <li key={r.id} className="grid grid-cols-[1fr_auto] items-center gap-x-4 gap-y-2 border-t border-row-divider px-5 py-3 first:border-t-0 sm:grid-cols-[12rem_1fr_6rem]">
             <span className="truncate font-medium text-text-primary">{r.name}</span>
             <span className="ccs-num text-right font-semibold text-accent-bright sm:order-last">{fmtRtp(r.rtp)}</span>
-            <span className="relative col-span-2 h-4 sm:col-span-1" aria-label={`${fmtRtp(r.rtp)} at ${p.o.name}, studio ${fmtRtp(r.publishedRtp)}, ${SOURCE_LABEL[r.source]}`}>
+            <span role="img" className="relative col-span-2 h-4 sm:col-span-1" aria-label={`${fmtRtp(r.rtp)} at ${p.o.name}, studio ${fmtRtp(r.publishedRtp)}, ${SOURCE_LABEL[r.source]}`}>
               <span className="absolute inset-x-0 top-1/2 h-px bg-border" />
               <span className="absolute top-0 h-4 w-px bg-accent/60" style={{ left: pos(r.publishedRtp) }} />
               <span className="ccs-dot absolute top-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full" style={{ left: pos(r.rtp) }} />

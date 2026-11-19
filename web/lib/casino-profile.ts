@@ -4,6 +4,7 @@ import { getCasino, atAGlance, specGroups, shortFact, casinoPath } from "./casin
 import { readingsFor, getGame } from "./slots";
 import { hasLink } from "./outbound";
 import { partnerCards } from "./partners";
+import { latestChange } from "./history";
 import { getSpecFact } from "./spec-sheet";
 import { volumeTable } from "./volume";
 import { OPS } from "./casinos";
@@ -59,6 +60,7 @@ export function casinoProfile(slug: string) {
     alternatives,
     groups,
     licenceSource: licenceFact?.sourceUrl ? { url: licenceFact.sourceUrl, asOf: licenceFact.asOf ?? null } : null,
+    change: latestChange(slug),
     factCount: groups.reduce((n, gr) => n + gr.facts.filter((f) => f.sourceUrl).length, 0),
   };
 }

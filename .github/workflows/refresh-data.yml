@@ -6,8 +6,11 @@
 # 2. Re-reads FairGambling's public casino pages for the 30-day deposit volume
 #    and hot-wallet figures (scripts/refresh-onchain.mjs; skips anything that
 #    looks wrong and lists it in the run summary).
-# 3. Type-checks and builds the whole site; only if that passes, commits the
+# 3. Saves a dated snapshot (data/history/onchain/), which publishes that
+#    week's report at /reports/<date>/.
+# 4. Type-checks and builds the whole site; only if that passes, commits the
 #    changed data to the default branch, which Vercel then deploys.
+# 5. Once Vercel reports the deploy live, pings IndexNow with every URL.
 #
 # Nothing is committed when nothing changed or when the build fails, and a
 # failed run is emailed to the repository owner by GitHub.
@@ -21,6 +24,7 @@ on:
 
 permissions:
   contents: write
+  statuses: read
 
 concurrency:
   group: refresh-data
@@ -64,6 +68,10 @@ jobs:
           REFRESH_REPORT: ${{ runner.temp }}/report.md
         run: node scripts/refresh-onchain.mjs
 
+      - name: Save weekly snapshot
+        working-directory: web
+        run: node scripts/snapshot-onchain.mjs
+
       - name: Run summary
         if: always()
         run: |
@@ -77,6 +85,7 @@ jobs:
           npm run build
 
       - name: Commit changed data
+        id: commit
         run: |
           git add web/data
           if git diff --cached --quiet; then
@@ -86,5 +95,23 @@ jobs:
           git config user.name "crypto-casino-stats-bot"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git commit -m "Weekly data refresh $(date -u +%Y-%m-%d)"
-          for i in 1 2 3; do git pull --rebase -q && git push && exit 0; sleep 5; done
+          for i in 1 2 3; do
+            if git pull --rebase -q && git push; then echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"; exit 0; fi
+            sleep 5
+          done
           exit 1
+
+      - name: Ping IndexNow once deployed
+        if: steps.commit.outputs.sha != ''
+        working-directory: web
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SHA: ${{ steps.commit.outputs.sha }}
+        run: |
+          for i in $(seq 1 40); do
+            s=$(gh api "repos/${{ github.repository }}/commits/$SHA/statuses" --jq '[.[]|select(.context=="Vercel")][0].state' 2>/dev/null || true)
+            if [ "$s" = success ]; then sleep 20; node scripts/indexnow.mjs || echo "IndexNow ping failed (not fatal)"; exit 0; fi
+            if [ "$s" = failure ] || [ "$s" = error ]; then echo "::error::Vercel deploy of $SHA failed"; exit 1; fi
+            sleep 15
+          done
+          echo "::warning::Vercel deploy not confirmed after 10 minutes; IndexNow not pinged"

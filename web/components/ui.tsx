@@ -8,7 +8,7 @@ export function Inline({ text }: { text: string }) {
       {parts.map((p, i) => {
         const m = p.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
         return m ? (
-          <Link key={i} href={m[2]} className="text-accent hover:underline">
+          <Link key={i} href={m[2]} className="text-accent underline decoration-accent/50 underline-offset-2 hover:decoration-current">
             {m[1]}
           </Link>
         ) : (

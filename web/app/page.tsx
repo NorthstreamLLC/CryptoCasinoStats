@@ -12,6 +12,8 @@ import { Featured } from "@/components/home/Featured";
 import { TrustSteps } from "@/components/home/TrustSteps";
 import { Articles } from "@/components/home/Articles";
 import { StickyBar } from "@/components/home/StickyBar";
+import { WeekBand } from "@/components/home/WeekBand";
+import { latestReport } from "@/lib/history";
 import { SITE_URL } from "@/lib/site";
 
 export const metadata = pageMeta(
@@ -34,6 +36,7 @@ export default function Home() {
   const lb = leaderboards();
   const casinos = finderCasinos();
   const facts = sourcedFactCount();
+  const week = latestReport();
   const ld = [
     {
       "@context": "https://schema.org",
@@ -66,6 +69,8 @@ export default function Home() {
       >
         <Leaderboard deposits={lb.deposits} wallet={lb.wallet} />
       </Section>
+
+      {week && <WeekBand r={week} />}
 
       <Section id="finder" eyebrow="Casino finder" title="Find a casino that fits" lede="Filter by what matters to you. Every attribute comes from the casino's own published terms." className="bg-section">
         <CasinoFinder casinos={casinos} />
