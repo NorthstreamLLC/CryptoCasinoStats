@@ -5,17 +5,17 @@
       {
         "source": "FairGambling",
         "metric": "30-day deposit volume",
-        "value": "$121.4M",
-        "note": "2.8% market share · 59.8K unique depositors · 373.5K total deposits",
-        "asOf": "2026-11-18",
+        "value": "$103.5M",
+        "note": "2.5% market share · 59.0K unique depositors · 371.3K total deposits",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/1win"
       },
       {
         "source": "FairGambling",
         "metric": "Hot wallet balance (all chains)",
-        "value": "$23.3M",
-        "note": "BSC, ETH, TRX, SOL, TON, LTC, BTC, POLYGON, XRP, DOGE, STELLAR",
-        "asOf": "2026-11-18",
+        "value": "$23.1M",
+        "note": "BSC, ETH, TRX, SOL, TON, LTC, POLYGON, BTC, XRP, STELLAR, DOGE",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/1win"
       },
       {
@@ -34,17 +34,17 @@
       {
         "source": "FairGambling",
         "metric": "30-day deposit volume",
-        "value": "$29.3M",
-        "note": "0.7% market share · 18.7K unique depositors · 92.8K total deposits",
-        "asOf": "2026-11-18",
+        "value": "$35.4M",
+        "note": "0.9% market share · 19.0K unique depositors · 96.4K total deposits",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/500casino"
       },
       {
         "source": "FairGambling",
         "metric": "Hot wallet balance (all chains)",
-        "value": "$1.9M",
-        "note": "ETH, TRX, SOL, BSC, BTC, POLYGON, LTC, CARDANO, DOGE, AVAX, BCH, XRP, STELLAR",
-        "asOf": "2026-11-18",
+        "value": "$2.6M",
+        "note": "ETH, BSC, TRX, SOL, BTC, POLYGON, LTC, CARDANO, DOGE, AVAX, BCH, XRP, STELLAR",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/500casino"
       },
       {
@@ -63,17 +63,17 @@
       {
         "source": "FairGambling",
         "metric": "30-day deposit volume",
-        "value": "$4.3M",
-        "note": "0.1% market share · 2.3K unique depositors · 7.2K total deposits",
-        "asOf": "2026-11-18",
+        "value": "$4.9M",
+        "note": "0.1% market share · 2.2K unique depositors · 7.4K total deposits",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/acebet"
       },
       {
         "source": "FairGambling",
         "metric": "Hot wallet balance (all chains)",
-        "value": "$269.4K",
-        "note": "ETH, SOL, LTC, BTC, XRP, BSC",
-        "asOf": "2026-11-18",
+        "value": "$352.9K",
+        "note": "SOL, ETH, LTC, BTC, XRP, BSC",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/acebet"
       },
       {
@@ -92,17 +92,17 @@
       {
         "source": "FairGambling",
         "metric": "30-day deposit volume",
-        "value": "$206.4M",
-        "note": "4.8% market share · 55.7K unique depositors · 175.4K total deposits",
-        "asOf": "2026-11-18",
+        "value": "$251.0M",
+        "note": "6.1% market share · 75.1K unique depositors · 238.4K total deposits",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/bcgame"
       },
       {
         "source": "FairGambling",
         "metric": "Hot wallet balance (all chains)",
-        "value": "$11.4M",
-        "note": "BSC, SOL, POLYGON, ETH, ARBITRUM, XRP, BASE, TRX",
-        "asOf": "2026-11-18",
+        "value": "$22.3M",
+        "note": "SOL, ETH, BSC, TRX, ARBITRUM, XRP, BASE, POLYGON",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/bcgame"
       },
       {
@@ -121,17 +121,17 @@
       {
         "source": "FairGambling",
         "metric": "30-day deposit volume",
-        "value": "$33.8M",
-        "note": "0.8% market share · 8.7K unique depositors · 40.6K total deposits",
-        "asOf": "2026-11-18",
+        "value": "$33.3M",
+        "note": "0.8% market share · 8.6K unique depositors · 40.8K total deposits",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/betfury"
       },
       {
         "source": "FairGambling",
         "metric": "Hot wallet balance (all chains)",
-        "value": "$3.7M",
-        "note": "ETH, TRX, BSC, SOL, POLYGON, ARBITRUM, TON, OPTIMISM, AVAX, XRP",
-        "asOf": "2026-11-18",
+        "value": "$4.1M",
+        "note": "ETH, BSC, TRX, SOL, POLYGON, TON, ARBITRUM, OPTIMISM, AVAX, XRP",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/betfury"
       },
       {
@@ -163,17 +163,17 @@
       {
         "source": "FairGambling",
         "metric": "30-day deposit volume",
-        "value": "$46.9M",
-        "note": "1.1% market share · 7.2K unique depositors · 15.5K total deposits",
-        "asOf": "2026-11-18",
+        "value": "$48.6M",
+        "note": "1.2% market share · 7.9K unique depositors · 16.3K total deposits",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/cloudbet"
       },
       {
         "source": "FairGambling",
         "metric": "Hot wallet balance (all chains)",
-        "value": "$12.1M",
-        "note": "SOL, ETH, POLYGON, AVAX, TRX, BSC, BTC, BASE, TON, STELLAR, DASH, CARDANO, LTC, DOGE, BCH",
-        "asOf": "2026-11-18",
+        "value": "$13.4M",
+        "note": "ETH, SOL, TRX, AVAX, POLYGON, BSC, BTC, BASE, TON, STELLAR, DASH, CARDANO, BCH, LTC, DOGE",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/cloudbet"
       },
       {
@@ -192,9 +192,9 @@
       {
         "source": "FairGambling",
         "metric": "30-day deposit volume",
-        "value": "$5.1M",
-        "note": "0.1% market share · 2.4K unique depositors · 14.6K total deposits",
-        "asOf": "2026-11-18",
+        "value": "$2.8M",
+        "note": "0.1% market share · 1.9K unique depositors · 12.9K total deposits",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/coincasino"
       },
       {
@@ -202,7 +202,7 @@
         "metric": "Hot wallet balance (all chains)",
         "value": "$3.0M",
         "note": "ETH, BSC, TRX, SOL, TON",
-        "asOf": "2026-11-18",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/coincasino"
       },
       {
@@ -250,17 +250,17 @@
       {
         "source": "FairGambling",
         "metric": "30-day deposit volume",
-        "value": "$4.6M",
-        "note": "0.1% market share · 4.8K unique depositors · 15.1K total deposits",
-        "asOf": "2026-11-18",
+        "value": "$4.8M",
+        "note": "0.1% market share · 4.7K unique depositors · 15.1K total deposits",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/degen"
       },
       {
         "source": "FairGambling",
         "metric": "Hot wallet balance (all chains)",
-        "value": "$734.2K",
+        "value": "$684.8K",
         "note": "ETH, SOL, TRX, BTC, LTC, DOGE",
-        "asOf": "2026-11-18",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/degen"
       }
     ]
@@ -271,17 +271,17 @@
       {
         "source": "FairGambling",
         "metric": "30-day deposit volume",
-        "value": "$911.8K",
-        "note": "0.0% market share · 6.8K unique depositors · 8.1K total deposits",
-        "asOf": "2026-11-18",
+        "value": "$1.1M",
+        "note": "0.0% market share · 6.8K unique depositors · 8.4K total deposits",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/degencity"
       },
       {
         "source": "FairGambling",
         "metric": "Hot wallet balance (all chains)",
-        "value": "$139.0K",
-        "note": "LTC, BTC, TRX, BSC, SOL, ETH",
-        "asOf": "2026-11-17",
+        "value": "$44.4K",
+        "note": "SOL, TRX, ETH, BSC, LTC",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/degencity"
       },
       {
@@ -300,9 +300,9 @@
       {
         "source": "FairGambling",
         "metric": "30-day deposit volume",
-        "value": "$28.0M",
-        "note": "0.6% market share · 2.8K unique depositors · 16.3K total deposits",
-        "asOf": "2026-11-18",
+        "value": "$26.5M",
+        "note": "0.6% market share · 2.8K unique depositors · 16.9K total deposits",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/dicey"
       },
       {
@@ -310,7 +310,7 @@
         "metric": "Hot wallet balance (all chains)",
         "value": "$7.2M",
         "note": "ETH, SOL, TRX, BTC",
-        "asOf": "2026-11-18",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/dicey"
       },
       {
@@ -329,17 +329,17 @@
       {
         "source": "FairGambling",
         "metric": "30-day deposit volume",
-        "value": "$187.9M",
-        "note": "4.3% market share · 35.4K unique depositors · 203.0K total deposits",
-        "asOf": "2026-11-18",
+        "value": "$189.3M",
+        "note": "4.6% market share · 36.6K unique depositors · 209.5K total deposits",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/duel"
       },
       {
         "source": "FairGambling",
         "metric": "Hot wallet balance (all chains)",
-        "value": "$14.6M",
+        "value": "$15.8M",
         "note": "ETH, SOL, TRX, BSC, POLYGON, XRP, TON, AVAX, HEDERA",
-        "asOf": "2026-11-18",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/duel"
       },
       {
@@ -358,17 +358,17 @@
       {
         "source": "FairGambling",
         "metric": "30-day deposit volume",
-        "value": "$21.2M",
-        "note": "0.5% market share · 8.1K unique depositors · 44.2K total deposits",
-        "asOf": "2026-11-18",
+        "value": "$20.0M",
+        "note": "0.5% market share · 7.7K unique depositors · 41.8K total deposits",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/duelbits"
       },
       {
         "source": "FairGambling",
         "metric": "Hot wallet balance (all chains)",
-        "value": "$4.9M",
+        "value": "$4.4M",
         "note": "ETH, SOL, BSC, TRX, XRP",
-        "asOf": "2026-11-18",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/duelbits"
       },
       {
@@ -387,17 +387,17 @@
       {
         "source": "FairGambling",
         "metric": "30-day deposit volume",
-        "value": "$150.2K",
-        "note": "0.0% market share · 825 unique depositors · 1.1K total deposits",
-        "asOf": "2026-11-18",
+        "value": "$173.3K",
+        "note": "0.0% market share · 892 unique depositors · 1.2K total deposits",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/dustbit"
       },
       {
         "source": "FairGambling",
         "metric": "Hot wallet balance (all chains)",
-        "value": "$21.6K",
-        "note": "ETH, TRX, BSC, SOL",
-        "asOf": "2026-11-18",
+        "value": "$28.6K",
+        "note": "ETH, TRX, SOL, BSC",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/dustbit"
       }
     ]
@@ -408,17 +408,17 @@
       {
         "source": "FairGambling",
         "metric": "30-day deposit volume",
-        "value": "$25.4K",
-        "note": "0.0% market share · 238 unique depositors · 321 total deposits",
-        "asOf": "2026-11-18",
+        "value": "$30.1K",
+        "note": "0.0% market share · 253 unique depositors · 347 total deposits",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/flush"
       },
       {
         "source": "FairGambling",
         "metric": "Hot wallet balance (all chains)",
-        "value": "$7.7K",
+        "value": "$8.7K",
         "note": "TRX, POLYGON, BTC, BSC, DOGE, ETH",
-        "asOf": "2026-11-18",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/flush"
       },
       {
@@ -437,17 +437,17 @@
       {
         "source": "FairGambling",
         "metric": "30-day deposit volume",
-        "value": "$20.5M",
-        "note": "0.5% market share · 12.5K unique depositors · 90.5K total deposits",
-        "asOf": "2026-11-18",
+        "value": "$17.5M",
+        "note": "0.4% market share · 12.3K unique depositors · 88.5K total deposits",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/gamba"
       },
       {
         "source": "FairGambling",
         "metric": "Hot wallet balance (all chains)",
-        "value": "$932.2K",
-        "note": "ETH, SOL, BSC, POLYGON, TRX, TON, XRP",
-        "asOf": "2026-11-18",
+        "value": "$884.6K",
+        "note": "ETH, SOL, POLYGON, TRX, BSC, TON, XRP",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/gamba"
       },
       {
@@ -466,17 +466,17 @@
       {
         "source": "FairGambling",
         "metric": "30-day deposit volume",
-        "value": "$174.3M",
-        "note": "4.0% market share · 43.4K unique depositors · 226.9K total deposits",
-        "asOf": "2026-11-18",
+        "value": "$169.0M",
+        "note": "4.1% market share · 41.6K unique depositors · 221.9K total deposits",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/gamdom"
       },
       {
         "source": "FairGambling",
         "metric": "Hot wallet balance (all chains)",
-        "value": "$2.6M",
-        "note": "ETH, BSC, SOL, TRX, XRP",
-        "asOf": "2026-11-18",
+        "value": "$4.8M",
+        "note": "SOL, ETH, TRX, BSC, XRP",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/gamdom"
       },
       {
@@ -496,16 +496,16 @@
         "source": "FairGambling",
         "metric": "30-day deposit volume",
         "value": "$3.1M",
-        "note": "0.1% market share · 3.2K unique depositors · 18.8K total deposits",
-        "asOf": "2026-11-18",
+        "note": "0.1% market share · 3.2K unique depositors · 18.6K total deposits",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/goated"
       },
       {
         "source": "FairGambling",
         "metric": "Hot wallet balance (all chains)",
-        "value": "$604.5K",
+        "value": "$495.0K",
         "note": "SOL, BSC, ETH, TRX, XRP, BTC, LTC",
-        "asOf": "2026-11-18",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/goated"
       },
       {
@@ -532,9 +532,9 @@
       {
         "source": "FairGambling",
         "metric": "Hot wallet balance (all chains)",
-        "value": "$1.2M",
-        "note": "ETH, TRX, BSC, POLYGON, SOL",
-        "asOf": "2026-11-18",
+        "value": "$942.3K",
+        "note": "TRX, ETH, BSC, POLYGON, SOL",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/housebets"
       },
       {
@@ -553,9 +553,9 @@
       {
         "source": "FairGambling",
         "metric": "30-day deposit volume",
-        "value": "$63.0K",
-        "note": "0.0% market share · 310 unique depositors · 1.7K total deposits",
-        "asOf": "2026-11-18",
+        "value": "$48.0K",
+        "note": "0.0% market share · 246 unique depositors · 1.3K total deposits",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/jackpotbet"
       },
       {
@@ -582,17 +582,17 @@
       {
         "source": "FairGambling",
         "metric": "30-day deposit volume",
-        "value": "$24.8M",
-        "note": "0.6% market share · 29.2K unique depositors · 91.6K total deposits",
-        "asOf": "2026-11-18",
+        "value": "$21.8M",
+        "note": "0.5% market share · 19.5K unique depositors · 81.6K total deposits",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/metawin"
       },
       {
         "source": "FairGambling",
         "metric": "Hot wallet balance (all chains)",
-        "value": "$3.3M",
-        "note": "SOL, ETH, BSC, TRX, LTC, BTC",
-        "asOf": "2026-11-18",
+        "value": "$2.8M",
+        "note": "SOL, ETH, TRX, BTC, BSC, LTC",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/metawin"
       },
       {
@@ -611,17 +611,17 @@
       {
         "source": "FairGambling",
         "metric": "30-day deposit volume",
-        "value": "$4.7M",
-        "note": "0.1% market share · 5.9K unique depositors · 22.3K total deposits",
-        "asOf": "2026-11-18",
+        "value": "$4.5M",
+        "note": "0.1% market share · 5.9K unique depositors · 21.7K total deposits",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/qzino"
       },
       {
         "source": "FairGambling",
         "metric": "Hot wallet balance (all chains)",
-        "value": "$1.1M",
+        "value": "$1.0M",
         "note": "TRX, BSC, ETH, SOL, TON, POLYGON",
-        "asOf": "2026-11-18",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/qzino"
       },
       {
@@ -640,17 +640,17 @@
       {
         "source": "FairGambling",
         "metric": "30-day deposit volume",
-        "value": "$337.0M",
-        "note": "7.8% market share · 93.8K unique depositors · 1.04M total deposits",
-        "asOf": "2026-11-18",
+        "value": "$317.7M",
+        "note": "7.7% market share · 91.1K unique depositors · 993.6K total deposits",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/rainbet"
       },
       {
         "source": "FairGambling",
         "metric": "Hot wallet balance (all chains)",
-        "value": "$87.1M",
-        "note": "ETH, SOL, BSC, BASE, TRX, POLYGON, LTC, BTC, ARBITRUM, DOGE, TON, CARDANO",
-        "asOf": "2026-11-18",
+        "value": "$82.0M",
+        "note": "ETH, SOL, BASE, BSC, TRX, POLYGON, LTC, ARBITRUM, BTC, DOGE, TON, CARDANO",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/rainbet"
       },
       {
@@ -669,17 +669,17 @@
       {
         "source": "FairGambling",
         "metric": "30-day deposit volume",
-        "value": "$27.7M",
-        "note": "0.6% market share · 9.0K unique depositors · 35.2K total deposits",
-        "asOf": "2026-11-18",
+        "value": "$27.2M",
+        "note": "0.7% market share · 8.4K unique depositors · 33.8K total deposits",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/razed"
       },
       {
         "source": "FairGambling",
         "metric": "Hot wallet balance (all chains)",
-        "value": "$3.1M",
+        "value": "$4.0M",
         "note": "ETH, TRX, SOL, LTC, BSC",
-        "asOf": "2026-11-18",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/razed"
       },
       {
@@ -711,17 +711,17 @@
       {
         "source": "FairGambling",
         "metric": "30-day deposit volume",
-        "value": "$459.1M",
-        "note": "10.6% market share · 59.0K unique depositors · 677.9K total deposits",
-        "asOf": "2026-11-18",
+        "value": "$418.5M",
+        "note": "10.1% market share · 57.6K unique depositors · 669.3K total deposits",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/roobet"
       },
       {
         "source": "FairGambling",
         "metric": "Hot wallet balance (all chains)",
-        "value": "$36.2M",
-        "note": "ETH, TRX, SOL, BTC, BSC, XRP, ARBITRUM, LTC, BASE, DOGE",
-        "asOf": "2026-11-18",
+        "value": "$37.6M",
+        "note": "ETH, TRX, SOL, BTC, BSC, BASE, XRP, ARBITRUM, LTC, DOGE",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/roobet"
       },
       {
@@ -741,16 +741,16 @@
         "source": "FairGambling",
         "metric": "30-day deposit volume",
         "value": "$2.9M",
-        "note": "0.1% market share · 1.3K unique depositors · 6.0K total deposits",
-        "asOf": "2026-11-18",
+        "note": "0.1% market share · 1.3K unique depositors · 6.1K total deposits",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/shock"
       },
       {
         "source": "FairGambling",
         "metric": "Hot wallet balance (all chains)",
-        "value": "$237.9K",
+        "value": "$201.4K",
         "note": "ETH, SOL, LTC, BTC, XRP",
-        "asOf": "2026-11-18",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/shock"
       },
       {
@@ -769,17 +769,17 @@
       {
         "source": "FairGambling",
         "metric": "30-day deposit volume",
-        "value": "$278.1M",
-        "note": "6.4% market share · 73.5K unique depositors · 594.9K total deposits",
-        "asOf": "2026-11-18",
+        "value": "$280.3M",
+        "note": "6.8% market share · 70.0K unique depositors · 586.1K total deposits",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/shuffle"
       },
       {
         "source": "FairGambling",
         "metric": "Hot wallet balance (all chains)",
-        "value": "$25.1M",
-        "note": "ETH, SOL, TRX, BSC, POLYGON, BASE, XRP, ARBITRUM, BTC, TON, LTC, AVAX, DOGE",
-        "asOf": "2026-11-18",
+        "value": "$25.4M",
+        "note": "ETH, SOL, TRX, BSC, POLYGON, BASE, XRP, BTC, TON, ARBITRUM, LTC, AVAX, DOGE",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/shuffle"
       },
       {
@@ -798,17 +798,17 @@
       {
         "source": "FairGambling",
         "metric": "30-day deposit volume",
-        "value": "$12.3M",
-        "note": "0.3% market share · 6.6K unique depositors · 54.2K total deposits",
-        "asOf": "2026-11-18",
+        "value": "$11.5M",
+        "note": "0.3% market share · 6.5K unique depositors · 52.8K total deposits",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/solcasino"
       },
       {
         "source": "FairGambling",
         "metric": "Hot wallet balance (all chains)",
-        "value": "$6.7M",
-        "note": "SOL, TRX, BSC, XRP, BASE, ARBITRUM, ETH, POLYGON, HYPE, AVAX, TON, DOGE, OPTIMISM",
-        "asOf": "2026-11-18",
+        "value": "$7.2M",
+        "note": "SOL, TRX, BSC, ETH, XRP, ARBITRUM, BASE, POLYGON, HYPE, AVAX, TON, DOGE, OPTIMISM",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/solcasino"
       },
       {
@@ -853,17 +853,17 @@
       {
         "source": "FairGambling",
         "metric": "30-day deposit volume",
-        "value": "$1.91B",
-        "note": "44.2% market share · 825.0K unique depositors · 3.59M total deposits",
-        "asOf": "2026-11-18",
+        "value": "$1.78B",
+        "note": "43.1% market share · 810.7K unique depositors · 3.47M total deposits",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/stake"
       },
       {
         "source": "FairGambling",
         "metric": "Hot wallet balance (all chains)",
-        "value": "$48.2M",
-        "note": "ETH, TRX, POLYGON, SOL, XRP, BSC",
-        "asOf": "2026-11-18",
+        "value": "$60.5M",
+        "note": "ETH, TRX, SOL, POLYGON, BSC, XRP",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/stake"
       },
       {
@@ -882,17 +882,17 @@
       {
         "source": "FairGambling",
         "metric": "30-day deposit volume",
-        "value": "$74.4M",
-        "note": "1.7% market share · 11.6K unique depositors · 137.3K total deposits",
-        "asOf": "2026-11-18",
+        "value": "$72.8M",
+        "note": "1.8% market share · 11.3K unique depositors · 136.0K total deposits",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/thrill"
       },
       {
         "source": "FairGambling",
         "metric": "Hot wallet balance (all chains)",
-        "value": "$1.4M",
-        "note": "ETH, BSC, SOL, TRX, BASE, POLYGON, XRP, BTC, ARBITRUM, BCH, DOGE",
-        "asOf": "2026-11-18",
+        "value": "$1.5M",
+        "note": "ETH, SOL, BSC, TRX, POLYGON, BASE, XRP, BTC, ARBITRUM, DOGE, BCH",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/thrill"
       },
       {
@@ -911,17 +911,17 @@
       {
         "source": "FairGambling",
         "metric": "30-day deposit volume",
-        "value": "$6.5M",
-        "note": "0.2% market share · 3.6K unique depositors · 22.9K total deposits",
-        "asOf": "2026-11-18",
+        "value": "$6.1M",
+        "note": "0.1% market share · 3.0K unique depositors · 21.7K total deposits",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/toshibet"
       },
       {
         "source": "FairGambling",
         "metric": "Hot wallet balance (all chains)",
-        "value": "$561.9K",
-        "note": "ETH, SOL, TRX, BSC, BTC, BASE, LTC, POLYGON, ARBITRUM, DASH, DOGE, AVAX, MONAD",
-        "asOf": "2026-11-18",
+        "value": "$753.7K",
+        "note": "ETH, SOL, BTC, BASE, TRX, LTC, POLYGON, BSC, ARBITRUM, DASH, DOGE, AVAX, MONAD",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/toshibet"
       },
       {
@@ -953,17 +953,17 @@
       {
         "source": "FairGambling",
         "metric": "30-day deposit volume",
-        "value": "$3.6M",
-        "note": "0.1% market share · 2.5K unique depositors · 10.4K total deposits",
-        "asOf": "2026-11-18",
+        "value": "$3.4M",
+        "note": "0.1% market share · 2.5K unique depositors · 10.1K total deposits",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/whaleio"
       },
       {
         "source": "FairGambling",
         "metric": "Hot wallet balance (all chains)",
-        "value": "$159.8K",
-        "note": "BSC, TRX, SOL, ETH",
-        "asOf": "2026-11-18",
+        "value": "$65.5K",
+        "note": "BSC, SOL, TRX, ETH",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/whaleio"
       },
       {
@@ -982,17 +982,17 @@
       {
         "source": "FairGambling",
         "metric": "30-day deposit volume",
-        "value": "$33.7M",
-        "note": "0.8% market share · 9.1K unique depositors · 60.3K total deposits",
-        "asOf": "2026-11-18",
+        "value": "$28.2M",
+        "note": "0.7% market share · 11.2K unique depositors · 69.3K total deposits",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/winna"
       },
       {
         "source": "FairGambling",
         "metric": "Hot wallet balance (all chains)",
-        "value": "$1.1M",
-        "note": "SOL, ETH, BSC, TRX, XRP, TON, LTC, BTC, DOGE",
-        "asOf": "2026-11-18",
+        "value": "$1.8M",
+        "note": "SOL, ETH, BSC, BASE, TRX, XRP, POLYGON, ARBITRUM, TON, LTC, BTC, DOGE",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/winna"
       },
       {
@@ -1011,17 +1011,17 @@
       {
         "source": "FairGambling",
         "metric": "30-day deposit volume",
-        "value": "$21.2M",
-        "note": "0.5% market share · 4.9K unique depositors · 32.5K total deposits",
-        "asOf": "2026-11-17",
+        "value": "$21.1M",
+        "note": "0.5% market share · 4.7K unique depositors · 29.7K total deposits",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/yeet"
       },
       {
         "source": "FairGambling",
         "metric": "Hot wallet balance (all chains)",
-        "value": "$3.8M",
-        "note": "ETH, TRX, SOL, BSC, POLYGON, ARBITRUM, BASE, BTC, LTC, XRP, DOGE",
-        "asOf": "2026-11-17",
+        "value": "$4.5M",
+        "note": "TRX, ETH, SOL, BSC, POLYGON, BASE, ARBITRUM, BTC, LTC, XRP, DOGE",
+        "asOf": "2026-11-23",
         "sourceUrl": "https://www.fairgambling.com/yeet"
       },
       {

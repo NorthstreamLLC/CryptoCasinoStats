@@ -1,0 +1,482 @@
+{
+ "date": "2026-11-23",
+ "source": "FairGambling",
+ "casinos": {
+  "1win": {
+   "deposits": {
+    "value": "$103.5M",
+    "num": 103500000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/1win"
+   },
+   "wallet": {
+    "value": "$23.1M",
+    "num": 23100000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/1win"
+   }
+  },
+  "500-casino": {
+   "deposits": {
+    "value": "$35.4M",
+    "num": 35400000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/500casino"
+   },
+   "wallet": {
+    "value": "$2.6M",
+    "num": 2600000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/500casino"
+   }
+  },
+  "acebet": {
+   "deposits": {
+    "value": "$4.9M",
+    "num": 4900000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/acebet"
+   },
+   "wallet": {
+    "value": "$352.9K",
+    "num": 352900,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/acebet"
+   }
+  },
+  "bc-game": {
+   "deposits": {
+    "value": "$251.0M",
+    "num": 251000000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/bcgame"
+   },
+   "wallet": {
+    "value": "$22.3M",
+    "num": 22300000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/bcgame"
+   }
+  },
+  "betfury": {
+   "deposits": {
+    "value": "$33.3M",
+    "num": 33299999.999999996,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/betfury"
+   },
+   "wallet": {
+    "value": "$4.1M",
+    "num": 4099999.9999999995,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/betfury"
+   }
+  },
+  "cloudbet": {
+   "deposits": {
+    "value": "$48.6M",
+    "num": 48600000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/cloudbet"
+   },
+   "wallet": {
+    "value": "$13.4M",
+    "num": 13400000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/cloudbet"
+   }
+  },
+  "coincasino": {
+   "deposits": {
+    "value": "$2.8M",
+    "num": 2800000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/coincasino"
+   },
+   "wallet": {
+    "value": "$3.0M",
+    "num": 3000000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/coincasino"
+   }
+  },
+  "cybet": {
+   "deposits": {
+    "value": "$400.1K",
+    "num": 400100,
+    "asOf": "2026-07-28",
+    "sourceUrl": "https://www.fairgambling.com/cybet"
+   },
+   "wallet": {
+    "value": "$47.0K",
+    "num": 47000,
+    "asOf": "2026-07-28",
+    "sourceUrl": "https://www.fairgambling.com/cybet"
+   }
+  },
+  "degen": {
+   "deposits": {
+    "value": "$4.8M",
+    "num": 4800000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/degen"
+   },
+   "wallet": {
+    "value": "$684.8K",
+    "num": 684800,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/degen"
+   }
+  },
+  "degencity": {
+   "deposits": {
+    "value": "$1.1M",
+    "num": 1100000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/degencity"
+   },
+   "wallet": {
+    "value": "$44.4K",
+    "num": 44400,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/degencity"
+   }
+  },
+  "dicey": {
+   "deposits": {
+    "value": "$26.5M",
+    "num": 26500000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/dicey"
+   },
+   "wallet": {
+    "value": "$7.2M",
+    "num": 7200000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/dicey"
+   }
+  },
+  "duel": {
+   "deposits": {
+    "value": "$189.3M",
+    "num": 189300000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/duel"
+   },
+   "wallet": {
+    "value": "$15.8M",
+    "num": 15800000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/duel"
+   }
+  },
+  "duelbits": {
+   "deposits": {
+    "value": "$20.0M",
+    "num": 20000000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/duelbits"
+   },
+   "wallet": {
+    "value": "$4.4M",
+    "num": 4400000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/duelbits"
+   }
+  },
+  "dustbit": {
+   "deposits": {
+    "value": "$173.3K",
+    "num": 173300,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/dustbit"
+   },
+   "wallet": {
+    "value": "$28.6K",
+    "num": 28600,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/dustbit"
+   }
+  },
+  "flush": {
+   "deposits": {
+    "value": "$30.1K",
+    "num": 30100,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/flush"
+   },
+   "wallet": {
+    "value": "$8.7K",
+    "num": 8700,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/flush"
+   }
+  },
+  "gamba": {
+   "deposits": {
+    "value": "$17.5M",
+    "num": 17500000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/gamba"
+   },
+   "wallet": {
+    "value": "$884.6K",
+    "num": 884600,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/gamba"
+   }
+  },
+  "gamdom": {
+   "deposits": {
+    "value": "$169.0M",
+    "num": 169000000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/gamdom"
+   },
+   "wallet": {
+    "value": "$4.8M",
+    "num": 4800000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/gamdom"
+   }
+  },
+  "goated": {
+   "deposits": {
+    "value": "$3.1M",
+    "num": 3100000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/goated"
+   },
+   "wallet": {
+    "value": "$495.0K",
+    "num": 495000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/goated"
+   }
+  },
+  "housebets": {
+   "deposits": {
+    "value": "$1.4M",
+    "num": 1400000,
+    "asOf": "2026-09-03",
+    "sourceUrl": "https://www.fairgambling.com/housebets"
+   },
+   "wallet": {
+    "value": "$942.3K",
+    "num": 942300,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/housebets"
+   }
+  },
+  "jackpotbet": {
+   "deposits": {
+    "value": "$48.0K",
+    "num": 48000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/jackpotbet"
+   },
+   "wallet": {
+    "value": "$76.9K",
+    "num": 76900,
+    "asOf": "2026-07-28",
+    "sourceUrl": "https://www.fairgambling.com/jackpotbet"
+   }
+  },
+  "metawin": {
+   "deposits": {
+    "value": "$21.8M",
+    "num": 21800000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/metawin"
+   },
+   "wallet": {
+    "value": "$2.8M",
+    "num": 2800000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/metawin"
+   }
+  },
+  "qzino": {
+   "deposits": {
+    "value": "$4.5M",
+    "num": 4500000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/qzino"
+   },
+   "wallet": {
+    "value": "$1.0M",
+    "num": 1000000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/qzino"
+   }
+  },
+  "rainbet": {
+   "deposits": {
+    "value": "$317.7M",
+    "num": 317700000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/rainbet"
+   },
+   "wallet": {
+    "value": "$82.0M",
+    "num": 82000000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/rainbet"
+   }
+  },
+  "razed": {
+   "deposits": {
+    "value": "$27.2M",
+    "num": 27200000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/razed"
+   },
+   "wallet": {
+    "value": "$4.0M",
+    "num": 4000000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/razed"
+   }
+  },
+  "roobet": {
+   "deposits": {
+    "value": "$418.5M",
+    "num": 418500000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/roobet"
+   },
+   "wallet": {
+    "value": "$37.6M",
+    "num": 37600000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/roobet"
+   }
+  },
+  "shock": {
+   "deposits": {
+    "value": "$2.9M",
+    "num": 2900000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/shock"
+   },
+   "wallet": {
+    "value": "$201.4K",
+    "num": 201400,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/shock"
+   }
+  },
+  "shuffle": {
+   "deposits": {
+    "value": "$280.3M",
+    "num": 280300000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/shuffle"
+   },
+   "wallet": {
+    "value": "$25.4M",
+    "num": 25400000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/shuffle"
+   }
+  },
+  "solcasino": {
+   "deposits": {
+    "value": "$11.5M",
+    "num": 11500000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/solcasino"
+   },
+   "wallet": {
+    "value": "$7.2M",
+    "num": 7200000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/solcasino"
+   }
+  },
+  "stake": {
+   "deposits": {
+    "value": "$1.78B",
+    "num": 1780000000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/stake"
+   },
+   "wallet": {
+    "value": "$60.5M",
+    "num": 60500000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/stake"
+   }
+  },
+  "thrill": {
+   "deposits": {
+    "value": "$72.8M",
+    "num": 72800000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/thrill"
+   },
+   "wallet": {
+    "value": "$1.5M",
+    "num": 1500000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/thrill"
+   }
+  },
+  "toshibet": {
+   "deposits": {
+    "value": "$6.1M",
+    "num": 6100000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/toshibet"
+   },
+   "wallet": {
+    "value": "$753.7K",
+    "num": 753700,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/toshibet"
+   }
+  },
+  "whale-io": {
+   "deposits": {
+    "value": "$3.4M",
+    "num": 3400000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/whaleio"
+   },
+   "wallet": {
+    "value": "$65.5K",
+    "num": 65500,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/whaleio"
+   }
+  },
+  "winna": {
+   "deposits": {
+    "value": "$28.2M",
+    "num": 28200000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/winna"
+   },
+   "wallet": {
+    "value": "$1.8M",
+    "num": 1800000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/winna"
+   }
+  },
+  "yeet": {
+   "deposits": {
+    "value": "$21.1M",
+    "num": 21100000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/yeet"
+   },
+   "wallet": {
+    "value": "$4.5M",
+    "num": 4500000,
+    "asOf": "2026-11-23",
+    "sourceUrl": "https://www.fairgambling.com/yeet"
+   }
+  }
+ }
+}
