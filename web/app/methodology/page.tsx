@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { pageMeta, fmtDate } from "@/lib/site";
-import { earliestAsOf, latestAsOf } from "@/lib/volume";
-import { CATALOGUE_AS_OF, allReadings } from "@/lib/slots";
+import { latestRun, CURRENT_DAYS } from "@/lib/volume";
+import { CATALOGUE_AS_OF, allReadings, rtpStatus } from "@/lib/slots";
 import { sourcedFactCount, heroStats } from "@/lib/home-data";
 import { DocLayout } from "@/components/doc/DocLayout";
 
@@ -14,12 +14,14 @@ export const metadata = pageMeta(
 export default function Page() {
   const lastRead = allReadings().map((r) => r.checkedAt).sort().at(-1) ?? "";
   const s = heroStats();
+  const rtp = rtpStatus();
   const SOURCES = [
     ["30-day deposit volume", "FairGambling, Tanzanite", "Third-party wallet attribution", "FairGambling weekly, automatically; Tanzanite by hand"],
     ["Hot-wallet balance", "FairGambling", "Third-party wallet attribution", "Weekly, automatically"],
-    ["RTP at a casino", "The casino's game page or in-game paytable", "Read by our team", "Monthly, by hand"],
+    ["RTP at a casino", "The casino's game page or in-game paytable", "Read by our team", rtp.overdue ? `Monthly, by hand; current set read ${fmtDate(rtp.last)}, overdue` : `Monthly, by hand; next by ${fmtDate(rtp.due)}`],
     ["Slot RTP, volatility, max win", "Studio data via slotessentials.com", "Studio-published", "With each catalogue export"],
-    ["KYC, limits, fees, licence", "The casino's own terms and help pages", "Read by our team", "Re-checked periodically"],
+    ["KYC, limits, fees, licence", "The casino's own terms and help pages", "Read by our team", "Re-checked periodically; each fact shows its date"],
+    ["Withdrawal times", "The casino's own terms and help pages", "The casino's claim, not timed by us", "With the casino facts"],
   ];
   return (
     <DocLayout
@@ -91,7 +93,17 @@ export default function Page() {
                 <li>A hot-wallet balance is what sits in the casino&apos;s spending wallets at one moment. Casinos also hold funds in cold storage, so it is not a measure of total reserves or solvency.</li>
                 <li>The two trackers can disagree for the same casino; we show both rather than pick one.</li>
               </ul>
-              <p>Figures on file currently run from {fmtDate(earliestAsOf())} to {fmtDate(latestAsOf())}. FairGambling&apos;s figures are re-read from its public casino pages every Monday; a figure that fails to read, or moves more than tenfold in a week, is held back for a person to check rather than published. Tanzanite&apos;s figures are updated by hand. Totals on the site say which casinos and dates they add up.</p>
+              <p>
+                FairGambling&apos;s figures are re-read from its public casino pages every Monday; a figure that fails to read, or moves more than tenfold
+                in a week, is held back for a person to check rather than published. Tanzanite&apos;s figures are updated by hand. The latest run was on{" "}
+                {fmtDate(latestRun())}.
+              </p>
+              <h3>Totals, rankings and changes</h3>
+              <ul>
+                <li>Each FairGambling deposit figure is that casino&apos;s trailing 30 days as of the day it was read, so figures read on different days cover different 30-day periods.</li>
+                <li>Totals and rankings only include figures read within {CURRENT_DAYS} days of the latest weekly run, so everything added together covers nearly the same 30 days. Older figures are shown separately with their own dates and are never added in.</li>
+                <li>A change (&ldquo;+4.3%&rdquo;) is only given between a casino&apos;s figures in two consecutive weekly snapshots, each read in its own week, and always with the dates it runs between.</li>
+              </ul>
             </>
           ),
         },
@@ -103,7 +115,9 @@ export default function Page() {
               <p>
                 Studios often release a slot in several RTP versions, and each casino chooses which one to run. A casino RTP reading is the RTP that casino
                 shows for its own copy of the game, read by our team on the casino&apos;s game page or in the in-game paytable, with the date. Readings are
-                re-checked monthly; the latest were taken on {fmtDate(lastRead)}. See them all on <Link href="/top-slots/#rtp-by-casino">RTP by casino</Link>.
+                re-checked monthly. The current set was read on {fmtDate(lastRead)}
+                {rtp.overdue ? <>, so it is <strong>overdue</strong>: until it is re-read every reading is labelled historical, because a casino can switch to a different RTP version at any time.</> : <>; the next check is due by {fmtDate(rtp.due)}.</>}{" "}
+                See them all on <Link href="/top-slots/#rtp-by-casino">RTP by casino</Link>.
               </p>
               <p>
                 We do not publish an RTP above 100%. RTP is a game&apos;s long-run theoretical return: almost always below 100%, and exactly 100% only
@@ -126,7 +140,7 @@ export default function Page() {
         {
           id: "facts",
           title: "Casino facts",
-          body: <p>Coins, limits, fees, KYC policy and licence details on casino pages are read from each casino&apos;s own published pages, summarised, and linked next to the fact with the date read. Follow the link for the casino&apos;s full wording.</p>,
+          body: <p>Coins, limits, fees, KYC policy and licence details on casino pages are read from each casino&apos;s own published pages, summarised, and linked next to the fact with the date read. Follow the link for the casino&apos;s full wording. Withdrawal times are what each casino states, marked &ldquo;(stated)&rdquo;: they are claims, not timed tests, and real times vary with the coin, the network and any checks.</p>,
         },
         {
           id: "principles",

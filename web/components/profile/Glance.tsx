@@ -5,7 +5,7 @@ export function Glance({ p }: { p: CasinoProfileData }) {
   const g = p.glance;
   const items: { k: string; v: string; note?: string; tone?: "good" | "warn" }[] = [
     { k: "KYC", v: g.kyc?.label ?? "Not classified", note: g.kyc?.why, tone: g.kyc && /only if asked|never/i.test(g.kyc.label) ? "good" : undefined },
-    { k: "Withdrawal time", v: g.withdrawal.label, note: g.withdrawal.caption === "stated" ? "As stated by the casino" : g.withdrawal.caption },
+    { k: "Stated withdrawal time", v: g.withdrawal.label, note: g.withdrawal.caption === "stated" ? "The casino's own claim, not a timed test. Actual times vary by coin, network and checks." : g.withdrawal.caption },
     { k: "Bonus wagering", v: g.wagering.charAt(0).toUpperCase() + g.wagering.slice(1) },
     ...(g.bonus ? [{ k: "Standing offer", v: g.bonus }] : []),
     { k: "Licence", v: g.licence || "Not on file" },

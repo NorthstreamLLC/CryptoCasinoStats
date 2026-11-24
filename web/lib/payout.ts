@@ -41,6 +41,17 @@ export function payoutView(o: Operator): PayoutView {
 }
 
 /** Ascending by known minutes; operators with no stated time go last, ties broken by name. */
+/**
+ * A withdrawal time as shown to readers: the casino's own claim is marked
+ * "(stated)" so it never reads as a guaranteed or measured outcome. Only a
+ * time we recorded ourselves is shown bare.
+ */
+export function payoutText(o: Operator): string {
+  const v = payoutView(o);
+  if (v.kind !== "stated") return v.label;
+  return v.label.endsWith(")") ? `${v.label.slice(0, -1)}, stated)` : `${v.label} (stated)`;
+}
+
 export function comparePayout(a: Operator, b: Operator): number {
   const pa = payoutView(a).mins;
   const pb = payoutView(b).mins;

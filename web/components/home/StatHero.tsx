@@ -5,13 +5,12 @@ import type { heroStats } from "@/lib/home-data";
 
 type Stats = ReturnType<typeof heroStats>;
 
-const span = (from: string, to: string) => (from === to ? fmtDate(to) : `${fmtDate(from)} to ${fmtDate(to)}`);
-
 export function StatHero({ s }: { s: Stats }) {
+  const excluded = (n: number) => (n ? ` ${n} older figure${n > 1 ? "s" : ""} left out.` : "");
   const cards = [
-    { value: s.deposits.value, label: "30-day on-chain deposits", foot: `Sum of FairGambling's figures for ${s.deposits.casinos} casinos, ${span(s.deposits.from, s.deposits.to)}`, href: "/casinos/#volume" },
-    { value: s.wallets.value, label: "Held in casino hot wallets", foot: `Sum across ${s.wallets.casinos} casinos, FairGambling, ${span(s.wallets.from, s.wallets.to)}`, href: "/casinos/#volume" },
-    { value: s.readings.value, label: "Casino RTP readings", foot: `${s.readings.casinos} casinos, read on their own game pages, ${fmtDate(s.readings.to)}`, href: "/top-slots/#rtp-by-casino" },
+    { value: s.deposits.value, label: "30-day on-chain deposits", foot: `${s.deposits.casinos} of ${s.fgCovered} casinos FairGambling covers, each its trailing 30 days as read on ${fmtDate(s.run)}.${excluded(s.deposits.stale)}`, href: "/casinos/#volume" },
+    { value: s.wallets.value, label: "Held in casino hot wallets", foot: `${s.wallets.casinos} casinos, balances read on ${fmtDate(s.run)} (FairGambling).${excluded(s.wallets.stale)}`, href: "/casinos/#volume" },
+    { value: s.readings.value, label: s.readings.overdue ? "Casino RTP readings (historical)" : "Casino RTP readings", foot: `${s.readings.casinos} casinos, last read ${fmtDate(s.readings.to)}${s.readings.overdue ? ". Monthly re-check overdue" : ""}`, href: "/top-slots/#rtp-by-casino" },
   ];
   return (
     <section className="ccs-hero relative overflow-hidden border-b border-border">

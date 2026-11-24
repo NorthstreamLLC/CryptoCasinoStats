@@ -2,9 +2,9 @@ import { allCasinos, atAGlance, casinoPath } from "./casinos";
 import { volumeTable } from "./volume";
 import { hasLink } from "./outbound";
 import { kycTierOf, type KycTier } from "./kyc";
-import { payoutView } from "./payout";
+import { payoutView, payoutText } from "./payout";
 import { wagerView } from "./wager";
-import { readingsFor } from "./slots";
+import { readingsFor, rtpStatus } from "./slots";
 import coinsBy from "@/data/coinsBy.json";
 import type { DirRow } from "@/components/casinos/Directory";
 
@@ -34,7 +34,7 @@ export function directoryRows(): DirRow[] {
       walNum: w?.num ?? -1,
       kyc: g.kyc?.label ?? "Not classified",
       kycRank: tier ? KYC_RANK[tier] : 9,
-      withdrawal: pv.label,
+      withdrawal: payoutText(o),
       withdrawalMins: pv.mins ?? 1e9,
       wagering: wv.label.charAt(0).toUpperCase() + wv.label.slice(1),
       licence: o.licence,
@@ -58,7 +58,7 @@ export function headToHead(slugs: string[]) {
     return {
       ...r,
       coins: ((coinsBy as Record<string, string[]>)[s] ?? []).slice(0, 6).join(" · "),
-      rtp: rd.length ? `${rd.length} slots, ${lo!.toFixed(2)}–${hi!.toFixed(2)}%` : "—",
+      rtp: rd.length ? `${rd.length} slots, ${lo!.toFixed(2)}–${hi!.toFixed(2)}% (read ${new Date(`${rd.map((x) => x.checkedAt).sort().at(-1)}T12:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "UTC" })}${rtpStatus().overdue ? ", historical" : ""})` : "—",
       rtpDate: rd.map((x) => x.checkedAt).sort().at(-1) ?? null,
     };
   });

@@ -22,7 +22,7 @@ export function Featured({ items }: { items: ReturnType<typeof featured> }) {
               <dd className="mt-0.5 font-semibold text-text-primary">{c.kyc}</dd>
             </div>
             <div className="rounded-xl bg-page px-3 py-2.5">
-              <dt className="text-xs text-text-dim">Withdrawal</dt>
+              <dt className="text-xs text-text-dim">Stated withdrawal</dt>
               <dd className="mt-0.5 font-semibold text-text-primary">{c.withdrawal}</dd>
             </div>
           </dl>

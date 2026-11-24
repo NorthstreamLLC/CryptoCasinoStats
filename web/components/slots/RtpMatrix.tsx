@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { fmtDate } from "@/lib/site";
+import { RtpStatusBadge } from "@/components/RtpStatusBadge";
 import type { rtpMatrix } from "@/lib/slot-page";
 
 type M = ReturnType<typeof rtpMatrix>;
@@ -19,7 +19,7 @@ export function RtpMatrix({ m }: { m: M }) {
         <div className="flex items-center gap-4 text-xs text-text-dim">
           <span className="inline-flex items-center gap-1.5"><span className="h-2.5 w-2.5 rounded-sm bg-accent/70" /> Matches studio</span>
           <span className="inline-flex items-center gap-1.5"><span className="h-2.5 w-2.5 rounded-sm bg-warning" /> Lower</span>
-          <span>Read {fmtDate(m.lastRead)}</span>
+          <RtpStatusBadge />
         </div>
       </div>
       <div className="overflow-x-auto">

@@ -52,3 +52,17 @@ export const SOURCE_LABEL: Record<RtpReading["source"], string> = {
 
 export const fmtRtp = (n: number | null | undefined) => (n == null ? "—" : `${n.toFixed(2)}%`);
 export const fmtX = (n: number | null | undefined) => (n == null ? "—" : `${n.toLocaleString("en-US")}x`);
+
+/**
+ * How often casino RTP readings are meant to be re-taken. A reading older than
+ * this is shown as historical, with an "overdue" marker, until it is re-read.
+ */
+export const RTP_REVIEW_DAYS = 31;
+
+/** Where the casino RTP readings stand against the monthly review policy. */
+export function rtpStatus() {
+  const last = READINGS.map((r) => r.checkedAt).sort().at(-1) ?? "";
+  const age = last ? Math.floor((Date.now() - new Date(`${last}T00:00:00Z`).getTime()) / 86400000) : 0;
+  const due = last ? new Date(new Date(`${last}T00:00:00Z`).getTime() + RTP_REVIEW_DAYS * 86400000).toISOString().slice(0, 10) : "";
+  return { last, age, due, overdue: !!last && age > RTP_REVIEW_DAYS };
+}

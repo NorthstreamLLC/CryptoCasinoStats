@@ -11,7 +11,7 @@ const fmt = (iso: string) => new Date(`${iso}T12:00:00Z`).toLocaleDateString("en
  * published RTP. The scale is fixed (94–97%) so a lower-RTP version would
  * visibly drop away from the line; a table repeats it for screen readers.
  */
-export function RtpPanel({ slots }: { slots: RtpSlot[] }) {
+export function RtpPanel({ slots, overdue = false }: { slots: RtpSlot[]; overdue?: boolean }) {
   const [i, setI] = useState(0);
   const s = slots[i];
   const lo = 94;
@@ -82,6 +82,7 @@ export function RtpPanel({ slots }: { slots: RtpSlot[] }) {
           {allMatch
             ? `All ${s.readings.length} casinos showed the studio's ${s.provider!.toFixed(2)}% version when we read them on ${fmt(date)}.`
             : `Readings differ from the studio's figure at some casinos (read ${fmt(date)}).`}
+          {overdue && <span className="mt-1 block text-xs font-semibold text-warning">Historical: these readings are past their monthly re-check, and a casino may have changed version since.</span>}
         </p>
       </div>
     </div>

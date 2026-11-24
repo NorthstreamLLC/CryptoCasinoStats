@@ -9,6 +9,8 @@ import { RtpMatrix } from "@/components/slots/RtpMatrix";
 import { SlotLists } from "@/components/slots/SlotLists";
 import { SlotArt } from "@/components/slots/SlotArt";
 import { PartnerCards } from "@/components/PartnerCards";
+import { RtpStatusBadge } from "@/components/RtpStatusBadge";
+import { rtpStatus } from "@/lib/slots";
 
 export const metadata = pageMeta(
   "Top Slots",
@@ -57,6 +59,7 @@ const EXPLAIN: [string, string, string][] = [
 
 export default function TopSlotsPage() {
   const m = rtpMatrix();
+  const st = rtpStatus();
   const top = TOP_RTP.map((s) => slotCard(s));
   const ld = {
     "@context": "https://schema.org",
@@ -77,7 +80,7 @@ export default function TopSlotsPage() {
         lede="The highest RTP, most volatile, and community-favorite games, with each studio's published numbers and the RTP each casino actually runs, on platforms like Razed, Roobet and Stake."
         stats={[
           { value: catalogueSize().toLocaleString("en-US"), label: "Slots in the catalogue", foot: `Studio-published RTP, volatility and max win, export of ${fmtDate(CATALOGUE_AS_OF)}`, href: "#lists" },
-          { value: String(m.total), label: "Casino RTP readings", foot: `${m.casinos.length} casinos, read on their own game pages and paytables`, href: "#rtp-by-casino" },
+          { value: String(m.total), label: st.overdue ? "Casino RTP readings (historical)" : "Casino RTP readings", foot: `${m.casinos.length} casinos, last read ${fmtDate(st.last)}${st.overdue ? "; monthly re-check overdue" : ""}`, href: "#rtp-by-casino" },
           { value: `${m.matching}/${m.total}`, label: "Match the studio's RTP", foot: "Readings at or above the published figure", href: "#rtp-by-casino" },
         ]}
         primary={{ href: "#rtp-by-casino", label: "See RTP by casino →" }}
@@ -109,7 +112,7 @@ export default function TopSlotsPage() {
         </div>
       </Section>
 
-      <Section id="rtp-by-casino" eyebrow="RTP by casino" title="Same slot, every casino" lede="Studios release games in several RTP versions and each casino picks one. These are the versions each casino actually showed us." className="bg-section">
+      <Section id="rtp-by-casino" eyebrow="RTP by casino" title="Same slot, every casino" lede="Studios release games in several RTP versions and each casino picks one. These are the versions each casino showed us when we last read them; a casino can switch versions, so treat older readings as historical." action={<RtpStatusBadge />} className="bg-section">
         <RtpMatrix m={m} />
       </Section>
 
@@ -164,7 +167,7 @@ export default function TopSlotsPage() {
         </p>
       </Section>
 
-      <Section eyebrow="Where to play" title="Casinos to play these at" lede="Partner casinos picked for fast withdrawals and light wagering, with their numbers." className="bg-section">
+      <Section eyebrow="Where to play" title="Casinos to play these at" lede="Partner casinos picked for fast stated withdrawals and light wagering, with their numbers." className="bg-section">
         <PartnerCards cards={partnerCards({ seed: "top-slots", context: { kind: "slots" } })} placement="slots-partners" />
       </Section>
     </>

@@ -60,7 +60,7 @@ export default function CasinosPage() {
         lede="Discover the best crypto casinos for higher RTPs, no KYC, and next-gen slot rewards, with the numbers behind them: deposit volume, wallet balances and the RTP each casino runs."
         stats={[
           { value: String(rows.length), label: "Casinos tracked", foot: "Every one has its own stats page", href: "#all-casinos" },
-          { value: s.deposits.value, label: "30-day on-chain deposits", foot: `FairGambling, ${s.deposits.casinos} casinos, ${fmtDate(s.deposits.from)} to ${fmtDate(s.deposits.to)}`, href: "#volume" },
+          { value: s.deposits.value, label: "30-day on-chain deposits", foot: `${s.deposits.casinos} casinos, each its trailing 30 days as read on ${fmtDate(s.run)} (FairGambling)${s.deposits.stale ? `; ${s.deposits.stale} older figures left out` : ""}`, href: "#volume" },
           { value: sourcedFactCount().toLocaleString("en-US"), label: "Casino facts with a source", foot: "Each linked to the casino's own page and dated", href: "/methodology/" },
         ]}
         primary={{ href: "#all-casinos", label: `Browse all ${rows.length} casinos →` }}
@@ -71,12 +71,12 @@ export default function CasinosPage() {
         <HeadToHead cols={h2h} />
       </Section>
 
-      <Section id="all-casinos" eyebrow="The directory" title="Every casino we track" lede="Search, filter by what matters to you, or sort by the numbers. KYC, withdrawal and wagering come from each casino's own terms." className="bg-section">
+      <Section id="all-casinos" eyebrow="The directory" title="Every casino we track" lede="Search, filter by what matters to you, or sort by the numbers. KYC, withdrawal and wagering are each casino's own published terms; withdrawal times are what the casino states, not timed tests." className="bg-section">
         <Directory rows={rows} />
       </Section>
 
       <Section id="volume" eyebrow="On-chain deposit volume" title="All tracked casinos, ranked" lede="Third-party attribution of 30-day deposits and hot-wallet balances, as each tracker published them." action={<Link href="/methodology/" className="ccs-btn-ghost">How to read these</Link>}>
-        <Leaderboard deposits={lb.deposits} wallet={lb.wallet} />
+        <Leaderboard deposits={lb.deposits} wallet={lb.wallet} depositsOther={lb.depositsOther} walletOther={lb.walletOther} asOf={lb.asOf} />
       </Section>
 
       <section className="bg-section py-16 sm:py-24">
@@ -123,7 +123,7 @@ export default function CasinosPage() {
         </div>
       </section>
 
-      <Section eyebrow="Where to play" title="Partner casinos worth a look" lede="Picked for fast withdrawals and light wagering, with their numbers.">
+      <Section eyebrow="Where to play" title="Partner casinos worth a look" lede="Picked for fast stated withdrawals and light wagering, with their numbers.">
         <PartnerCards cards={partnerCards({ seed: "casinos" })} placement="casinos-partners" />
       </Section>
     </>
