@@ -29,7 +29,7 @@ export interface DirRow {
 
 const FILTERS = [
   { key: "noKyc", label: "No routine KYC" },
-  { key: "instant", label: "Instant withdrawals" },
+  { key: "instant", label: "Instant withdrawals (stated)" },
   { key: "noWagering", label: "No bonus wagering" },
   { key: "sol", label: "Takes SOL" },
   { key: "sports", label: "Sportsbook" },
@@ -40,7 +40,7 @@ const SORTS = {
   partner: { label: "Featured", fn: () => 0 },
   deposits: { label: "Deposits, high to low", fn: (a: DirRow, b: DirRow) => b.depNum - a.depNum },
   wallet: { label: "Hot wallet, high to low", fn: (a: DirRow, b: DirRow) => b.walNum - a.walNum },
-  withdrawal: { label: "Fastest withdrawal", fn: (a: DirRow, b: DirRow) => a.withdrawalMins - b.withdrawalMins },
+  withdrawal: { label: "Fastest stated withdrawal", fn: (a: DirRow, b: DirRow) => a.withdrawalMins - b.withdrawalMins },
   kyc: { label: "Lightest KYC", fn: (a: DirRow, b: DirRow) => a.kycRank - b.kycRank },
   name: { label: "Name, A–Z", fn: (a: DirRow, b: DirRow) => a.name.localeCompare(b.name) },
 } as const;
@@ -101,7 +101,7 @@ export function Directory({ rows }: { rows: DirRow[] }) {
 
       <div className="ccs-card mt-4 overflow-hidden">
         <div className="hidden grid-cols-[1.5fr_1fr_1fr_1.2fr_1fr_1.2fr_auto] gap-4 border-b border-border px-5 py-3 text-xs font-semibold uppercase tracking-wide text-text-dim lg:grid">
-          <span>Casino</span><span>30-day deposits</span><span>Hot wallet</span><span>KYC</span><span>Withdrawal</span><span>Bonus wagering</span><span className="w-[9.5rem]" />
+          <span>Casino</span><span>30-day deposits</span><span>Hot wallet</span><span>KYC</span><span>Stated withdrawal</span><span>Bonus wagering</span><span className="w-[9.5rem]" />
         </div>
         <ul>
           {list.map((r) => (
@@ -117,7 +117,7 @@ export function Directory({ rows }: { rows: DirRow[] }) {
                 ["30-day deposits", r.deposits ?? "—", true],
                 ["Hot wallet", r.wallet ?? "—", true],
                 ["KYC", r.kyc, false],
-                ["Withdrawal", r.withdrawal, false],
+                ["Stated withdrawal", r.withdrawal, false],
                 ["Bonus wagering", r.wagering, false],
               ].map(([k, v, num]) => (
                 <div key={k as string} className="min-w-0 text-sm">

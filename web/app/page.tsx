@@ -14,6 +14,7 @@ import { Articles } from "@/components/home/Articles";
 import { StickyBar } from "@/components/home/StickyBar";
 import { WeekBand } from "@/components/home/WeekBand";
 import { latestReport } from "@/lib/history";
+import { rtpStatus } from "@/lib/slots";
 import { SITE_URL } from "@/lib/site";
 
 export const metadata = pageMeta(
@@ -67,7 +68,7 @@ export default function Home() {
         lede="Ranked by 30-day on-chain deposits. Switch to hot-wallet balance to see what each casino keeps on hand."
         action={<Link href="/casinos/#volume" className="ccs-btn-ghost">All {s.deposits.casinos} casinos</Link>}
       >
-        <Leaderboard deposits={lb.deposits} wallet={lb.wallet} />
+        <Leaderboard deposits={lb.deposits} wallet={lb.wallet} depositsOther={lb.depositsOther} walletOther={lb.walletOther} asOf={lb.asOf} />
       </Section>
 
       {week && <WeekBand r={week} />}
@@ -78,7 +79,7 @@ export default function Home() {
 
       <section className="scroll-mt-20 py-16 sm:py-24">
         <div className="mx-auto max-w-6xl px-4">
-          <RtpPanel slots={rtpSlots()} />
+          <RtpPanel slots={rtpSlots()} overdue={rtpStatus().overdue} />
         </div>
       </section>
 

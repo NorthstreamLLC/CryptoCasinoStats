@@ -41,9 +41,12 @@ export interface Move {
   name: string;
   path: string;
   now: Fig;
+  /** The figure from the previous snapshot, only when it was current there: like-for-like. */
   prev: Fig | null;
-  change: number | null; // fraction, e.g. 0.138
-  fresh: boolean; // read on the report's date
+  /** The latest earlier figure of any date, for display when prev is null. */
+  last: Fig | null;
+  change: number | null; // fraction, e.g. 0.138; only between like-for-like figures
+  fresh: boolean; // read in this run's window
 }
 
 export interface Report {
@@ -51,7 +54,9 @@ export interface Report {
   prevDate: string | null;
   deposits: Move[];
   wallet: Move[];
-  totals: { deposits: number; prevDeposits: number; wallet: number; prevWallet: number; comparable: number };
+  totals: { deposits: number; prevDeposits: number; wallet: number; prevWallet: number; comparable: number; fresh: number; freshDeposits: number };
+  /** The comparison window: previous snapshot date to this one, in days. */
+  window: { from: string; to: string; days: number } | null;
   risers: Move[];
   fallers: Move[];
   heldBack: Move[];
@@ -62,21 +67,29 @@ export interface Report {
 /** Report dates, newest first. The oldest snapshot is the baseline, not a report. */
 export const reportDates = () => snapshots().slice(1).map((s) => s.date).reverse();
 
+const DAY = 86400000;
+const days = (a: string, b: string) => Math.round((new Date(`${b}T00:00:00Z`).getTime() - new Date(`${a}T00:00:00Z`).getTime()) / DAY);
+/** A figure counts for a snapshot only if it was read within a week of that snapshot's date. */
+const currentIn = (f: Fig | undefined, snapDate: string): f is Fig => !!f && days(f.asOf, snapDate) <= 7 && days(f.asOf, snapDate) >= 0;
+
 function moves(cur: Snapshot, prevs: Snapshot[], k: "deposits" | "wallet"): Move[] {
+  const prevSnap = prevs.at(-1);
   return Object.entries(cur.casinos)
     .filter(([, c]) => c[k])
     .map(([slug, c]) => {
       const now = c[k]!;
-      // The latest earlier reading with a different as-of date.
-      let prev: Fig | null = null;
-      for (const p of [...prevs].reverse()) {
-        const f = p.casinos[slug]?.[k];
+      const fresh = currentIn(now, cur.date);
+      const p = prevSnap?.casinos[slug]?.[k];
+      const prev = fresh && prevSnap && currentIn(p, prevSnap.date) && p.asOf < now.asOf ? p : null;
+      let last: Fig | null = null;
+      for (const s of [...prevs].reverse()) {
+        const f = s.casinos[slug]?.[k];
         if (f && f.asOf < now.asOf) {
-          prev = f;
+          last = f;
           break;
         }
       }
-      return { slug, name: nameOf(slug), path: casinoPath(slug), now, prev, change: prev && prev.num > 0 ? now.num / prev.num - 1 : null, fresh: now.asOf === cur.date };
+      return { slug, name: nameOf(slug), path: casinoPath(slug), now, prev, last, change: prev && prev.num > 0 ? now.num / prev.num - 1 : null, fresh };
     })
     .sort((a, b) => b.now.num - a.now.num);
 }
@@ -90,6 +103,8 @@ export function report(date: string): Report | null {
   const deposits = moves(cur, prevs, "deposits");
   const wallet = moves(cur, prevs, "wallet");
   const comparable = deposits.filter((m) => m.fresh && m.change != null);
+  const freshDeps = deposits.filter((m) => m.fresh);
+  const prevSnap = prevs.at(-1)!;
   const sum = (xs: Move[], f: (m: Move) => number) => xs.reduce((a, m) => a + f(m), 0);
   // Movers: casinos big enough that a percentage means something ($5M+ before).
   const sized = comparable.filter((m) => (m.prev?.num ?? 0) >= 5e6);
@@ -104,11 +119,14 @@ export function report(date: string): Report | null {
       wallet: sum(wallet.filter((m) => m.fresh && m.prev), (m) => m.now.num),
       prevWallet: sum(wallet.filter((m) => m.fresh && m.prev), (m) => m.prev!.num),
       comparable: comparable.length,
+      fresh: freshDeps.length,
+      freshDeposits: sum(freshDeps, (m) => m.now.num),
     },
+    window: { from: prevSnap.date, to: date, days: days(prevSnap.date, date) },
     risers: [...sized].sort((a, b) => b.change! - a.change!).filter((m) => m.change! > 0).slice(0, 3),
     fallers: [...sized].sort((a, b) => a.change! - b.change!).filter((m) => m.change! < 0).slice(0, 3),
     heldBack: deposits.filter((m) => !m.fresh),
-    leader: deposits[0] ?? null,
+    leader: freshDeps[0] ?? null,
     sourceUrl: "https://www.fairgambling.com/",
   };
 }

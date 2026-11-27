@@ -1,14 +1,14 @@
-import { volumeTable, latestAsOf, earliestAsOf, parseMoney } from "./volume";
+import { volumeTable, latestRun, isCurrent } from "./volume";
+import { ageDays } from "./site";
+import { RTP_REVIEW_DAYS } from "./slots";
 import { allCasinos, casinoPath, atAGlance, OPS } from "./casinos";
 import { allReadings, getGame } from "./slots";
 import { hasLink } from "./outbound";
 import { kycTierOf } from "./kyc";
-import { payoutView } from "./payout";
+import { payoutView, payoutText } from "./payout";
 import { wagerView } from "./wager";
 import { getCasinoSpecSheet } from "./spec-sheet";
 import coinsBy from "@/data/coinsBy.json";
-import onChain from "@/data/onChainVolume.json";
-import type { OnChainVolumeEntry } from "./types";
 
 /**
  * Everything the home page shows, computed from the shared data files. Every
@@ -28,43 +28,63 @@ export interface BoardRow {
   asOf: string;
 }
 
-function board(metric: "deposits" | "wallet"): BoardRow[] {
-  return volumeTable()
-    .map((r) => {
-      const list = metric === "deposits" ? r.deposits : r.wallet;
-      const f = list.find((x) => x.source === "FairGambling") ?? list[0];
-      if (!f || !Number.isFinite(f.num)) return null;
-      const o = OPS.find((x) => x.slug === r.slug);
-      return { slug: r.slug, name: r.name, mono: o?.mono ?? r.name.slice(0, 2).toUpperCase(), path: casinoPath(r.slug), value: f.value, num: f.num, source: f.source, sourceUrl: f.sourceUrl, asOf: f.asOf };
-    })
-    .filter((x): x is BoardRow => !!x)
-    .sort((a, b) => b.num - a.num);
+export interface OtherRow extends BoardRow {
+  reason: string;
+}
+
+/**
+ * The ranking for one metric: FairGambling figures read in the current window
+ * (comparable, ranked), and everything else (older FairGambling figures, or a
+ * casino only another tracker covers), listed apart with the reason.
+ */
+function board(metric: "deposits" | "wallet"): { rows: BoardRow[]; other: OtherRow[] } {
+  const ref = latestRun();
+  const rows: BoardRow[] = [];
+  const other: OtherRow[] = [];
+  for (const r of volumeTable()) {
+    const list = metric === "deposits" ? r.deposits : r.wallet;
+    const fg = list.find((x) => x.source === "FairGambling");
+    const f = fg ?? list[0];
+    if (!f || !Number.isFinite(f.num)) continue;
+    const o = OPS.find((x) => x.slug === r.slug);
+    const row = { slug: r.slug, name: r.name, mono: o?.mono ?? r.name.slice(0, 2).toUpperCase(), path: casinoPath(r.slug), value: f.value, num: f.num, source: f.source, sourceUrl: f.sourceUrl, asOf: f.asOf };
+    if (fg && isCurrent(fg.asOf, ref)) rows.push(row);
+    else other.push({ ...row, reason: fg ? "Not re-read this week" : `${f.source} only` });
+  }
+  rows.sort((a, b) => b.num - a.num);
+  other.sort((a, b) => b.asOf.localeCompare(a.asOf) || b.num - a.num);
+  return { rows, other };
 }
 
 const fmtBig = (n: number) => (n >= 1e9 ? `$${(n / 1e9).toFixed(2)}B` : `$${Math.round(n / 1e6)}M`);
 
+/**
+ * Headline figures. Totals add up only FairGambling figures read in the current
+ * window (the latest weekly run), so every number in a total covers nearly the
+ * same 30 days; older figures are counted apart and named as excluded.
+ */
 export function heroStats() {
-  const entries = onChain as OnChainVolumeEntry[];
-  const pickFG = (metric: string) =>
-    entries.flatMap((e) => e.sources.filter((s) => s.source === "FairGambling" && s.metric === metric).slice(0, 1)).map((s) => ({ n: parseMoney(s.value), d: s.asOf }));
-  const dep = pickFG("30-day deposit volume");
-  const wal = pickFG("Hot wallet balance (all chains)");
+  const ref = latestRun();
+  const dep = board("deposits");
+  const wal = board("wallet");
   const readings = allReadings();
-  const range = (xs: { d: string }[]) => {
-    const ds = xs.map((x) => x.d).sort();
-    return { from: ds[0], to: ds.at(-1)! };
-  };
+  const lastRead = readings.map((r) => r.checkedAt).sort().at(-1)!;
   return {
-    deposits: { value: fmtBig(dep.reduce((a, b) => a + b.n, 0)), casinos: dep.length, ...range(dep) },
-    wallets: { value: fmtBig(wal.reduce((a, b) => a + b.n, 0)), casinos: wal.length, ...range(wal) },
-    readings: { value: String(readings.length), casinos: new Set(readings.map((r) => r.operatorSlug)).size, to: readings.map((r) => r.checkedAt).sort().at(-1)! },
+    run: ref,
+    deposits: { value: fmtBig(dep.rows.reduce((a, b) => a + b.num, 0)), casinos: dep.rows.length, stale: dep.other.filter((r) => r.source === "FairGambling").length },
+    wallets: { value: fmtBig(wal.rows.reduce((a, b) => a + b.num, 0)), casinos: wal.rows.length, stale: wal.other.filter((r) => r.source === "FairGambling").length },
+    fgCovered: dep.rows.length + dep.other.filter((r) => r.source === "FairGambling").length,
+    readings: { value: String(readings.length), casinos: new Set(readings.map((r) => r.operatorSlug)).size, to: lastRead, ageDays: ageDays(lastRead), overdue: ageDays(lastRead) > RTP_REVIEW_DAYS },
     casinosTracked: OPS.length,
-    updated: [latestAsOf(), ...readings.map((r) => r.checkedAt)].sort().at(-1)!,
-    dataFrom: earliestAsOf(),
+    updated: [ref, lastRead].sort().at(-1)!,
   };
 }
 
-export const leaderboards = (limit = 10) => ({ deposits: board("deposits").slice(0, limit), wallet: board("wallet").slice(0, limit) });
+export function leaderboards(limit = 10) {
+  const d = board("deposits");
+  const w = board("wallet");
+  return { asOf: latestRun(), deposits: d.rows.slice(0, limit), wallet: w.rows.slice(0, limit), depositsOther: d.other, walletOther: w.other };
+}
 
 export interface FinderCasino {
   slug: string;
@@ -97,7 +117,7 @@ export function finderCasinos(): FinderCasino[] {
       link: hasLink(o.slug),
       kyc: g.kyc?.label ?? "Not classified",
       noKyc: tier === "never" || tier === "discretionary",
-      withdrawal: pv.label,
+      withdrawal: payoutText(o),
       instant: pv.mins === 0,
       wagering: wv.label.charAt(0).toUpperCase() + wv.label.slice(1),
       noWagering: wv.kind === "none" || (wv.kind === "cited" && wv.mult === 0),
@@ -143,7 +163,7 @@ export function featured() {
     stake: "Leading crypto casino with a massive community and fast payouts.",
     razed: "Next-gen crypto casino known for exclusive high-reward slots.",
   };
-  const dep = board("deposits");
+  const dep = board("deposits").rows;
   return ["roobet", "stake", "razed"].map((slug) => {
     const o = OPS.find((x) => x.slug === slug)!;
     const g = atAGlance(o);

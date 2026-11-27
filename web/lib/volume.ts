@@ -71,3 +71,20 @@ export function latestAsOf(): string {
 export function earliestAsOf(): string {
   return ENTRIES.flatMap((e) => e.sources.map((s) => s.asOf)).sort()[0] ?? "";
 }
+
+/**
+ * The current window. FairGambling's figures are each a trailing 30 days as of
+ * the day we read them. Figures read within CURRENT_DAYS of the latest weekly
+ * run cover (nearly) the same 30 days and can be added up or ranked together;
+ * anything older is "stale": shown with its own date, never summed or ranked
+ * with current figures.
+ */
+export const CURRENT_DAYS = 7;
+const dayMs = 86400000;
+
+export function latestRun(): string {
+  return ENTRIES.flatMap((e) => e.sources.filter((s) => s.source === "FairGambling").map((s) => s.asOf)).sort().at(-1) ?? "";
+}
+
+export const isCurrent = (asOf: string, ref = latestRun()) =>
+  !!asOf && !!ref && (new Date(`${ref}T00:00:00Z`).getTime() - new Date(`${asOf}T00:00:00Z`).getTime()) / dayMs <= CURRENT_DAYS;

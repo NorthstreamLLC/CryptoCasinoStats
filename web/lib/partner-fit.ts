@@ -62,7 +62,7 @@ export function defaultPitch(o: Operator): string | null {
   const pv = payoutView(o);
   const wv = wagerView(o);
   const parts: string[] = [];
-  if (pv.kind !== "none") parts.push(`${pv.label} withdrawals`);
+  if (pv.kind !== "none") parts.push(`${pv.label} withdrawals${pv.kind === "stated" ? " (stated)" : ""}`);
   if (wv.kind !== "unknown") parts.push(wv.label.toLowerCase());
   if (!parts.length) return null;
   const line = parts.join(" · ");
@@ -145,7 +145,7 @@ function alternativeFit(p: Operator, of: string): { pts: number; pitch: string |
   const mx = payoutMins(x);
   if (mp !== null && mx !== null && mp < mx) {
     pts += 1;
-    reasons.push(`${payoutView(p).label} withdrawals`);
+    reasons.push(`${payoutView(p).label} withdrawals${payoutView(p).kind === "stated" ? " (stated)" : ""}`);
   }
 
   const wp = wagerMult(p);

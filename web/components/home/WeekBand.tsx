@@ -12,9 +12,10 @@ export function WeekBand({ r }: { r: Report }) {
         <div>
           <p className="ccs-eyebrow">Weekly report · {fmtDate(r.date)}</p>
           <p className="mt-2 text-text-secondary">
-            <span className="ccs-num text-2xl font-semibold text-text-primary">{big(t.deposits)}</span> in 30-day deposits
-            {t.prevDeposits ? <span className="ccs-num ml-2 font-semibold text-text-primary">{pct(t.deposits / t.prevDeposits - 1)}</span> : null}
+            <span className="ccs-num text-2xl font-semibold text-text-primary">{big(t.freshDeposits)}</span> in 30-day deposits, {t.fresh} casinos
+            {t.comparable ? <span className="ccs-num ml-2 font-semibold text-text-primary">{pct(t.deposits / t.prevDeposits - 1)}</span> : null}
           </p>
+          {t.comparable ? <p className="mt-1 text-xs text-text-dim">Like for like: {t.comparable} casinos since {fmtDate(r.window!.from)} ({r.window!.days} days)</p> : <p className="mt-1 text-xs text-text-dim">No like-for-like change this time</p>}
         </div>
         <ul className="-mx-4 flex gap-2 overflow-x-auto px-4 sm:mx-0 sm:flex-wrap sm:px-0">
           {movers.map((m) => (

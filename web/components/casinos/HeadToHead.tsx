@@ -10,7 +10,7 @@ export function HeadToHead({ cols }: { cols: Col[] }) {
     ["30-day deposits", (c) => c.deposits ?? "—"],
     ["Hot-wallet balance", (c) => c.wallet ?? "—"],
     ["KYC", (c) => c.kyc],
-    ["Withdrawal time", (c) => c.withdrawal],
+    ["Stated withdrawal", (c) => c.withdrawal],
     ["Bonus wagering", (c) => c.wagering],
     ["Slot RTPs read", (c) => c.rtp],
     ["Licence", (c) => c.licence],

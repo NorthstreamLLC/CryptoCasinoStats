@@ -1,7 +1,7 @@
 import ops from "@/data/ops.json";
 import coinsBy from "@/data/coinsBy.json";
 import { inHouseOrder } from "./house-order";
-import { payoutView } from "./payout";
+import { payoutView, payoutText } from "./payout";
 import { wagerView } from "./wager";
 import { kycTierOf, kycWhy, KYC_TIER_LABEL, kycTierDescription } from "./kyc";
 import { getCasinoSpecSheet } from "./spec-sheet";
@@ -35,7 +35,7 @@ export function atAGlance(o: Operator): AtAGlance {
   const wv = wagerView(o);
   return {
     kyc: tier ? { label: KYC_TIER_LABEL[tier], why: kycWhy(o.slug), description: kycTierDescription(tier) } : null,
-    withdrawal: { label: pv.label, caption: pv.caption },
+    withdrawal: { label: payoutText(o), caption: pv.caption },
     wagering: wv.label,
     bonus: o.bonusShort ?? null,
     coins: (coinsBy as Record<string, string[]>)[o.slug] ?? [],

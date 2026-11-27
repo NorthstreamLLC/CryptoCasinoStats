@@ -7,7 +7,7 @@ import type { FinderCasino } from "@/lib/home-data";
 
 const FILTERS = [
   { key: "noKyc", label: "No routine KYC" },
-  { key: "instant", label: "Instant withdrawals" },
+  { key: "instant", label: "Instant withdrawals (stated)" },
   { key: "noWagering", label: "No bonus wagering" },
   { key: "sol", label: "Takes SOL" },
   { key: "sports", label: "Has a sportsbook" },
@@ -66,7 +66,7 @@ export function CasinoFinder({ casinos }: { casinos: FinderCasino[] }) {
             <dl className="mt-4 divide-y divide-row-divider rounded-xl bg-page text-sm">
               {[
                 ["KYC", c.kyc],
-                ["Withdrawal", c.withdrawal],
+                ["Stated withdrawal", c.withdrawal],
                 ["Bonus wagering", c.wagering],
               ].map(([k, v]) => (
                 <div key={k} className="flex items-baseline justify-between gap-3 px-3 py-2">

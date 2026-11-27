@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import type { BoardRow } from "@/lib/home-data";
+import type { BoardRow, OtherRow } from "@/lib/home-data";
 
 const fmtDate = (iso: string) => new Date(`${iso}T12:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "UTC" });
 
@@ -11,9 +11,10 @@ const fmtDate = (iso: string) => new Date(`${iso}T12:00:00Z`).toLocaleDateString
  * The toggle swaps the metric; each row links to the casino's stats page and
  * carries its own source and date.
  */
-export function Leaderboard({ deposits, wallet }: { deposits: BoardRow[]; wallet: BoardRow[] }) {
+export function Leaderboard({ deposits, wallet, depositsOther = [], walletOther = [], asOf, showOther = true }: { deposits: BoardRow[]; wallet: BoardRow[]; depositsOther?: OtherRow[]; walletOther?: OtherRow[]; asOf?: string; showOther?: boolean }) {
   const [metric, setMetric] = useState<"deposits" | "wallet">("deposits");
   const rows = metric === "deposits" ? deposits : wallet;
+  const other = metric === "deposits" ? depositsOther : walletOther;
   const max = rows[0]?.num ?? 1;
   return (
     <div className="ccs-card overflow-hidden">
@@ -36,7 +37,7 @@ export function Leaderboard({ deposits, wallet }: { deposits: BoardRow[]; wallet
             </button>
           ))}
         </div>
-        <p className="text-xs text-text-dim">{rows.length > 10 ? `All ${rows.length}` : `Top ${rows.length}`} · FairGambling on-chain attribution · dated per row</p>
+        <p className="text-xs text-text-dim">{rows.length > 10 ? `All ${rows.length}` : `Top ${rows.length}`} · FairGambling, every figure read {asOf ? fmtDate(asOf) : "this week"}{other.length ? ` · ${other.length} not ranked` : ""}</p>
       </div>
       <ol key={metric} className="divide-y divide-row-divider">
         {rows.map((r, i) => (
@@ -61,6 +62,21 @@ export function Leaderboard({ deposits, wallet }: { deposits: BoardRow[]; wallet
           </li>
         ))}
       </ol>
+      {showOther && other.length > 0 && (
+        <div className="border-t border-border bg-page/40 px-4 py-4 sm:px-6">
+          <p className="text-xs font-semibold text-text-secondary">Not ranked: figure not read this week, or from another tracker</p>
+          <ul className="mt-2 grid gap-1.5 text-sm sm:grid-cols-2">
+            {other.map((r) => (
+              <li key={r.slug} className="flex min-w-0 items-baseline justify-between gap-3">
+                <Link href={r.path} className="truncate text-text-secondary hover:text-text-primary">{r.name}</Link>
+                <span className="shrink-0 text-xs text-text-dim">
+                  <span className="ccs-num text-text-secondary">{r.value}</span> · {r.source}, {fmtDate(r.asOf)}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
       <div className="border-t border-border px-4 py-4 text-xs text-text-dim sm:px-6">
         Third-party wallet attribution, not our measurement; deposits are money in, not profit or amount wagered.{" "}
         <Link href="/methodology/" className="font-semibold text-accent hover:underline">What this can&apos;t tell you →</Link>

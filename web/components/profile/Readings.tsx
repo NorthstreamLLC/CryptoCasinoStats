@@ -1,4 +1,4 @@
-import { fmtDate } from "@/lib/site";
+import { RtpStatusBadge } from "@/components/RtpStatusBadge";
 import { fmtRtp, SOURCE_LABEL } from "@/lib/slots";
 import type { CasinoProfileData } from "@/lib/casino-profile";
 
@@ -13,7 +13,7 @@ export function Readings({ p }: { p: CasinoProfileData }) {
         <p className="font-semibold text-text-primary">
           {matches} of {p.readings.length} slots run the studio&apos;s published RTP at {p.o.name}
         </p>
-        <p className="text-xs text-text-dim">Read {fmtDate(p.readings.map((r) => r.checkedAt).sort().at(-1)!)} · scale 94–97%</p>
+        <RtpStatusBadge />
       </div>
       <ul>
         {p.readings.map((r) => (

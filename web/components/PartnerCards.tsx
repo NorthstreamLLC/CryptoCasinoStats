@@ -20,7 +20,7 @@ export function PartnerCards({ cards, placement, count = 3 }: { cards: PartnerCa
           {[
             ["Deposits", a.deposits ?? "—"],
             ["KYC", a.kyc],
-            ["Withdrawal", a.withdrawal],
+            ["Stated payout", a.withdrawal],
           ].map(([k, v]) => (
             <div key={k} className="min-w-0 rounded-lg bg-page px-2.5 py-2">
               <dt className="text-text-dim">{k}</dt>

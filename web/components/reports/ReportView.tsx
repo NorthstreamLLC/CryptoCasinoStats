@@ -25,25 +25,23 @@ function MoverCard({ m, kind }: { m: Move; kind: "up" | "down" }) {
 /** Sentences built only from the numbers in the report, so the text can never say more than the data. */
 export function summary(r: Report): string[] {
   const t = r.totals;
+  const w = r.window;
   const out: string[] = [];
-  if (t.comparable > 0 && t.prevDeposits > 0) {
+  out.push(`On ${fmtDate(r.date)}, 30-day on-chain deposits at the ${t.fresh} casinos we re-read on FairGambling totalled ${big(t.freshDeposits)}. Each figure is that casino's trailing 30 days as of the day it was read.`);
+  if (w && t.comparable > 0 && t.prevDeposits > 0) {
     const ch = t.deposits / t.prevDeposits - 1;
-    const prevDates = r.deposits.filter((m) => m.fresh && m.prev).map((m) => m.prev!.asOf).sort();
-    const from = prevDates[0], to = prevDates.at(-1)!;
-    const when = from === to ? fmtDate(from) : `${fmtDate(from)} to ${fmtDate(to)}`;
-    out.push(`Across the ${t.comparable} casinos re-read on ${fmtDate(r.date)}, 30-day on-chain deposits totalled ${big(t.deposits)}, ${ch >= 0 ? "up" : "down"} ${pct(Math.abs(ch)).replace("+", "")} on their previous readings (${big(t.prevDeposits)}, taken ${when}).`);
+    out.push(`For the ${t.comparable} casinos also read in our previous snapshot (${fmtDate(w.from)}, ${w.days} days earlier), deposits moved from ${big(t.prevDeposits)} to ${big(t.deposits)} (${pct(ch)}).`);
+  } else if (w) {
+    out.push(`No change is given against the previous snapshot (${fmtDate(w.from)}): its figures were read on different dates, so they do not cover the same 30 days. Like-for-like changes start with the next weekly run.`);
   }
-  if (r.leader) {
-    const share = t.deposits > 0 && r.leader.fresh ? ` That is ${((r.leader.now.num / t.deposits) * 100).toFixed(0)}% of the total.` : "";
-    out.push(`${r.leader.name} is the largest by deposits at ${r.leader.now.value}${r.leader.change != null ? `, ${pct(r.leader.change)} on its previous reading` : ""}.${share}`);
-  }
+  if (r.leader) out.push(`${r.leader.name} is the largest at ${r.leader.now.value}${r.leader.change != null ? ` (${pct(r.leader.change)} since ${fmtDate(r.leader.prev!.asOf)})` : ""}${t.freshDeposits > 0 ? `, ${((r.leader.now.num / t.freshDeposits) * 100).toFixed(0)}% of the total` : ""}.`);
   if (r.risers[0]) out.push(`The biggest rise among casinos with at least $5M in deposits was ${r.risers[0].name} (${pct(r.risers[0].change)}, ${r.risers[0].prev!.value} to ${r.risers[0].now.value}).`);
   if (r.fallers[0]) out.push(`The biggest fall was ${r.fallers[0].name} (${pct(r.fallers[0].change)}, ${r.fallers[0].prev!.value} to ${r.fallers[0].now.value}).`);
   if (t.prevWallet > 0) {
-    const w = t.wallet / t.prevWallet - 1;
-    out.push(`Hot-wallet balances at the same casinos came to ${big(t.wallet)}, ${w >= 0 ? "up" : "down"} ${pct(Math.abs(w)).replace("+", "")}.`);
+    const ch = t.wallet / t.prevWallet - 1;
+    out.push(`Hot-wallet balances at casinos read on both dates came to ${big(t.wallet)}, ${pct(ch)} since ${fmtDate(w!.from)}.`);
   }
-  if (r.heldBack.length) out.push(`${r.heldBack.length} casino${r.heldBack.length > 1 ? "s were" : " was"} not re-read this time and keep${r.heldBack.length > 1 ? "" : "s"} an older figure, listed below.`);
+  if (r.heldBack.length) out.push(`${r.heldBack.length} casino${r.heldBack.length > 1 ? "s were" : " was"} not re-read this time. Their older figures are listed with their own dates and left out of the totals.`);
   return out;
 }
 
@@ -68,7 +66,7 @@ export function ReportView({ r }: { r: Report }) {
       )}
 
       <h2 className="ccs-display mt-14 text-3xl">Every casino, deposits and hot wallets</h2>
-      <p className="mt-2 max-w-3xl text-sm text-text-muted">30-day deposits and hot-wallet balance as FairGambling attributes them, against each casino&apos;s previous reading. Each figure links to its source page.</p>
+      <p className="mt-2 max-w-3xl text-sm text-text-muted">30-day deposits and hot-wallet balance as FairGambling attributes them. A change is shown only where the casino was also read in the previous snapshot{r.window ? ` (${fmtDate(r.window.from)})` : ""}, so both figures are like for like. Each figure links to its source page.</p>
       <div className="ccs-card mt-6 overflow-x-auto">
         <table className="w-full min-w-[760px] border-collapse text-sm">
           <thead>
@@ -93,7 +91,13 @@ export function ReportView({ r }: { r: Report }) {
                     <a href={m.now.sourceUrl} target="_blank" rel="noopener noreferrer nofollow" className="ccs-num font-semibold text-text-primary hover:text-accent">{m.now.value}</a>
                     {!m.fresh && <span className="block text-xs text-warning">as of {fmtDate(m.now.asOf)}</span>}
                   </td>
-                  <td className="px-4 py-3 text-text-secondary">{m.prev ? <><span className="ccs-num">{m.prev.value}</span><span className="block text-xs text-text-dim">{fmtDate(m.prev.asOf)}</span></> : "—"}</td>
+                  <td className="px-4 py-3 text-text-secondary">
+                    {m.prev ? (
+                      <><span className="ccs-num">{m.prev.value}</span><span className="block text-xs text-text-dim">{fmtDate(m.prev.asOf)}</span></>
+                    ) : m.last ? (
+                      <><span className="ccs-num">{m.last.value}</span><span className="block text-xs text-text-dim">{fmtDate(m.last.asOf)}, not like for like</span></>
+                    ) : "—"}
+                  </td>
                   <td className="px-4 py-3">{m.fresh ? <Change x={m.change} /> : <span className="text-xs text-text-dim">not re-read</span>}</td>
                   <td className="ccs-num px-4 py-3 text-text-secondary">{w?.now.value ?? "—"}</td>
                   <td className="px-4 py-3">{w?.fresh ? <Change x={w.change} /> : <span className="text-xs text-text-dim">—</span>}</td>
@@ -107,7 +111,7 @@ export function ReportView({ r }: { r: Report }) {
       <div className="mt-8 grid grid-cols-1 gap-3 md:grid-cols-2">
         <div className="ccs-card p-5 text-sm text-text-secondary">
           <p className="font-semibold text-text-primary">How this report is made</p>
-          <p className="mt-2">Every Monday we re-read FairGambling&apos;s public page for each casino it covers and save the figures. This report compares each casino with its previous saved reading. A figure that fails to read, or moves more than tenfold, is held back and keeps its older date rather than being published as new.</p>
+          <p className="mt-2">Every Monday we re-read FairGambling&apos;s public page for each casino it covers and save the figures. This report compares each casino only with its figure in the previous snapshot, and only when both were read in their own week; older figures are shown with their dates but never compared or totalled. A figure that fails to read, or moves more than tenfold, is held back and keeps its older date.</p>
         </div>
         <div className="ccs-card p-5 text-sm text-text-secondary">
           <p className="font-semibold text-text-primary">What these numbers are</p>

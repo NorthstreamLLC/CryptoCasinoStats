@@ -42,14 +42,14 @@ export default async function ReportPage({ params }: { params: Promise<{ date: s
           </>
         }
         title={title(r.date)}
-        lede={r.prevDate ? `Each casino compared with its previous reading. The last saved snapshot was ${fmtDate(r.prevDate)}.` : undefined}
+        lede={r.window ? `Figures read on ${fmtDate(r.date)}, compared like for like with our previous snapshot (${fmtDate(r.window.from)}, ${r.window.days} days earlier).` : undefined}
         wide
       >
         <div className="mt-8 grid max-w-4xl grid-cols-1 gap-3 sm:grid-cols-3">
           {[
-            [big(t.deposits), "30-day deposits", t.prevDeposits ? `${pct(t.deposits / t.prevDeposits - 1)} on previous readings` : ""],
-            [r.leader?.now.value ?? "—", `${r.leader?.name ?? ""}, the largest`, r.leader?.change != null ? `${pct(r.leader.change)} on its previous reading` : ""],
-            [String(t.comparable), "casinos re-read", `${r.heldBack.length} held back with older figures`],
+            [big(t.freshDeposits), "30-day deposits", `${t.fresh} casinos read ${fmtDate(r.date)}; ${r.heldBack.length} older figures left out`],
+            [r.leader?.now.value ?? "—", `${r.leader?.name ?? ""}, the largest`, r.leader?.change != null ? `${pct(r.leader.change)} since ${fmtDate(r.leader.prev!.asOf)}` : "no like-for-like change"],
+            [t.comparable ? pct(t.deposits / t.prevDeposits - 1) : "—", "Like-for-like change", r.window ? (t.comparable ? `${t.comparable} casinos since ${fmtDate(r.window.from)} (${r.window.days} days)` : `none comparable with ${fmtDate(r.window.from)}`) : ""],
           ].map(([v, l, f]) => (
             <div key={l} className="ccs-card p-5">
               <p className="ccs-num text-3xl font-semibold text-text-primary">{v}</p>

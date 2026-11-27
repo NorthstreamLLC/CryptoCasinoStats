@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CountUp } from "@/components/home/CountUp";
+import { rtpStatus } from "@/lib/slots";
 import { fmtDate } from "@/lib/site";
 import type { CasinoProfileData } from "@/lib/casino-profile";
 
@@ -12,8 +13,8 @@ export function ProfileHero({ p, logo, tagline }: { p: CasinoProfileData; logo?:
   const stats = [
     dep && { value: dep.value, label: "30-day on-chain deposits", foot: p.rank ? `#${p.rank.pos} of ${p.rank.of} tracked · ${dep.source}, ${fmtDate(dep.asOf)}` : `${dep.source}, ${fmtDate(dep.asOf)}`, href: "#on-chain" },
     wal && { value: wal.value, label: "Hot-wallet balance", foot: `${p.walletRank ? `#${p.walletRank.pos} of ${p.walletRank.of} · ` : ""}${wal.source}, ${fmtDate(wal.asOf)}`, href: "#on-chain" },
-    p.readings.length > 0 && { value: String(p.readings.length), label: "Slot RTPs read here", foot: `On ${o.name}'s own pages, ${fmtDate(lastRead!)}`, href: "#slots" },
-    { value: p.glance.withdrawal.label, label: "Withdrawal time", foot: p.glance.withdrawal.caption === "stated" ? `As stated by ${o.name}` : p.glance.withdrawal.caption, href: "#terms" },
+    p.readings.length > 0 && { value: String(p.readings.length), label: rtpStatus().overdue ? "Slot RTPs read (historical)" : "Slot RTPs read here", foot: `On ${o.name}'s own pages, ${fmtDate(lastRead!)}${rtpStatus().overdue ? "; re-check overdue" : ""}`, href: "#slots" },
+    { value: p.glance.withdrawal.label, label: "Stated withdrawal time", foot: p.glance.withdrawal.caption === "stated" ? `${o.name}'s own claim, not timed by us` : p.glance.withdrawal.caption, href: "#terms" },
   ].filter(Boolean).slice(0, 3) as { value: string; label: string; foot: string; href: string }[];
   const updated = [dep?.asOf, wal?.asOf, lastRead].filter(Boolean).sort().at(-1);
 
